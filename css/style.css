@@ -1,42 +1,324 @@
-.hero-title {
-	font-size: 2.5rem;
+/* =========================================
+   LUCIANO CAMPOS — PORTFOLIO 2026
+========================================= */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: #0a0a0a;
+	font-family: 'Inter', sans-serif;
+	color: #ffffff;
+	overflow-x: hidden;
+	line-height: 1.6;
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-weight: 700;
-	line-height: 1.2;
+	letter-spacing: -1px;
+	margin-bottom: 20px;
+	color: #ffffff;
+}
+
+p {
+	color: #b5b5b5;
+	font-size: 1rem;
+	line-height: 1.8;
+	margin-bottom: 20px;
+}
+
+a {
+	text-decoration: none !important;
+	transition: all 0.3s ease;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+	padding-top: 24px;
+	padding-bottom: 24px;
+}
+
+.navbar-brand {
+	font-size: 1.1rem;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	color: #ffffff !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+	color: #ffffff !important;
+	font-size: 0.88rem;
+	font-weight: 500;
+	letter-spacing: 1px;
+	margin-left: 24px;
+	opacity: 0.9;
+	position: relative;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+	opacity: 1;
+	color: #2563eb !important;
+}
+
+/* =========================================
+   SOCIAL ICONS
+========================================= */
+
+.social-icons a img {
+	width: 22px;
+	margin-left: 16px;
+	transition: all 0.3s ease;
+	opacity: 0.85;
+}
+
+.social-icons a img:hover {
+	opacity: 1;
+	transform: translateY(-2px);
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero-section {
+	min-height: 85vh;
+	display: flex;
+	align-items: center;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.hero-title {
+	font-size: 3.4rem;
+	font-weight: 700;
+	line-height: 1.05;
+	max-width: 700px;
+	margin-bottom: 28px;
 	color: #ffffff;
 }
 
 .hero-subtitle {
 	font-size: 1.1rem;
-	color: #cccccc;
-	max-width: 500px;
-}
-
-.hero-cta .btn {
-	padding: 10px 20px;
-	font-size: 0.9rem;
-	border-radius: 4px;
-}
-
-.btn-primary {
-	background-color: #2563eb;
-	border: none;
-}
-
-.btn-primary:hover {
-	background-color: #1d4ed8;
-}
-
-.btn-outline-light {
-	border: 1px solid #ffffff;
-	color: #ffffff;
-}
-
-.btn-outline-light:hover {
-	background-color: #ffffff;
-	color: #000000;
+	line-height: 1.8;
+	color: #b5b5b5;
+	max-width: 580px;
+	margin-bottom: 40px;
 }
 
 .hero-image {
-	max-width: 300px;
-	margin-top: 20px;
+	max-width: 320px;
+	border-radius: 12px;
+	transition: transform 0.4s ease;
+}
+
+.hero-image:hover {
+	transform: scale(1.02);
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn-main {
+	display: inline-block;
+	background-color: #2563eb;
+	color: #ffffff !important;
+	padding: 14px 28px;
+	border-radius: 6px;
+	font-size: 0.95rem;
+	font-weight: 600;
+	margin-right: 14px;
+	transition: all 0.3s ease;
+}
+
+.btn-main:hover {
+	background-color: #1d4ed8;
+	transform: translateY(-2px);
+}
+
+.btn-outline-custom {
+	display: inline-block;
+	border: 1px solid rgba(255,255,255,0.2);
+	color: #ffffff !important;
+	padding: 14px 28px;
+	border-radius: 6px;
+	font-size: 0.95rem;
+	font-weight: 600;
+	transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+	background-color: #ffffff;
+	color: #000000 !important;
+	transform: translateY(-2px);
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+section {
+	position: relative;
+}
+
+.container {
+	position: relative;
+	z-index: 2;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+	border-top: 1px solid rgba(255,255,255,0.08);
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-top: 40px;
+}
+
+.footer-text {
+	font-size: 0.9rem;
+	color: #777777;
+	margin-bottom: 0;
+}
+
+/* =========================================
+   UTILITIES
+========================================= */
+
+.text-muted-custom {
+	color: #8e8e8e;
+}
+
+.bg-black {
+	background-color: #0a0a0a;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+.fade-in {
+	animation: fadeIn 1s ease forwards;
+	opacity: 0;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+
+	.hero-section {
+		text-align: center;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+	.hero-title {
+		font-size: 2.6rem;
+		max-width: 100%;
+	}
+
+	.hero-subtitle {
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.hero-image {
+		margin-top: 50px;
+		max-width: 260px;
+	}
+
+	.navbar-dark .navbar-nav .nav-link {
+		margin-left: 0;
+		margin-top: 10px;
+	}
+
+	.social-icons {
+		margin-top: 20px;
+		justify-content: center;
+	}
+
+	.social-icons a img {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+}
+
+@media (max-width: 768px) {
+
+	.hero-title {
+		font-size: 2.2rem;
+		line-height: 1.15;
+	}
+
+	.hero-subtitle {
+		font-size: 1rem;
+		line-height: 1.7;
+	}
+
+	.btn-main,
+	.btn-outline-custom {
+		display: block;
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 15px;
+		text-align: center;
+	}
+
+	.hero-image {
+		max-width: 220px;
+	}
+
+}
+
+@media (max-width: 480px) {
+
+	.hero-title {
+		font-size: 1.9rem;
+	}
+
+	.hero-subtitle {
+		font-size: 0.95rem;
+	}
+
+	.navbar-brand {
+		font-size: 1rem;
+	}
+
 }
