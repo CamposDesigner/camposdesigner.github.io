@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -9,14 +10,24 @@
 
 	<meta name="description" content="Alquimia magazine editorial design project by Luciano Campos.">
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="icon" type="image/png" href="/favicon.png">
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet"
+		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="preconnect"
+		  href="https://fonts.googleapis.com">
 
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="preconnect"
+		  href="https://fonts.gstatic.com"
+		  crossorigin>
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+		  rel="stylesheet">
+
+	<link rel="stylesheet"
+		  href="/css/style.css">
+
 </head>
 
 <body>
@@ -25,7 +36,7 @@
 
 	<main>
 
-		<section class="selected-work">
+		<section class="case-study">
 
 			<div class="container">
 
@@ -34,7 +45,7 @@
 					<div class="col-lg-9">
 
 						<p class="eyebrow">
-							Publication Design
+							Magazine Case Study
 						</p>
 
 						<h1 class="hero-title">
@@ -42,7 +53,83 @@
 						</h1>
 
 						<p class="hero-subtitle">
-							Editorial publication design focused on typography, visual rhythm, and immersive reading experiences.
+							Editorial publication design focused on typography, rhythm, page sequencing, and immersive visual storytelling.
+						</p>
+
+					</div>
+
+				</div>
+
+				<div class="row mb-5">
+
+					<div class="col-md-4 mb-4">
+
+						<p class="eyebrow">
+							Role
+						</p>
+
+						<h3 class="project-title">
+							Editorial Designer
+						</h3>
+
+						<p>
+							Magazine layout, typography, publication structure, and visual composition.
+						</p>
+
+					</div>
+
+					<div class="col-md-4 mb-4">
+
+						<p class="eyebrow">
+							Scope
+						</p>
+
+						<h3 class="project-title">
+							Publication Design
+						</h3>
+
+						<p>
+							Editorial spreads, cover-to-feature pacing, and structured magazine page systems.
+						</p>
+
+					</div>
+
+					<div class="col-md-4 mb-4">
+
+						<p class="eyebrow">
+							Focus
+						</p>
+
+						<h3 class="project-title">
+							Typography & Rhythm
+						</h3>
+
+						<p>
+							Creating an immersive reading flow through hierarchy, spacing, image placement, and editorial pacing.
+						</p>
+
+					</div>
+
+				</div>
+
+				<div class="row mb-5">
+
+					<div class="col-lg-8">
+
+						<p class="eyebrow">
+							Project Overview
+						</p>
+
+						<h2 class="section-title">
+							A magazine system designed through visual rhythm and editorial sequencing.
+						</h2>
+
+						<p>
+							Alquimia Magazine was developed as a publication experience where typography, imagery, and page structure work together to create a cohesive editorial rhythm.
+						</p>
+
+						<p>
+							The layout direction focused on readability, visual contrast, structured pacing, and the relationship between single pages and full spreads.
 						</p>
 
 					</div>
@@ -94,20 +181,78 @@
 					<div class="col-lg-8">
 
 						<p class="eyebrow">
-							Editorial Design
+							Design Direction
 						</p>
 
 						<h2 class="section-title">
-							Typography, pacing, and publication rhythm.
+							Editorial pacing built through typography, image scale, and page rhythm.
 						</h2>
 
 						<p>
-							A visual editorial system focused on readability, immersive layouts, and structured storytelling across magazine spreads.
+							The project focused on creating a cohesive magazine experience where each spread contributes to the overall narrative flow while maintaining clarity and visual sophistication.
 						</p>
 
-						<a href="/magazine.html" class="btn-outline-custom">
+						<a href="/magazine.html"
+						   class="btn-outline-custom">
+
 							Back to Magazines
+
 						</a>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<section class="contact-cta">
+
+			<div class="container">
+
+				<div class="row justify-content-center">
+
+					<div class="col-lg-8 text-center">
+
+						<p class="eyebrow">
+							Let’s Work Together
+						</p>
+
+						<h2 class="section-title">
+							Interested in creating thoughtful and visually engaging experiences?
+						</h2>
+
+						<p>
+							I’m open to discussing design opportunities, collaborations, freelance projects, and creative partnerships.
+						</p>
+
+						<div class="contact-cta-buttons">
+
+							<a href="mailto:alexandrecampos00@gmail.com"
+							   class="btn-main">
+
+								Email Me
+
+							</a>
+
+							<a href="https://www.linkedin.com/in/lucianoacampos/"
+							   target="_blank"
+							   class="btn-outline-custom">
+
+								LinkedIn
+
+							</a>
+
+							<a href="https://camposdesigner.github.io/visualdesigner/index.html"
+							   target="_blank"
+							   class="btn-outline-custom">
+
+								Visual Portfolio
+
+							</a>
+
+						</div>
 
 					</div>
 
@@ -148,15 +293,19 @@
 	</footer>
 
 	<script>
+
 		fetch('/navbar.html')
 			.then(response => response.text())
 			.then(data => {
 				document.getElementById('navbar-placeholder').innerHTML = data;
 			});
+
 	</script>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 </body>
