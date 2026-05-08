@@ -1,6 +1,6 @@
 /* =========================================
    LUCIANO CAMPOS — PORTFOLIO
-   FINAL POLISHED VERSION
+   FINAL ANIMATED VERSION
 ========================================= */
 
 * {
@@ -21,21 +21,45 @@ body {
 	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
-	animation: pageFadeIn 0.45s ease forwards;
+	animation: pageFadeIn 0.55s ease forwards;
 }
 
 /* PAGE FADE */
 
 @keyframes pageFadeIn {
+
 	from {
 		opacity: 0;
-		transform: translateY(8px);
+		transform: translateY(10px);
 	}
 
 	to {
 		opacity: 1;
 		transform: translateY(0);
 	}
+}
+
+/* STRONGER SECTION ANIMATION */
+
+@keyframes fadeUpVisible {
+
+	from {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.hero-section,
+.selected-work,
+.alt-section,
+.contact-cta,
+.case-study {
+	animation: fadeUpVisible 0.75s ease both;
 }
 
 /* TYPOGRAPHY */
@@ -130,13 +154,14 @@ a {
 	padding: 12px;
 	background-color: #ffffff;
 	margin-top: 12px;
-	animation: dropdownFade 0.2s ease both;
+	animation: dropdownFade 0.25s ease both;
 }
 
 @keyframes dropdownFade {
+
 	from {
 		opacity: 0;
-		transform: translateY(6px);
+		transform: translateY(8px);
 	}
 
 	to {
@@ -158,7 +183,7 @@ a {
 	color: #2563eb;
 }
 
-/* LINKEDIN + PORTFOLIO ICONS */
+/* ICONS */
 
 .linkedin-icon {
 	display: flex !important;
@@ -244,11 +269,13 @@ a {
 	font-weight: 800;
 	margin-right: 12px;
 	box-shadow: 0 14px 35px rgba(37,99,235,0.18);
+	transition: all 0.25s ease;
 }
 
 .btn-main:hover {
-	transform: translateY(-2px);
+	transform: translateY(-3px);
 	background-color: #1d4ed8;
+	box-shadow: 0 18px 42px rgba(37,99,235,0.25);
 }
 
 .btn-outline-custom {
@@ -259,12 +286,13 @@ a {
 	border-radius: 12px;
 	font-size: 0.92rem;
 	font-weight: 800;
+	transition: all 0.25s ease;
 }
 
 .btn-outline-custom:hover {
 	background-color: #111111;
 	color: #ffffff !important;
-	transform: translateY(-2px);
+	transform: translateY(-3px);
 }
 
 /* SECTIONS */
@@ -287,6 +315,7 @@ a {
 .project-card {
 	display: block;
 	color: inherit;
+	will-change: transform;
 }
 
 .project-image {
@@ -301,36 +330,20 @@ a {
 		transform 0.35s ease,
 		box-shadow 0.35s ease,
 		filter 0.35s ease;
-	animation: imageSoftReveal 0.55s ease both;
+}
+
+.project-card:hover {
+	transform: translateY(-5px);
 }
 
 .project-card:hover .project-image,
 .project-card:hover .client-preview {
-	transform: translateY(-5px);
 	box-shadow: 0 30px 65px rgba(0,0,0,0.12);
-	filter: saturate(1.05) contrast(1.02);
-}
-
-/* IMAGE ANIMATION */
-
-@keyframes imageSoftReveal {
-	from {
-		opacity: 0;
-		transform: translateY(12px);
-	}
-
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+	filter: saturate(1.08) contrast(1.03);
 }
 
 .project-info {
 	padding-top: 20px;
-}
-
-.project-info p {
-	max-width: 92%;
 }
 
 .project-category {
@@ -364,7 +377,6 @@ a {
 .projects-gallery-image {
 	width: 100%;
 	height: auto !important;
-	max-height: none;
 	object-fit: contain !important;
 	object-position: center;
 	border-radius: 18px;
@@ -377,7 +389,14 @@ a {
 		transform 0.35s ease,
 		box-shadow 0.35s ease,
 		filter 0.35s ease;
-	animation: imageSoftReveal 0.55s ease both;
+}
+
+.magazine-page:hover,
+.project-page-image:hover,
+.editorial-gallery-image:hover,
+.projects-gallery-image:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 28px 58px rgba(0,0,0,0.12);
 }
 
 .magazine-spread,
@@ -404,7 +423,12 @@ a {
 		transform 0.35s ease,
 		box-shadow 0.35s ease,
 		filter 0.35s ease;
-	animation: imageSoftReveal 0.55s ease both;
+}
+
+.client-logo:hover,
+.client-preview:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 26px 54px rgba(0,0,0,0.1);
 }
 
 .client-logo {
@@ -457,11 +481,6 @@ a {
 	margin-top: 32px;
 }
 
-.contact-cta-buttons .btn-main,
-.contact-cta-buttons .btn-outline-custom {
-	margin-bottom: 12px;
-}
-
 /* FOOTER */
 
 footer {
@@ -476,41 +495,6 @@ footer {
 	font-size: 0.88rem;
 	color: #707070;
 	margin-bottom: 0;
-}
-
-/* OPTIONAL ANIMATION POLISH */
-
-@keyframes softFadeUp {
-	from {
-		opacity: 0;
-		transform: translateY(14px);
-	}
-
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-.hero-section .eyebrow,
-.hero-title,
-.hero-subtitle,
-.hero-buttons,
-.selected-work .row,
-.case-study .row {
-	animation: softFadeUp 0.55s ease both;
-}
-
-.hero-title {
-	animation-delay: 0.05s;
-}
-
-.hero-subtitle {
-	animation-delay: 0.1s;
-}
-
-.hero-buttons {
-	animation-delay: 0.15s;
 }
 
 /* RESPONSIVE */
@@ -592,17 +576,9 @@ footer {
 		animation: none;
 	}
 
-	p {
-		font-size: 0.98rem;
-	}
-
 	.hero-title {
 		line-height: 1.04;
 		letter-spacing: -0.035em;
-	}
-
-	.hero-subtitle {
-		margin-bottom: 32px;
 	}
 
 	.btn-main,
@@ -616,7 +592,6 @@ footer {
 	.project-image {
 		height: 260px;
 		border-radius: 18px;
-		animation: none;
 	}
 
 	.col-lg-12 .project-image {
@@ -627,20 +602,6 @@ footer {
 	.projects-gallery-image {
 		height: 300px !important;
 		padding: 18px;
-		animation: none;
-	}
-
-	.project-page-image,
-	.magazine-page {
-		animation: none;
-	}
-
-	.project-info {
-		padding-top: 16px;
-	}
-
-	.project-info p {
-		max-width: 100%;
 	}
 
 	.project-title {
@@ -651,7 +612,6 @@ footer {
 		height: 260px;
 		gap: 16px;
 		padding: 24px;
-		animation: none;
 	}
 
 	.client-preview img {
@@ -661,16 +621,11 @@ footer {
 	.client-logo {
 		height: 180px;
 		padding: 28px;
-		animation: none;
 	}
 
 	.contact-cta {
 		padding-top: 70px;
 		padding-bottom: 70px;
-	}
-
-	footer {
-		margin-top: 0;
 	}
 }
 
@@ -716,20 +671,8 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
 
-	.hero-section .eyebrow,
-	.hero-title,
-	.hero-subtitle,
-	.hero-buttons,
-	.selected-work .row,
-	.case-study .row,
-	.project-card,
-	.client-logo,
-	.client-preview {
-		animation: none !important;
-		transform: none !important;
-	}
-
 	* {
+		animation: none !important;
 		transition: none !important;
 		scroll-behavior: auto !important;
 	}
