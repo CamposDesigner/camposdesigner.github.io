@@ -169,3 +169,26 @@ footer {
 		scroll-behavior: auto !important;
 	}
 }
+
+/* =========================================
+   LINKEDIN ICON
+========================================= */
+
+.linkedin-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 8px;
+}
+
+.linkedin-icon svg {
+	opacity: 0.8;
+	transition:
+		all 0.25s ease;
+}
+
+.linkedin-icon:hover svg {
+	opacity: 1;
+	transform: translateY(-1px);
+	color: #2563eb;
+}
