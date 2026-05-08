@@ -27,7 +27,6 @@ body {
 /* PAGE FADE */
 
 @keyframes pageFadeIn {
-
 	from {
 		opacity: 0;
 		transform: translateY(10px);
@@ -39,10 +38,9 @@ body {
 	}
 }
 
-/* STRONGER SECTION ANIMATION */
+/* SCROLL / SECTION REVEAL */
 
 @keyframes fadeUpVisible {
-
 	from {
 		opacity: 0;
 		transform: translateY(24px);
@@ -58,7 +56,10 @@ body {
 .selected-work,
 .alt-section,
 .contact-cta,
-.case-study {
+.case-study,
+.project-card,
+.client-logo,
+.client-preview {
 	animation: fadeUpVisible 0.75s ease both;
 }
 
@@ -158,7 +159,6 @@ a {
 }
 
 @keyframes dropdownFade {
-
 	from {
 		opacity: 0;
 		transform: translateY(8px);
@@ -500,7 +500,6 @@ footer {
 /* RESPONSIVE */
 
 @media (max-width: 1200px) {
-
 	.project-image {
 		height: 360px;
 	}
@@ -516,7 +515,6 @@ footer {
 }
 
 @media (max-width: 991px) {
-
 	.navbar-light .navbar-nav .nav-link {
 		margin-left: 0;
 		margin-top: 12px;
@@ -571,8 +569,18 @@ footer {
 }
 
 @media (max-width: 768px) {
-
 	body {
+		animation: none;
+	}
+
+	.hero-section,
+	.selected-work,
+	.alt-section,
+	.contact-cta,
+	.case-study,
+	.project-card,
+	.client-logo,
+	.client-preview {
 		animation: none;
 	}
 
@@ -630,7 +638,6 @@ footer {
 }
 
 @media (max-width: 480px) {
-
 	.navbar {
 		padding: 16px 0;
 	}
@@ -670,7 +677,6 @@ footer {
 /* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
-
 	* {
 		animation: none !important;
 		transition: none !important;
