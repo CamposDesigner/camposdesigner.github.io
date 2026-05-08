@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -9,14 +10,24 @@
 
 	<meta name="description" content="Selected work by Luciano Campos — Product, Brand, Editorial, and UI/UX Designer.">
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="icon" type="image/png" href="/favicon.png">
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet"
+		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="preconnect"
+		  href="https://fonts.googleapis.com">
 
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="preconnect"
+		  href="https://fonts.gstatic.com"
+		  crossorigin>
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+		  rel="stylesheet">
+
+	<link rel="stylesheet"
+		  href="/css/style.css">
+
 </head>
 
 <body>
@@ -49,15 +60,16 @@
 
 				</div>
 
-				<!-- GRID -->
-
 				<div class="row">
 
 					<div class="col-md-6 mb-5">
 
-						<a href="/magazine.html" class="project-card">
+						<a href="/magazine.html"
+						   class="project-card">
 
-							<img src="/images/magazine/KZ_Comgas_Page_01.jpg" alt="Editorial magazine design" class="img-fluid project-image">
+							<img src="/images/magazine/KZ_Comgas_Page_01.jpg"
+								 alt="Editorial magazine design"
+								 class="img-fluid project-image">
 
 							<div class="project-info">
 
@@ -77,9 +89,12 @@
 
 					<div class="col-md-6 mb-5">
 
-						<a href="/web.html" class="project-card">
+						<a href="/web.html"
+						   class="project-card">
 
-							<img src="/web/tecto/images/Layout_04.jpg" alt="Web and UI design" class="img-fluid project-image">
+							<img src="/web/tecto/images/Layout_04.jpg"
+								 alt="Web and UI design"
+								 class="img-fluid project-image">
 
 							<div class="project-info">
 
@@ -99,9 +114,12 @@
 
 					<div class="col-md-6 mb-5">
 
-						<a href="/editorial.html" class="project-card">
+						<a href="/editorial.html"
+						   class="project-card">
 
-							<img src="/images/work/ESH_Veja_SP_(202x131)mm_25Nov2011_B.png" alt="Editorial and print design" class="img-fluid project-image">
+							<img src="/editorial/casa-fares/images/Casa_Fares.jpg"
+								 alt="Editorial and print design"
+								 class="img-fluid project-image">
 
 							<div class="project-info">
 
@@ -121,9 +139,12 @@
 
 					<div class="col-md-6 mb-5">
 
-						<a href="/projects.html" class="project-card">
+						<a href="/projects.html"
+						   class="project-card">
 
-							<img src="/images/projects/ICON.png" alt="Identity and branding design" class="img-fluid project-image">
+							<img src="/images/projects/ICON.png"
+								 alt="Identity and branding design"
+								 class="img-fluid project-image">
 
 							<div class="project-info">
 
@@ -138,6 +159,61 @@
 							</div>
 
 						</a>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<section class="contact-cta">
+
+			<div class="container">
+
+				<div class="row justify-content-center">
+
+					<div class="col-lg-8 text-center">
+
+						<p class="eyebrow">
+							Let’s Work Together
+						</p>
+
+						<h2 class="section-title">
+							Interested in creating thoughtful and visually engaging experiences?
+						</h2>
+
+						<p>
+							I’m open to discussing design opportunities, collaborations, freelance projects, and creative partnerships.
+						</p>
+
+						<div class="contact-cta-buttons">
+
+							<a href="mailto:alexandrecampos00@gmail.com"
+							   class="btn-main">
+
+								Email Me
+
+							</a>
+
+							<a href="https://www.linkedin.com/in/lucianoacampos/"
+							   target="_blank"
+							   class="btn-outline-custom">
+
+								LinkedIn
+
+							</a>
+
+							<a href="https://camposdesigner.github.io/visualdesigner/index.html"
+							   target="_blank"
+							   class="btn-outline-custom">
+
+								Visual Portfolio
+
+							</a>
+
+						</div>
 
 					</div>
 
@@ -178,11 +254,13 @@
 	</footer>
 
 	<script>
+
 		fetch('/navbar.html')
 			.then(response => response.text())
 			.then(data => {
 				document.getElementById('navbar-placeholder').innerHTML = data;
 			});
+
 	</script>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

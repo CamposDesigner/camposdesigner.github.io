@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -9,14 +10,24 @@
 
 	<meta name="description" content="Identity and branding systems by Luciano Campos.">
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="icon" type="image/png" href="/favicon.png">
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet"
+		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="preconnect"
+		  href="https://fonts.googleapis.com">
 
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="preconnect"
+		  href="https://fonts.gstatic.com"
+		  crossorigin>
+
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+		  rel="stylesheet">
+
+	<link rel="stylesheet"
+		  href="/css/style.css">
+
 </head>
 
 <body>
@@ -49,123 +60,92 @@
 
 				</div>
 
-				<!-- FEATURED -->
+				<div class="row">
 
-				<div class="row mb-5">
+					<div class="col-md-6 mb-5">
 
-					<div class="col-lg-12">
+						<img src="/images/projects/ICON.png"
+							 alt="Identity design system"
+							 class="img-fluid project-image">
 
-						<a href="projects.html" class="project-card">
+					</div>
 
-							<img src="images/work/ICON.png" alt="Identity design system" class="img-fluid project-image">
+					<div class="col-md-6 mb-5">
 
-							<div class="project-info">
+						<img src="/images/projects/Catalogo_Page_7.png"
+							 alt="Brand layout system"
+							 class="img-fluid project-image">
 
-								<span class="project-category">
-									Featured Identity Work
-								</span>
+					</div>
 
-								<h3 class="project-title">
-									Brand & Visual Identity Systems
-								</h3>
+					<div class="col-md-6 mb-5">
 
-							</div>
+						<img src="/images/projects/Catalogo_Page_-1.png"
+							 alt="Typography and layout system"
+							 class="img-fluid project-image">
 
-						</a>
+					</div>
+
+					<div class="col-md-6 mb-5">
+
+						<img src="/images/work/Totens_Alphaville_50x70.png"
+							 alt="Brand communication materials"
+							 class="img-fluid project-image">
 
 					</div>
 
 				</div>
 
-				<!-- GRID -->
+			</div>
 
-				<div class="row">
+		</section>
 
-					<div class="col-md-6 mb-5">
+		<section class="contact-cta">
 
-						<a href="projects.html" class="project-card">
+			<div class="container">
 
-							<img src="images/work/Catalogo_Page_7.png" alt="Brand layout system" class="img-fluid project-image">
+				<div class="row justify-content-center">
 
-							<div class="project-info">
+					<div class="col-lg-8 text-center">
 
-								<span class="project-category">
-									Brand Systems
-								</span>
+						<p class="eyebrow">
+							Let’s Work Together
+						</p>
 
-								<h3 class="project-title">
-									Structured Communication Design
-								</h3>
+						<h2 class="section-title">
+							Interested in creating thoughtful and visually engaging experiences?
+						</h2>
 
-							</div>
+						<p>
+							I’m open to discussing design opportunities, collaborations, freelance projects, and creative partnerships.
+						</p>
 
-						</a>
+						<div class="contact-cta-buttons">
 
-					</div>
+							<a href="mailto:alexandrecampos00@gmail.com"
+							   class="btn-main">
 
-					<div class="col-md-6 mb-5">
+								Email Me
 
-						<a href="editorial.html" class="project-card">
+							</a>
 
-							<img src="images/work/Catalogo_Page_-1.png" alt="Typography and layout system" class="img-fluid project-image">
+							<a href="https://www.linkedin.com/in/lucianoacampos/"
+							   target="_blank"
+							   class="btn-outline-custom">
 
-							<div class="project-info">
+								LinkedIn
 
-								<span class="project-category">
-									Typography
-								</span>
+							</a>
 
-								<h3 class="project-title">
-									Typography & Layout Systems
-								</h3>
+							<a href="https://camposdesigner.github.io/visualdesigner/index.html"
+							   target="_blank"
+							   class="btn-outline-custom">
 
-							</div>
+								Visual Portfolio
 
-						</a>
+							</a>
 
-					</div>
-
-					<div class="col-md-6 mb-5">
-
-						<a href="governmental.html" class="project-card">
-
-							<img src="images/work/Totens_Alphaville_50x70.png" alt="Brand communication materials" class="img-fluid project-image">
-
-							<div class="project-info">
-
-								<span class="project-category">
-									Brand Communication
-								</span>
-
-								<h3 class="project-title">
-									Identity Across Media
-								</h3>
-
-							</div>
-
-						</a>
-
-					</div>
-
-					<div class="col-md-6 mb-5">
-
-						<a href="magazine.html" class="project-card">
-
-							<img src="images/magazine/imgs-kaza.jpg" alt="Editorial identity design" class="img-fluid project-image">
-
-							<div class="project-info">
-
-								<span class="project-category">
-									Editorial Identity
-								</span>
-
-								<h3 class="project-title">
-									Publication & Visual Systems
-								</h3>
-
-							</div>
-
-						</a>
+						</div>
 
 					</div>
 
@@ -206,15 +186,19 @@
 	</footer>
 
 	<script>
+
 		fetch('/navbar.html')
 			.then(response => response.text())
 			.then(data => {
 				document.getElementById('navbar-placeholder').innerHTML = data;
 			});
+
 	</script>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 </body>
