@@ -1,35 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Rotary International | Brand Design | Luciano Campos</title>
 
-  <link rel="stylesheet" href="/brand/style.css" />
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f7f7f5;
+      color: #111;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .site-header {
+      height: 72px;
+      padding: 0 63px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f7f7f5;
+      border-bottom: 1px solid #e7e7e4;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+    }
+
+    .site-logo {
+      color: #111;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .site-nav a {
+      color: #3f3f3f;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .site-nav a:hover,
+    .site-nav a.active {
+      color: #2f65f2;
+    }
+
+    .nav-dropdown {
+      position: relative;
+      padding: 27px 0;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: -18px;
+      min-width: 140px;
+      background: #fff;
+      border: 1px solid #e5e5e2;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+      padding: 8px 0;
+      z-index: 10000;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 16px;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .nav-icon {
+      color: #6f6f6f !important;
+      font-size: 17px !important;
+      font-weight: 800 !important;
+    }
+
+    .nav-icon:hover {
+      color: #2f65f2 !important;
+    }
+
+    .project-hero {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 112px 24px 58px;
+    }
+
+    .eyebrow {
+      margin: 0 0 24px;
+      color: #7d7d7d;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .project-hero h1 {
+      max-width: 940px;
+      margin: 0 0 28px;
+      font-size: clamp(44px, 6vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -0.075em;
+      font-weight: 900;
+    }
+
+    .project-hero p {
+      max-width: 720px;
+      margin: 0;
+      color: #666;
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    .project-meta {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px 54px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .project-meta div {
+      border-top: 1px solid #ddd;
+      padding-top: 18px;
+    }
+
+    .project-meta p {
+      margin: 0 0 10px;
+      color: #777;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .project-meta h3 {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.3;
+    }
+
+    .project-gallery {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 0 24px 88px;
+      display: grid;
+      gap: 28px;
+    }
+
+    .project-image {
+      margin: 0;
+      background: #fff;
+      border: 1px solid #e6e6e3;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 100%;
+      max-height: 520px;
+      display: block;
+      object-fit: contain;
+      background: #f2f2ef;
+      padding: 18px;
+    }
+
+    .gallery-two {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .gallery-two .project-image img {
+      height: 360px;
+      max-height: 360px;
+    }
+
+    .site-footer {
+      min-height: 84px;
+      padding: 0 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f7f7f5;
+      border-top: 1px solid #ededeb;
+    }
+
+    .site-footer p {
+      margin: 0;
+      color: #777;
+      font-size: 15px;
+    }
+
+    @media (max-width: 980px) {
+      .site-header {
+        height: auto;
+        padding: 22px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .site-nav {
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      .nav-dropdown {
+        padding: 0;
+      }
+
+      .dropdown-menu {
+        display: none !important;
+      }
+
+      .project-hero {
+        padding: 90px 22px 56px;
+      }
+
+      .project-meta {
+        grid-template-columns: 1fr;
+        padding: 0 22px 46px;
+      }
+
+      .project-gallery {
+        max-width: 100%;
+        padding: 0 22px 72px;
+      }
+
+      .gallery-two {
+        grid-template-columns: 1fr;
+      }
+
+      .project-image img,
+      .gallery-two .project-image img {
+        height: auto;
+        max-height: 420px;
+        padding: 16px;
+      }
+
+      .site-footer {
+        padding: 28px 24px;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
   <header class="site-header">
-    <a href="/" class="site-logo">Luciano Campos</a>
+    <a href="/index.html" class="site-logo">Luciano Campos</a>
 
     <nav class="site-nav">
-      <a href="/">Home</a>
+      <a href="/index.html">Home</a>
       <a href="/brand/" class="active">Brand</a>
-      <a href="/web/">Web</a>
-      <a href="/magazine/">Magazines</a>
-      <a href="/work/">Projects</a>
-      <a href="/clients/">Clients</a>
-      <a href="/about/">About</a>
+      <a href="/web.html">Web</a>
+
+      <div class="nav-dropdown">
+        <a href="/magazine.html">Magazines ▾</a>
+        <div class="dropdown-menu">
+          <a href="/editorial.html">Editorial</a>
+        </div>
+      </div>
+
+      <div class="nav-dropdown">
+        <a href="/projects.html">Projects ▾</a>
+        <div class="dropdown-menu">
+          <a href="/work.html">Work</a>
+        </div>
+      </div>
+
+      <a href="/clients.html">Clients</a>
+
+      <div class="nav-dropdown">
+        <a href="/about.html">About ▾</a>
+        <div class="dropdown-menu">
+          <a href="/about.html#contact">Contact</a>
+        </div>
+      </div>
+
+      <a href="https://camposdesigner.github.io/visualdesigner/" target="_blank" rel="noopener noreferrer" class="nav-icon">▤</a>
+      <a href="https://www.linkedin.com/in/lucianoacampos/" target="_blank" rel="noopener noreferrer" class="nav-icon">in</a>
     </nav>
   </header>
 
   <main>
 
-    <section class="brand-hero">
-      <p class="brand-eyebrow">Rotary International</p>
+    <section class="project-hero">
+      <p class="eyebrow">Rotary International</p>
 
       <h1>Campaigns, publications, and visual communication for a global organization.</h1>
 
@@ -59,7 +333,7 @@
 
     <section class="project-gallery">
 
-      <figure class="project-image project-image-featured">
+      <figure class="project-image">
         <img src="/brand/rotary/images/cover.jpg" alt="Rotary International brand design cover">
       </figure>
 
@@ -93,17 +367,12 @@
 
     </section>
 
-    <section class="brand-cta">
-      <p>Explore more brand and visual communication work.</p>
-      <a href="/brand/">Back to Brand</a>
-    </section>
-
   </main>
 
   <footer class="site-footer">
-    <p>© Luciano Campos. All rights reserved.</p>
+    <p>Product • Brand • UI/UX Designer</p>
+    <p>© 2026 Luciano Campos</p>
   </footer>
 
 </body>
-
 </html>
