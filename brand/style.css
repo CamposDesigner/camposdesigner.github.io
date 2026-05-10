@@ -13,7 +13,7 @@ body {
 
 .site-header {
   width: 100%;
-  padding: 24px 40px;
+  padding: 22px 34px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,25 +30,73 @@ body {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 
-.site-nav a {
+.site-nav a,
+.nav-dropdown > a {
   color: #444444;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .site-nav a:hover,
-.site-nav a.active {
+.site-nav a.active,
+.nav-dropdown:hover > a {
   color: #000000;
   font-weight: 700;
+}
+
+.nav-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: -14px;
+  min-width: 145px;
+  padding: 10px 0;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.10);
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 11px 16px;
+  font-size: 14px;
+  color: #444444;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.nav-icon-link {
+  padding: 8px 11px;
+  border: 1px solid #dddddd;
+  border-radius: 999px;
+  font-size: 12px !important;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.nav-icon-link:hover {
+  border-color: #111111;
 }
 
 /* BRAND PAGE */
@@ -240,17 +288,22 @@ body {
 
 /* RESPONSIVE */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .site-header {
+    align-items: flex-start;
     flex-direction: column;
-    gap: 16px;
-    padding: 22px 20px;
+    gap: 18px;
   }
 
   .site-nav {
     flex-wrap: wrap;
-    justify-content: center;
     gap: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    padding: 22px 20px;
   }
 
   .brand-hero {
@@ -286,5 +339,9 @@ body {
   .project-image img {
     height: auto;
     max-height: 520px;
+  }
+
+  .dropdown-menu {
+    display: none !important;
   }
 }
