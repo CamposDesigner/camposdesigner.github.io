@@ -1,0 +1,104 @@
+/* =========================================================
+   BRAND PROJECT PAGE — Rotary / Project Detail
+========================================================= */
+
+.project-meta {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px 90px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.project-meta div {
+  border-top: 1px solid rgba(0,0,0,0.12);
+  padding-top: 22px;
+}
+
+.project-meta p {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.project-meta h3 {
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #111;
+}
+
+.project-gallery {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px 140px;
+  display: grid;
+  gap: 34px;
+}
+
+.project-gallery img {
+  width: 100%;
+  display: block;
+  border-radius: 28px;
+  background: #f5f5f3;
+  object-fit: cover;
+}
+
+.project-gallery > img {
+  max-height: 820px;
+  object-fit: cover;
+}
+
+.gallery-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 34px;
+}
+
+.gallery-two img {
+  height: 620px;
+  object-fit: cover;
+}
+
+/* =========================================================
+   RESPONSIVE — Project Pages
+========================================================= */
+
+@media (max-width: 900px) {
+  .project-meta {
+    grid-template-columns: 1fr;
+    padding: 0 20px 70px;
+  }
+
+  .project-gallery {
+    padding: 0 20px 100px;
+    gap: 24px;
+  }
+
+  .gallery-two {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .gallery-two img {
+    height: auto;
+  }
+
+  .project-gallery > img {
+    max-height: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .project-meta h3 {
+    font-size: 20px;
+  }
+
+  .project-gallery img {
+    border-radius: 20px;
+  }
+}
