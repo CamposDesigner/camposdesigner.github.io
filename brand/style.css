@@ -64,11 +64,6 @@ body {
   padding: 14px 0;
 }
 
-.brand-nav-dropdown > a::after {
-  content: " ▾";
-  font-size: 11px;
-}
-
 .brand-dropdown-menu {
   display: none;
   position: absolute;
@@ -101,7 +96,7 @@ body {
 }
 
 /* =========================================
-   NAV PILLS
+   NAV BUTTONS
 ========================================= */
 
 .brand-nav-pill {
@@ -152,7 +147,7 @@ body {
 }
 
 /* =========================================
-   BRAND GRID
+   GRID
 ========================================= */
 
 .brand-grid {
