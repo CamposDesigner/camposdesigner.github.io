@@ -4,165 +4,162 @@
 
 body {
   margin: 0;
-  background: #ffffff;
-  color: #111111;
+  background: #fff;
+  color: #111;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .brand-header {
-  width: 100%;
-  padding: 28px 40px;
+  padding: 24px 40px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background: #ffffff;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  align-items: center;
+  border-bottom: 1px solid #eee;
 }
 
 .brand-logo {
-  color: #111111;
+  color: #111;
   text-decoration: none;
-  font-size: 18px;
   font-weight: 700;
+  font-size: 18px;
 }
 
 .brand-nav {
   display: flex;
-  gap: 26px;
+  gap: 24px;
 }
 
 .brand-nav a {
-  color: #444444;
+  color: #444;
   text-decoration: none;
   font-size: 15px;
 }
 
-.brand-nav a.active,
-.brand-nav a:hover {
-  color: #000000;
-}
-
-.brand-hero {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 120px 32px 80px;
-}
-
-.brand-eyebrow {
-  margin: 0 0 24px;
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #777777;
-}
-
-.brand-hero h1 {
-  max-width: 980px;
-  margin: 0 0 32px;
-  font-size: clamp(44px, 7vw, 88px);
-  line-height: 0.98;
-  letter-spacing: -0.06em;
+.brand-nav a.active {
+  color: #000;
   font-weight: 700;
 }
 
+.brand-hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 90px 28px 60px;
+}
+
+.brand-eyebrow {
+  margin: 0 0 20px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #777;
+}
+
+.brand-hero h1 {
+  margin: 0 0 28px;
+  max-width: 850px;
+  font-size: clamp(38px, 5vw, 68px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
 .brand-hero p {
-  max-width: 720px;
   margin: 0;
-  font-size: 20px;
-  line-height: 1.6;
-  color: #555555;
+  max-width: 680px;
+  font-size: 19px;
+  line-height: 1.55;
+  color: #555;
 }
 
 .brand-grid {
-  max-width: 1280px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 0 32px 120px;
+  padding: 0 28px 90px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 34px;
+  gap: 28px;
 }
 
 .brand-card {
   display: block;
   overflow: hidden;
   background: #f4f4f2;
-  border-radius: 28px;
-  color: inherit;
+  border-radius: 22px;
   text-decoration: none;
+  color: inherit;
 }
 
 .brand-card img {
   width: 100%;
-  height: 520px;
+  height: 340px;
   display: block;
   object-fit: cover;
-  background: #e8e8e5;
+  background: #eee;
 }
 
 .brand-card-content {
-  padding: 30px;
+  padding: 24px;
 }
 
 .brand-card-content p {
-  margin: 0 0 14px;
-  color: #777777;
+  margin: 0 0 10px;
   font-size: 12px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  color: #777;
 }
 
 .brand-card-content h2 {
-  margin: 0 0 16px;
-  font-size: 32px;
+  margin: 0 0 12px;
+  font-size: 26px;
   line-height: 1.08;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
 }
 
 .brand-card-content span {
-  color: #666666;
-  font-size: 15px;
+  font-size: 14px;
+  color: #666;
 }
 
 .brand-cta {
-  padding: 110px 32px;
+  padding: 80px 28px;
   text-align: center;
-  border-top: 1px solid rgba(0,0,0,0.08);
+  border-top: 1px solid #eee;
 }
 
 .brand-cta p {
-  max-width: 820px;
-  margin: 0 auto 36px;
-  font-size: clamp(30px, 4vw, 56px);
-  line-height: 1.05;
+  max-width: 720px;
+  margin: 0 auto 28px;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.08;
   letter-spacing: -0.04em;
 }
 
 .brand-cta a {
   display: inline-block;
-  padding: 16px 32px;
-  background: #111111;
-  color: #ffffff;
-  text-decoration: none;
+  padding: 14px 28px;
   border-radius: 999px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
 }
 
 .brand-footer {
-  padding: 44px 32px;
+  padding: 36px 28px;
   text-align: center;
-  border-top: 1px solid rgba(0,0,0,0.08);
+  border-top: 1px solid #eee;
 }
 
 .brand-footer p {
   margin: 0;
-  color: #777777;
   font-size: 14px;
+  color: #777;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   .brand-header {
-    padding: 24px 20px;
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
+    padding: 22px 20px;
   }
 
   .brand-nav {
@@ -172,15 +169,15 @@ body {
   }
 
   .brand-hero {
-    padding: 90px 20px 60px;
+    padding: 70px 20px 44px;
   }
 
   .brand-grid {
     grid-template-columns: 1fr;
-    padding: 0 20px 90px;
+    padding: 0 20px 70px;
   }
 
   .brand-card img {
-    height: 360px;
+    height: 280px;
   }
 }
