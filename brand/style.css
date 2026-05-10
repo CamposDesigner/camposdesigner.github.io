@@ -45,6 +45,7 @@ body {
   font-size: 14px;
   font-weight: 700;
   white-space: nowrap;
+  transition: color 0.2s ease;
 }
 
 .site-nav a:hover,
@@ -85,10 +86,16 @@ body {
 /* NAV ICONS */
 
 .nav-icon {
-  color: #6a6a6a !important;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #6f6f6f !important;
   font-size: 17px !important;
   font-weight: 800 !important;
-  letter-spacing: -0.04em;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .nav-icon:hover {
