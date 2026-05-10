@@ -1,72 +1,73 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
+  margin: 0;
   background: #ffffff;
   color: #111111;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.site-header {
+.brand-header {
   width: 100%;
   padding: 28px 40px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   background: #ffffff;
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
-.logo {
+.brand-logo {
   color: #111111;
   text-decoration: none;
   font-size: 18px;
   font-weight: 700;
 }
 
-.site-nav {
+.brand-nav {
   display: flex;
   gap: 26px;
 }
 
-.site-nav a {
+.brand-nav a {
   color: #444444;
   text-decoration: none;
   font-size: 15px;
 }
 
-.site-nav a.active,
-.site-nav a:hover {
+.brand-nav a.active,
+.brand-nav a:hover {
   color: #000000;
 }
 
 .brand-hero {
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 130px 32px 80px;
+  padding: 120px 32px 80px;
 }
 
-.eyebrow {
+.brand-eyebrow {
+  margin: 0 0 24px;
   font-size: 12px;
-  text-transform: uppercase;
   letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: #777777;
-  margin-bottom: 28px;
 }
 
 .brand-hero h1 {
   max-width: 980px;
+  margin: 0 0 32px;
   font-size: clamp(44px, 7vw, 88px);
   line-height: 0.98;
   letter-spacing: -0.06em;
-  margin-bottom: 32px;
+  font-weight: 700;
 }
 
 .brand-hero p {
   max-width: 720px;
+  margin: 0;
   font-size: 20px;
   line-height: 1.6;
   color: #555555;
@@ -83,9 +84,9 @@ body {
 
 .brand-card {
   display: block;
+  overflow: hidden;
   background: #f4f4f2;
   border-radius: 28px;
-  overflow: hidden;
   color: inherit;
   text-decoration: none;
 }
@@ -95,31 +96,31 @@ body {
   height: 520px;
   display: block;
   object-fit: cover;
-  background: #e6e6e2;
+  background: #e8e8e5;
 }
 
-.brand-card-text {
+.brand-card-content {
   padding: 30px;
 }
 
-.brand-card-text p {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+.brand-card-content p {
+  margin: 0 0 14px;
   color: #777777;
-  margin-bottom: 14px;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
-.brand-card-text h2 {
+.brand-card-content h2 {
+  margin: 0 0 16px;
   font-size: 32px;
   line-height: 1.08;
   letter-spacing: -0.04em;
-  margin-bottom: 16px;
 }
 
-.brand-card-text span {
-  font-size: 15px;
+.brand-card-content span {
   color: #666666;
+  font-size: 15px;
 }
 
 .brand-cta {
@@ -145,25 +146,26 @@ body {
   border-radius: 999px;
 }
 
-.site-footer {
+.brand-footer {
   padding: 44px 32px;
   text-align: center;
   border-top: 1px solid rgba(0,0,0,0.08);
 }
 
-.site-footer p {
-  font-size: 14px;
+.brand-footer p {
+  margin: 0;
   color: #777777;
+  font-size: 14px;
 }
 
 @media (max-width: 900px) {
-  .site-header {
+  .brand-header {
     padding: 24px 20px;
     flex-direction: column;
     gap: 18px;
   }
 
-  .site-nav {
+  .brand-nav {
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
