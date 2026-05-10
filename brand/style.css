@@ -1,7 +1,4 @@
-/* =========================================
-   BRAND PAGE CONTENT ONLY
-   Navbar comes from main /style.css
-========================================= */
+/* BRAND PAGE ONLY — navbar comes from /navbar.html and /css/style.css */
 
 .brand-page-hero {
   max-width: 1120px;
@@ -9,32 +6,15 @@
   padding: 112px 24px 64px;
 }
 
-.eyebrow {
-  margin: 0 0 24px;
-  color: #7d7d7d;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-}
-
 .brand-page-hero h1 {
   max-width: 940px;
   margin: 0 0 28px;
-  font-size: clamp(44px, 6vw, 76px);
-  line-height: 0.98;
-  letter-spacing: -0.075em;
-  font-weight: 900;
 }
 
 .brand-page-hero p:not(.eyebrow) {
   max-width: 720px;
   margin: 0;
-  color: #666;
-  font-size: 19px;
-  line-height: 1.7;
 }
-
-/* GRID */
 
 .brand-page-grid {
   max-width: 1120px;
@@ -81,9 +61,6 @@
 
 .brand-page-card h2 {
   margin: 0 0 12px;
-  font-size: 28px;
-  line-height: 1.05;
-  letter-spacing: -0.055em;
 }
 
 .brand-page-card span {
@@ -91,10 +68,7 @@
   font-size: 15px;
 }
 
-/* RESPONSIVE */
-
 @media (max-width: 980px) {
-
   .brand-page-hero {
     padding: 90px 22px 56px;
   }
@@ -108,5 +82,4 @@
     height: 280px;
     padding: 16px;
   }
-
 }
