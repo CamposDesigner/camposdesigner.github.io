@@ -4,14 +4,10 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: Arial, Helvetica, sans-serif;
   background: #ffffff;
   color: #111111;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .site-header {
@@ -22,13 +18,10 @@ body {
   align-items: center;
   background: #ffffff;
   border-bottom: 1px solid rgba(0,0,0,0.08);
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
 .logo {
-  color: #111;
+  color: #111111;
   text-decoration: none;
   font-size: 18px;
   font-weight: 700;
@@ -37,22 +30,21 @@ body {
 .site-nav {
   display: flex;
   gap: 26px;
-  align-items: center;
 }
 
 .site-nav a {
-  color: #444;
+  color: #444444;
   text-decoration: none;
   font-size: 15px;
 }
 
-.site-nav a:hover,
-.site-nav a.active {
-  color: #000;
+.site-nav a.active,
+.site-nav a:hover {
+  color: #000000;
 }
 
 .brand-hero {
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 130px 32px 80px;
 }
@@ -61,8 +53,8 @@ body {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: #777;
-  margin-bottom: 26px;
+  color: #777777;
+  margin-bottom: 28px;
 }
 
 .brand-hero h1 {
@@ -77,7 +69,7 @@ body {
   max-width: 720px;
   font-size: 20px;
   line-height: 1.6;
-  color: #555;
+  color: #555555;
 }
 
 .brand-grid {
@@ -94,101 +86,40 @@ body {
   background: #f4f4f2;
   border-radius: 28px;
   overflow: hidden;
-  text-decoration: none;
   color: inherit;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  text-decoration: none;
 }
 
-.brand-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 24px 70px rgba(0,0,0,0.14);
-}
-
-.brand-card-image {
+.brand-card img {
   width: 100%;
   height: 520px;
-  background: #e8e8e5;
-  overflow: hidden;
-}
-
-.brand-card-image img {
-  width: 100%;
-  height: 100%;
   display: block;
   object-fit: cover;
+  background: #e6e6e2;
 }
 
-.brand-card-content {
+.brand-card-text {
   padding: 30px;
 }
 
-.brand-card-content p {
+.brand-card-text p {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: #777;
+  color: #777777;
   margin-bottom: 14px;
 }
 
-.brand-card-content h2 {
+.brand-card-text h2 {
   font-size: 32px;
   line-height: 1.08;
   letter-spacing: -0.04em;
   margin-bottom: 16px;
 }
 
-.brand-card-content span {
+.brand-card-text span {
   font-size: 15px;
-  color: #666;
-}
-
-.project-meta {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 32px 80px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.project-meta div {
-  border-top: 1px solid rgba(0,0,0,0.14);
-  padding-top: 22px;
-}
-
-.project-meta p {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: #777;
-  margin-bottom: 12px;
-}
-
-.project-meta h3 {
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 1.3;
-}
-
-.project-gallery {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 32px 120px;
-  display: grid;
-  gap: 34px;
-}
-
-.project-gallery img {
-  width: 100%;
-  display: block;
-  border-radius: 28px;
-  background: #f4f4f2;
-}
-
-.gallery-two {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 34px;
+  color: #666666;
 }
 
 .brand-cta {
@@ -208,10 +139,10 @@ body {
 .brand-cta a {
   display: inline-block;
   padding: 16px 32px;
-  border-radius: 999px;
-  background: #111;
-  color: #fff;
+  background: #111111;
+  color: #ffffff;
   text-decoration: none;
+  border-radius: 999px;
 }
 
 .site-footer {
@@ -222,7 +153,7 @@ body {
 
 .site-footer p {
   font-size: 14px;
-  color: #777;
+  color: #777777;
 }
 
 @media (max-width: 900px) {
@@ -247,40 +178,7 @@ body {
     padding: 0 20px 90px;
   }
 
-  .brand-card-image {
+  .brand-card img {
     height: 360px;
-  }
-
-  .project-meta {
-    grid-template-columns: 1fr;
-    padding: 0 20px 60px;
-  }
-
-  .project-gallery {
-    padding: 0 20px 90px;
-    gap: 24px;
-  }
-
-  .gallery-two {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .brand-cta {
-    padding: 90px 20px;
-  }
-}
-
-@media (max-width: 540px) {
-  .brand-card-image {
-    height: 280px;
-  }
-
-  .brand-card-content h2 {
-    font-size: 25px;
-  }
-
-  .brand-hero p {
-    font-size: 18px;
   }
 }
