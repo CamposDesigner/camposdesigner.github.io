@@ -9,35 +9,68 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.brand-header {
+.site-header {
+  width: 100%;
   padding: 24px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #fff;
   border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-.brand-logo {
+.site-logo {
   color: #111;
   text-decoration: none;
   font-weight: 700;
   font-size: 18px;
 }
 
-.brand-nav {
+.site-nav {
   display: flex;
+  align-items: center;
   gap: 24px;
 }
 
-.brand-nav a {
+.site-nav a {
   color: #444;
   text-decoration: none;
   font-size: 15px;
 }
 
-.brand-nav a.active {
+.site-nav a:hover,
+.site-nav a.active {
   color: #000;
   font-weight: 700;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 140px;
+  padding: 12px 0;
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 16px;
+  white-space: nowrap;
+}
+
+.nav-item:hover .dropdown {
+  display: block;
 }
 
 .brand-hero {
@@ -143,29 +176,33 @@ body {
   text-decoration: none;
 }
 
-.brand-footer {
+.site-footer {
   padding: 36px 28px;
   text-align: center;
   border-top: 1px solid #eee;
 }
 
-.brand-footer p {
+.site-footer p {
   margin: 0;
   font-size: 14px;
   color: #777;
 }
 
-@media (max-width: 800px) {
-  .brand-header {
+@media (max-width: 900px) {
+  .site-header {
     flex-direction: column;
     gap: 16px;
     padding: 22px 20px;
   }
 
-  .brand-nav {
+  .site-nav {
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
+  }
+
+  .dropdown {
+    display: none;
   }
 
   .brand-hero {

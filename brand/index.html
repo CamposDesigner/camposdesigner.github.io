@@ -11,17 +11,36 @@
 
 <body>
 
-  <header class="brand-header">
-    <a href="/" class="brand-logo">Luciano Campos</a>
+  <header class="site-header">
+    <a href="/" class="site-logo">Luciano Campos</a>
 
-    <nav class="brand-nav">
+    <nav class="site-nav">
       <a href="/">Home</a>
       <a href="/brand/" class="active">Brand</a>
       <a href="/web/">Web</a>
-      <a href="/magazine/">Magazines</a>
-      <a href="/work/">Projects</a>
+
+      <div class="nav-item">
+        <a href="/magazine/">Magazines</a>
+        <div class="dropdown">
+          <a href="/editorial/">Editorial</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="/projects/">Projects</a>
+        <div class="dropdown">
+          <a href="/work/">Work</a>
+        </div>
+      </div>
+
       <a href="/clients/">Clients</a>
-      <a href="/about/">About</a>
+
+      <div class="nav-item">
+        <a href="/about/">About</a>
+        <div class="dropdown">
+          <a href="/about/#contact">Contact</a>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -65,12 +84,12 @@
 
     <section class="brand-cta">
       <p>Let’s build meaningful visual experiences together.</p>
-      <a href="/about/">Contact</a>
+      <a href="/about/#contact">Contact</a>
     </section>
 
   </main>
 
-  <footer class="brand-footer">
+  <footer class="site-footer">
     <p>© Luciano Campos. All rights reserved.</p>
   </footer>
 
