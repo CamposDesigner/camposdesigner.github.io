@@ -1,30 +1,241 @@
-.nav-portfolio-icon {
-  width: 18px;
-  height: 18px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3px;
+* {
+  box-sizing: border-box;
 }
 
-.nav-portfolio-icon span {
-  display: block;
-  border: 2px solid #6f6f6f;
-  border-radius: 2px;
-  transition: border-color 0.2s ease;
+body {
+  margin: 0;
+  background: #f7f7f5;
+  color: #111;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.nav-portfolio-icon:hover span {
-  border-color: #111;
+.site-header {
+  height: 72px;
+  padding: 0 63px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f7f7f5;
+  border-bottom: 1px solid #e7e7e4;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-.nav-linkedin-icon {
-  color: #6f6f6f !important;
-  font-size: 17px !important;
-  font-weight: 800 !important;
-  letter-spacing: -0.06em;
+.site-logo {
+  color: #111;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.site-nav a {
+  color: #3f3f3f;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
   transition: color 0.2s ease;
 }
 
-.nav-linkedin-icon:hover {
+.site-nav a:hover,
+.site-nav a.active {
+  color: #111;
+}
+
+.nav-dropdown {
+  position: relative;
+  padding: 27px 0;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: -18px;
+  min-width: 140px;
+  background: #fff;
+  border: 1px solid #e5e5e2;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+  padding: 8px 0;
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.nav-icon {
+  color: #6f6f6f !important;
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  line-height: 1;
+}
+
+.nav-icon:hover {
   color: #111 !important;
+}
+
+.nav-linkedin {
+  letter-spacing: -0.06em;
+}
+
+.brand-hero {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 112px 24px 64px;
+}
+
+.eyebrow {
+  margin: 0 0 24px;
+  color: #7d7d7d;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.brand-hero h1 {
+  max-width: 940px;
+  margin: 0 0 28px;
+  font-size: clamp(44px, 6vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.075em;
+  font-weight: 900;
+}
+
+.brand-hero p {
+  max-width: 720px;
+  margin: 0;
+  color: #666;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.brand-grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px 88px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.brand-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e6e6e3;
+  border-radius: 22px;
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand-card img {
+  width: 100%;
+  height: 340px;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  background: #f2f2ef;
+  padding: 18px;
+}
+
+.brand-card-content {
+  padding: 26px;
+}
+
+.brand-card-content p {
+  margin: 0 0 10px;
+  color: #777;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.brand-card-content h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+
+.brand-card-content span {
+  color: #666;
+  font-size: 15px;
+}
+
+.site-footer {
+  min-height: 84px;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f7f7f5;
+  border-top: 1px solid #ededeb;
+}
+
+.site-footer p {
+  margin: 0;
+  color: #777;
+  font-size: 15px;
+}
+
+@media (max-width: 980px) {
+  .site-header {
+    height: auto;
+    padding: 22px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .nav-dropdown {
+    padding: 0;
+  }
+
+  .dropdown-menu {
+    display: none !important;
+  }
+
+  .brand-hero {
+    padding: 90px 22px 56px;
+  }
+
+  .brand-grid {
+    grid-template-columns: 1fr;
+    padding: 0 22px 72px;
+  }
+
+  .brand-card img {
+    height: 280px;
+    padding: 16px;
+  }
+
+  .site-footer {
+    padding: 28px 24px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
 }
