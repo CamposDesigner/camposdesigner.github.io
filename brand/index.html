@@ -39,7 +39,7 @@
 
   <main>
 
-    <section class="brand-page-hero">
+    <section class="selected-work brand-page">
 
       <div class="container">
 
@@ -64,23 +64,17 @@
 
         </div>
 
-      </div>
-
-    </section>
-
-    <section class="brand-page-grid-section">
-
-      <div class="container">
-
         <div class="row">
 
           <div class="col-md-6 mb-4">
 
-            <a href="/brand/kemper/" class="brand-page-card">
+            <a href="/brand/kemper/" class="brand-card">
 
-              <img src="/brand/kemper/images/cover.jpg" alt="Kemper Brand Design">
+              <div class="brand-card-image">
+                <img src="/brand/kemper/images/cover.jpg" alt="Kemper Brand Design">
+              </div>
 
-              <div class="brand-page-card-content">
+              <div class="brand-card-content">
 
                 <p class="eyebrow">
                   Kemper
@@ -102,11 +96,13 @@
 
           <div class="col-md-6 mb-4">
 
-            <a href="/brand/rotary/" class="brand-page-card">
+            <a href="/brand/rotary/" class="brand-card">
 
-              <img src="/brand/rotary/images/cover.jpg" alt="Rotary International Brand Design">
+              <div class="brand-card-image">
+                <img src="/brand/rotary/images/cover.jpg" alt="Rotary International Brand Design">
+              </div>
 
-              <div class="brand-page-card-content">
+              <div class="brand-card-content">
 
                 <p class="eyebrow">
                   Rotary International
@@ -153,6 +149,12 @@
     </div>
 
   </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
   <script>
     fetch('/navbar.html')

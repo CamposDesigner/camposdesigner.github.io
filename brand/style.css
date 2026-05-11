@@ -1,13 +1,15 @@
-/* Brand pages only.
-   Global typography, navbar, footer, spacing system come from /css/style.css.
-*/
-
-/* Overview cards */
+/* =========================================================
+   BRAND PAGE ONLY
+   Navbar, typography, footer, icons, and dropdowns come from:
+   /css/style.css + /navbar.html
+========================================================= */
 
 .brand-page {
   padding-top: 130px;
   padding-bottom: 90px;
 }
+
+/* Cards */
 
 .brand-card {
   display: block;
@@ -54,110 +56,15 @@
   color: #666;
 }
 
-/* Project page */
-
-.brand-project-page {
-  padding-top: 130px;
-  padding-bottom: 55px;
-}
-
-.project-meta-row {
-  margin-top: 35px;
-}
-
-.project-meta-card {
-  border-top: 1px solid rgba(0, 0, 0, 0.14);
-  padding-top: 18px;
-}
-
-.project-meta-card h3 {
-  margin: 0;
-  font-size: 19px;
-  line-height: 1.35;
-}
-
-.brand-category-section {
-  padding-bottom: 76px;
-}
-
-.brand-category-section.last {
-  padding-bottom: 50px;
-}
-
-.category-header {
-  border-top: 1px solid rgba(0, 0, 0, 0.14);
-  padding-top: 28px;
-  margin-bottom: 28px;
-}
-
-.category-header h2 {
-  margin: 0;
-}
-
-.project-image-feature,
-.project-image-card {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 22px;
-  overflow: hidden;
-}
-
-.project-image-feature img,
-.project-image-card img {
-  width: 100%;
-  display: block;
-  object-fit: contain;
-  object-position: center;
-  background: #f2f2ef;
-  padding: 18px;
-}
-
-.project-image-feature img {
-  max-height: 560px;
-}
-
-.project-image-card img {
-  height: 360px;
-}
-
-.project-image-card.small img {
-  height: 300px;
-}
-
-.brand-back-section {
-  padding-bottom: 90px;
-}
-
-.brand-back-link {
-  color: inherit;
-  font-weight: 700;
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-}
-
-.brand-back-link:hover {
-  color: inherit;
-  text-decoration: none;
-}
+/* Responsive */
 
 @media (max-width: 767px) {
-  .brand-page,
-  .brand-project-page {
+  .brand-page {
     padding-top: 90px;
-    padding-bottom: 55px;
+    padding-bottom: 70px;
   }
 
   .brand-card-image img {
     height: 260px;
-  }
-
-  .project-image-card img,
-  .project-image-card.small img {
-    height: auto;
-    max-height: 420px;
-  }
-
-  .project-image-feature img {
-    max-height: 420px;
   }
 }
