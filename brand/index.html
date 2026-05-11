@@ -1,149 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Brand Design | Luciano Campos</title>
 
-  <!-- MAIN PORTFOLIO CSS -->
-  <link rel="stylesheet" href="/css/style.css" />
-
-  <!-- BRAND PAGE CSS -->
+  <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="/brand/style.css" />
-
 </head>
 
 <body>
 
-  <!-- =========================================
-       NAVBAR PLACEHOLDER
-       Uses the SAME navbar system as the portfolio
-  ========================================== -->
-
   <div id="navbar-placeholder"></div>
 
-  <!-- =========================================
-       MAIN
-  ========================================== -->
-
   <main>
-
-    <!-- HERO -->
-
     <section class="brand-page-hero">
+      <p class="eyebrow">Product • Brand • UI/UX Designer</p>
 
-      <p class="eyebrow">
-        Product • Brand • UI/UX Designer
-      </p>
-
-      <h1>
-        Brand and visual identity systems across print,
-        digital, and communication.
-      </h1>
+      <h1>Brand and visual identity systems across print, digital, and communication.</h1>
 
       <p>
-        A curated selection of brand communication,
-        campaigns, editorial layouts, marketing collateral,
-        and digital assets developed across corporate and cultural projects.
+        A curated selection of brand communication, campaigns, editorial layouts,
+        marketing collateral, and digital assets developed across corporate and cultural projects.
       </p>
-
     </section>
-
-    <!-- BRAND GRID -->
 
     <section class="brand-page-grid">
 
-      <!-- KEMPER -->
-
       <a href="/brand/kemper/" class="brand-page-card">
-
-        <img
-          src="/brand/kemper/images/cover.jpg"
-          alt="Kemper Brand Design"
-        >
+        <img src="/brand/kemper/images/cover.jpg" alt="Kemper Brand Design">
 
         <div>
-
-          <p>
-            Kemper
-          </p>
-
-          <h2>
-            Corporate Brand Communication
-          </h2>
-
-          <span>
-            Brand • Editorial • Marketing Assets
-          </span>
-
+          <p>Kemper</p>
+          <h2>Corporate Brand Communication</h2>
+          <span>Brand • Editorial • Marketing Assets</span>
         </div>
-
       </a>
 
-      <!-- ROTARY -->
-
       <a href="/brand/rotary/" class="brand-page-card">
-
-        <img
-          src="/brand/rotary/images/cover.jpg"
-          alt="Rotary International Brand Design"
-        >
+        <img src="/brand/rotary/images/cover.jpg" alt="Rotary International Brand Design">
 
         <div>
-
-          <p>
-            Rotary International
-          </p>
-
-          <h2>
-            Campaigns & Publication Design
-          </h2>
-
-          <span>
-            Brand • Editorial • Campaign • Digital
-          </span>
-
+          <p>Rotary International</p>
+          <h2>Campaigns & Publication Design</h2>
+          <span>Brand • Editorial • Campaign • Digital</span>
         </div>
-
       </a>
 
     </section>
-
   </main>
 
-  <!-- =========================================
-       FOOTER
-  ========================================== -->
-
   <footer class="site-footer">
-
-    <p>
-      Product • Brand • UI/UX Designer
-    </p>
-
-    <p>
-      © 2026 Luciano Campos
-    </p>
-
+    <p>Product • Brand • UI/UX Designer</p>
+    <p>© 2026 Luciano Campos</p>
   </footer>
 
-  <!-- =========================================
-       LOAD SHARED NAVBAR
-  ========================================== -->
-
   <script>
-
     fetch('/navbar.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
       });
-
   </script>
 
 </body>
-
 </html>
