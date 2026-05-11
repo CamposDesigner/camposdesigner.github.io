@@ -36,15 +36,18 @@
 		}
 
 		.about-photo-wrap {
-			background: #f2f2ef;
-			border-radius: 28px;
+			width: 300px;
+			height: 300px;
+			margin-left: auto;
+			border-radius: 50%;
 			overflow: hidden;
-			box-shadow: 0 24px 60px rgba(0,0,0,0.08);
+			background: #f2f2ef;
+			box-shadow: 0 24px 60px rgba(0,0,0,0.10);
 		}
 
 		.about-photo-wrap img {
 			width: 100%;
-			height: 440px;
+			height: 100%;
 			display: block;
 			object-fit: cover;
 			object-position: center top;
@@ -74,15 +77,31 @@
 		}
 
 		.about-statement {
-			padding: 70px 64px;
-			border-radius: 34px;
+			padding: 54px 58px;
+			border-radius: 30px;
 			background: #f7f7f4;
+			max-width: 980px;
+			margin: 0 auto;
 		}
 
-		.about-statement p {
-			max-width: 820px;
-			font-size: 18px;
-			line-height: 1.8;
+		.about-statement .eyebrow {
+			margin-bottom: 22px;
+			font-size: 12px;
+			letter-spacing: 0.18em;
+		}
+
+		.about-statement h2 {
+			max-width: 640px;
+			margin-bottom: 24px;
+			font-size: clamp(34px, 4vw, 48px);
+			line-height: 1.05;
+			letter-spacing: -0.055em;
+		}
+
+		.about-statement p:not(.eyebrow) {
+			max-width: 760px;
+			font-size: 17px;
+			line-height: 1.85;
 			color: #5a5a5a;
 			font-weight: 400;
 		}
@@ -105,11 +124,9 @@
 		@media (max-width: 991px) {
 
 			.about-photo-wrap {
-				margin-top: 42px;
-			}
-
-			.about-photo-wrap img {
-				height: 420px;
+				width: 260px;
+				height: 260px;
+				margin: 42px 0 0;
 			}
 
 		}
@@ -121,16 +138,22 @@
 				padding-bottom: 55px;
 			}
 
-			.about-photo-wrap img {
-				height: 340px;
+			.about-photo-wrap {
+				width: 220px;
+				height: 220px;
 			}
 
 			.about-statement {
-				padding: 36px 30px;
+				padding: 34px 28px;
 			}
 
-			.about-statement p {
-				font-size: 17px;
+			.about-statement h2 {
+				font-size: 34px;
+			}
+
+			.about-statement p:not(.eyebrow) {
+				font-size: 16px;
+				line-height: 1.75;
 			}
 
 			.strength-list {
@@ -274,7 +297,7 @@
 						Design Philosophy
 					</p>
 
-					<h2 class="section-title" style="max-width: 760px;">
+					<h2>
 						Clear design is not only visual — it is structural.
 					</h2>
 
