@@ -31,6 +31,32 @@
   <link rel="stylesheet"
         href="/brand/style.css">
 
+  <style>
+    .brand-pdf-frame {
+      width: 100%;
+      height: 620px;
+      display: block;
+      border: none;
+      background: #f2f2ef;
+    }
+
+    .wireframes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 767px) {
+      .brand-pdf-frame {
+        height: 420px;
+      }
+
+      .wireframes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -57,7 +83,7 @@
 
             <p class="hero-subtitle">
               A curated selection of visual design work developed for Kemper, organized by
-              application: brochures, campaigns, flyers and posters, hero pages, social assets,
+              application: brochures, campaigns, flyers and posters, graphics, social assets,
               web pages, and wireframes.
             </p>
 
@@ -94,7 +120,7 @@
 
     </section>
 
-    <!-- BROCHURE -->
+    <!-- BROCHURES -->
 
     <section class="brand-category-section">
 
@@ -102,7 +128,7 @@
 
         <div class="category-header">
           <p class="eyebrow">Category</p>
-          <h2>Brochure</h2>
+          <h2>Brochures</h2>
         </div>
 
         <div class="project-image-feature mb-4">
@@ -160,7 +186,7 @@
 
     </section>
 
-    <!-- CAMPAIGN HERO PAGES -->
+    <!-- GRAPHICS -->
 
     <section class="brand-category-section">
 
@@ -168,19 +194,19 @@
 
         <div class="category-header">
           <p class="eyebrow">Category</p>
-          <h2>Campaign Hero Pages</h2>
+          <h2>Graphics</h2>
         </div>
 
         <div class="project-image-feature mb-4">
-          <img src="/brand/kemper/hero/images/hero-01.png" alt="Kemper hero page 01">
+          <img src="/brand/kemper/hero/images/hero-01.png" alt="Kemper graphic 01">
         </div>
 
         <div class="project-image-feature mb-4">
-          <img src="/brand/kemper/hero/images/hero-02.png" alt="Kemper hero page 02">
+          <img src="/brand/kemper/hero/images/hero-02.png" alt="Kemper graphic 02">
         </div>
 
         <div class="project-image-feature mb-4">
-          <img src="/brand/kemper/hero/images/hero-03.png" alt="Kemper hero page 03">
+          <img src="/brand/kemper/hero/images/hero-03.png" alt="Kemper graphic 03">
         </div>
 
       </div>
@@ -257,21 +283,15 @@
         </div>
 
         <div class="project-image-feature mb-4">
-          <a href="/brand/kemper/web-pages/images/web-01.pdf" target="_blank" rel="noopener noreferrer" class="brand-pdf-link">
-            View web page PDF 01
-          </a>
+          <iframe class="brand-pdf-frame" src="/brand/kemper/web-pages/images/web-01.pdf"></iframe>
         </div>
 
         <div class="project-image-feature mb-4">
-          <a href="/brand/kemper/web-pages/images/web-02.pdf" target="_blank" rel="noopener noreferrer" class="brand-pdf-link">
-            View web page PDF 02
-          </a>
+          <iframe class="brand-pdf-frame" src="/brand/kemper/web-pages/images/web-02.pdf"></iframe>
         </div>
 
         <div class="project-image-feature mb-4">
-          <a href="/brand/kemper/web-pages/images/web-03.pdf" target="_blank" rel="noopener noreferrer" class="brand-pdf-link">
-            View web page PDF 03
-          </a>
+          <iframe class="brand-pdf-frame" src="/brand/kemper/web-pages/images/web-03.pdf"></iframe>
         </div>
 
       </div>
@@ -289,12 +309,16 @@
           <h2>Wireframes</h2>
         </div>
 
-        <div class="project-image-feature mb-4">
-          <img src="/brand/kemper/wireframes/images/frame-01.jpg" alt="Kemper wireframe 01">
-        </div>
+        <div class="wireframes-grid">
 
-        <div class="project-image-feature mb-4">
-          <img src="/brand/kemper/wireframes/images/frame-02.jpg" alt="Kemper wireframe 02">
+          <div class="project-image-feature mb-4">
+            <img src="/brand/kemper/wireframes/images/frame-01.jpg" alt="Kemper wireframe 01">
+          </div>
+
+          <div class="project-image-feature mb-4">
+            <img src="/brand/kemper/wireframes/images/frame-02.jpg" alt="Kemper wireframe 02">
+          </div>
+
         </div>
 
       </div>
