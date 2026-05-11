@@ -19,148 +19,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/css/style.css">
-
-  <style>
-    .premium-hero {
-      padding-top: 125px;
-      padding-bottom: 95px;
-    }
-
-    .premium-hero-layout {
-      align-items: center;
-    }
-
-    .premium-hero-copy {
-      max-width: 700px;
-      padding-right: 56px;
-    }
-
-    .premium-hero-title {
-      font-size: clamp(52px, 6.8vw, 88px);
-      line-height: 0.96;
-      letter-spacing: -0.065em;
-      margin-bottom: 30px;
-    }
-
-    .premium-hero-subtitle {
-      max-width: 600px;
-      font-size: 18px;
-      line-height: 1.85;
-      color: #555;
-      margin-bottom: 40px;
-    }
-
-    .premium-hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 38px;
-    }
-
-    .premium-hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .premium-hero-tag {
-      padding: 11px 17px;
-      border-radius: 999px;
-      background: #f4f4f1;
-      color: #555;
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .premium-hero-visual {
-      position: relative;
-      height: 650px;
-      border-radius: 34px;
-      overflow: hidden;
-      background: #f4f4f1;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.1);
-    }
-
-    .premium-hero-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
-    .premium-hero-card {
-      position: absolute;
-      left: 32px;
-      bottom: 32px;
-      max-width: 340px;
-      padding: 24px 26px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.92);
-      box-shadow: 0 18px 42px rgba(0,0,0,0.12);
-    }
-
-    .premium-hero-card span {
-      display: block;
-      margin-bottom: 10px;
-      color: #777;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .premium-hero-card h3 {
-      margin: 0;
-      font-size: 23px;
-      line-height: 1.22;
-      letter-spacing: -0.04em;
-    }
-
-    @media (max-width: 991px) {
-      .premium-hero {
-        padding-top: 95px;
-        padding-bottom: 70px;
-      }
-
-      .premium-hero-copy {
-        padding-right: 0;
-        margin-bottom: 48px;
-      }
-
-      .premium-hero-title {
-        font-size: clamp(46px, 10vw, 72px);
-      }
-
-      .premium-hero-visual {
-        height: 520px;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .premium-hero-title {
-        line-height: 1;
-        letter-spacing: -0.05em;
-      }
-
-      .premium-hero-subtitle {
-        font-size: 17px;
-        line-height: 1.7;
-      }
-
-      .premium-hero-visual {
-        height: 410px;
-        border-radius: 26px;
-      }
-
-      .premium-hero-card {
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
-        max-width: none;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -169,61 +27,28 @@
 
   <main>
 
-    <section class="hero-section premium-hero">
+    <section class="hero-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10">
 
-      <div class="container-fluid px-3 px-md-4">
+            <p class="eyebrow">Product • Brand • UI/UX Designer</p>
 
-        <div class="row premium-hero-layout">
+            <h1 class="hero-title">
+              Creating thoughtful visual experiences across branding, digital products, editorial, and web design.
+            </h1>
 
-          <div class="col-lg-5">
+            <p class="hero-subtitle">
+              Visual designer with experience developing brand systems, digital interfaces,
+              marketing communication, editorial layouts, and scalable visual solutions for global organizations and modern businesses.
+            </p>
 
-            <div class="premium-hero-copy">
-
-              <p class="eyebrow">Product • Brand • UI/UX Designer</p>
-
-              <h1 class="hero-title premium-hero-title">
-                Designing visual systems across editorial, brand, and digital experiences.
-              </h1>
-
-              <p class="hero-subtitle premium-hero-subtitle">
-                Bilingual visual designer creating structured communication systems through branding, editorial design, UI/UX, and digital storytelling across Brazil and the United States.
-              </p>
-
-              <div class="premium-hero-actions">
-                <a href="/brand/" class="btn-main">View Work</a>
-                <a href="/about.html" class="btn-outline-custom">Learn More</a>
-              </div>
-
-              <div class="premium-hero-tags">
-                <span class="premium-hero-tag">Editorial Design</span>
-                <span class="premium-hero-tag">Brand Systems</span>
-                <span class="premium-hero-tag">UI / UX</span>
-                <span class="premium-hero-tag">Digital Experiences</span>
-              </div>
-
-            </div>
+            <a href="/brand/" class="btn-main">View Work</a>
+            <a href="/about.html" class="btn-outline-custom">Learn More</a>
 
           </div>
-
-          <div class="col-lg-7">
-
-            <div class="premium-hero-visual">
-
-              <img src="/brand/kemper/images/cover.jpg" alt="Kemper visual system">
-
-              <div class="premium-hero-card">
-                <span>Featured Work</span>
-                <h3>Corporate communication systems across print, campaigns, and digital experiences.</h3>
-              </div>
-
-            </div>
-
-          </div>
-
         </div>
-
       </div>
-
     </section>
 
     <div class="home-divider"></div>
