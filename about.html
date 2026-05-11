@@ -28,6 +28,118 @@
 	<link rel="stylesheet"
 		  href="/css/style.css">
 
+	<style>
+
+		.about-hero {
+			padding-top: 130px;
+			padding-bottom: 80px;
+		}
+
+		.about-photo-wrap {
+			background: #f2f2ef;
+			border-radius: 28px;
+			overflow: hidden;
+			box-shadow: 0 24px 60px rgba(0,0,0,0.08);
+		}
+
+		.about-photo-wrap img {
+			width: 100%;
+			height: 560px;
+			display: block;
+			object-fit: cover;
+			object-position: center;
+		}
+
+		.about-intro-text {
+			max-width: 720px;
+			font-size: 18px;
+			line-height: 1.75;
+			color: #555;
+		}
+
+		.about-card {
+			height: 100%;
+			padding: 30px;
+			border-radius: 24px;
+			background: #ffffff;
+			box-shadow: 0 18px 45px rgba(0,0,0,0.06);
+		}
+
+		.about-card h3 {
+			margin-bottom: 14px;
+		}
+
+		.about-section {
+			padding-bottom: 80px;
+		}
+
+		.about-statement {
+			padding: 54px;
+			border-radius: 30px;
+			background: #f7f7f4;
+		}
+
+		.about-statement p {
+			max-width: 850px;
+			font-size: 20px;
+			line-height: 1.7;
+			color: #555;
+		}
+
+		.strength-list {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 18px;
+			margin-top: 28px;
+		}
+
+		.strength-item {
+			padding: 22px 24px;
+			border-radius: 18px;
+			background: #ffffff;
+			box-shadow: 0 14px 34px rgba(0,0,0,0.05);
+			font-weight: 700;
+		}
+
+		@media (max-width: 991px) {
+
+			.about-photo-wrap {
+				margin-top: 42px;
+			}
+
+			.about-photo-wrap img {
+				height: 460px;
+			}
+
+		}
+
+		@media (max-width: 767px) {
+
+			.about-hero {
+				padding-top: 90px;
+				padding-bottom: 55px;
+			}
+
+			.about-photo-wrap img {
+				height: 380px;
+			}
+
+			.about-statement {
+				padding: 30px;
+			}
+
+			.about-statement p {
+				font-size: 17px;
+			}
+
+			.strength-list {
+				grid-template-columns: 1fr;
+			}
+
+		}
+
+	</style>
+
 </head>
 
 <body>
@@ -36,97 +148,40 @@
 
 	<main>
 
-		<section class="case-study">
+		<section class="about-hero">
 
 			<div class="container">
 
-				<div class="row mb-5">
+				<div class="row align-items-center">
 
-					<div class="col-lg-9">
+					<div class="col-lg-7">
 
 						<p class="eyebrow">
 							About
 						</p>
 
 						<h1 class="hero-title">
-							Designing experiences that connect communication, structure, and culture.
+							Designing visual systems that connect communication, structure, and culture.
 						</h1>
 
 						<p class="hero-subtitle">
-							Bilingual designer with 20+ years of experience creating editorial, branding, UI/UX, and digital experiences across Brazil and the United States.
+							I’m a bilingual visual designer with 20+ years of experience creating brand, editorial, digital, and UI/UX design work across Brazil and the United States.
+						</p>
+
+						<p class="about-intro-text">
+							My work combines visual communication, typography, structured design systems, and storytelling across both print and digital environments. I focus on building design that feels visually engaging, organized, scalable, and purposeful.
 						</p>
 
 					</div>
 
-				</div>
+					<div class="col-lg-5">
 
-				<div class="row mb-5">
+						<div class="about-photo-wrap">
 
-					<div class="col-lg-8">
+							<img src="/images/luciano-campos.jpg"
+								 alt="Luciano Campos">
 
-						<p>
-							My work combines visual communication, typography, structured design systems, and storytelling across both print and digital environments.
-						</p>
-
-						<p>
-							Throughout my career, I’ve collaborated with publications, creative teams, modern businesses, and multicultural audiences, developing projects ranging from editorial layouts and identity systems to UI/UX and web experiences.
-						</p>
-
-						<p>
-							With a multidisciplinary background and a strong editorial eye, I focus on creating work that feels visually engaging, organized, and meaningful.
-						</p>
-
-					</div>
-
-				</div>
-
-				<div class="row mb-5">
-
-					<div class="col-md-4 mb-4">
-
-						<p class="eyebrow">
-							Experience
-						</p>
-
-						<h3 class="project-title">
-							20+ Years
-						</h3>
-
-						<p>
-							Working across editorial, branding, print, and digital design.
-						</p>
-
-					</div>
-
-					<div class="col-md-4 mb-4">
-
-						<p class="eyebrow">
-							Specialties
-						</p>
-
-						<h3 class="project-title">
-							UI/UX • Branding • Editorial
-						</h3>
-
-						<p>
-							Focused on creating structured visual experiences across multiple platforms.
-						</p>
-
-					</div>
-
-					<div class="col-md-4 mb-4">
-
-						<p class="eyebrow">
-							Markets
-						</p>
-
-						<h3 class="project-title">
-							Brazil & United States
-						</h3>
-
-						<p>
-							Experience designing for multicultural and bilingual audiences.
-						</p>
+						</div>
 
 					</div>
 
@@ -136,53 +191,150 @@
 
 		</section>
 
-		<section class="contact-cta">
+		<section class="about-section">
 
 			<div class="container">
 
-				<div class="row justify-content-center">
+				<div class="row">
 
-					<div class="col-lg-8 text-center">
+					<div class="col-md-4 mb-4">
 
-						<p class="eyebrow">
-							Let’s Work Together
-						</p>
+						<div class="about-card">
 
-						<h2 class="section-title">
-							Interested in creating thoughtful and visually engaging experiences?
-						</h2>
+							<p class="eyebrow">
+								Experience
+							</p>
 
-						<p>
-							I’m open to discussing design opportunities, collaborations, freelance projects, and creative partnerships.
-						</p>
+							<h3 class="project-title">
+								20+ Years
+							</h3>
 
-						<div class="contact-cta-buttons">
-
-							<a href="mailto:alexandrecampos00@gmail.com"
-							   class="btn-main">
-
-								Email Me
-
-							</a>
-
-							<a href="https://www.linkedin.com/in/lucianoacampos/"
-							   target="_blank"
-							   class="btn-outline-custom">
-
-								LinkedIn
-
-							</a>
-
-							<a href="https://camposdesigner.github.io/visualdesigner/index.html"
-							   target="_blank"
-							   class="btn-outline-custom">
-
-								Visual Portfolio
-
-							</a>
+							<p>
+								Experience across editorial, branding, print, web, digital communication, and visual systems.
+							</p>
 
 						</div>
 
+					</div>
+
+					<div class="col-md-4 mb-4">
+
+						<div class="about-card">
+
+							<p class="eyebrow">
+								Focus
+							</p>
+
+							<h3 class="project-title">
+								Brand • Editorial • UI/UX
+							</h3>
+
+							<p>
+								Designing structured visual experiences that work across multiple platforms and communication needs.
+							</p>
+
+						</div>
+
+					</div>
+
+					<div class="col-md-4 mb-4">
+
+						<div class="about-card">
+
+							<p class="eyebrow">
+								Perspective
+							</p>
+
+							<h3 class="project-title">
+								Brazil & United States
+							</h3>
+
+							<p>
+								Bilingual and multicultural experience designing for diverse audiences, industries, and markets.
+							</p>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<section class="about-section">
+
+			<div class="container">
+
+				<div class="about-statement">
+
+					<p class="eyebrow">
+						Design Philosophy
+					</p>
+
+					<h2 class="section-title">
+						Clear design is not only visual — it is structural.
+					</h2>
+
+					<p>
+						I believe strong design helps people understand information faster, connect with a message more clearly, and experience a brand with more confidence. My approach is rooted in hierarchy, rhythm, consistency, and visual clarity — whether the output is a magazine spread, a corporate campaign, a web page, or a full communication system.
+					</p>
+
+				</div>
+
+			</div>
+
+		</section>
+
+		<section class="about-section">
+
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-lg-8">
+
+						<p class="eyebrow">
+							Core Strengths
+						</p>
+
+						<h2 class="section-title">
+							A visual communication background built for both creative expression and production realities.
+						</h2>
+
+						<p class="about-intro-text">
+							I bring together a strong editorial eye, brand consistency, digital design sensibility, and practical production experience — helping ideas move from concept to polished execution.
+						</p>
+
+					</div>
+
+				</div>
+
+				<div class="strength-list">
+
+					<div class="strength-item">
+						Visual Systems
+					</div>
+
+					<div class="strength-item">
+						Editorial & Publication Design
+					</div>
+
+					<div class="strength-item">
+						Brand Communication
+					</div>
+
+					<div class="strength-item">
+						Web & UI Design
+					</div>
+
+					<div class="strength-item">
+						Campaign Layouts
+					</div>
+
+					<div class="strength-item">
+						Production-Ready Design
 					</div>
 
 				</div>
