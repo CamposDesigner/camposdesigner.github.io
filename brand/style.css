@@ -58,12 +58,12 @@
 
 .brand-project-page {
   padding-top: 130px;
-  padding-bottom: 60px;
+  padding-bottom: 54px;
 }
 
 .project-meta-row {
   margin-top: 35px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .project-meta-card {
@@ -77,41 +77,74 @@
   line-height: 1.35;
 }
 
-/* IMAGES */
+/* CATEGORY SECTIONS */
 
-.project-image-feature,
-.project-image-card {
+.brand-category-section {
+  padding-bottom: 46px;
+}
+
+.brand-category-section.last {
+  padding-bottom: 34px;
+}
+
+.category-header {
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+  padding-top: 24px;
+  margin-bottom: 24px;
+}
+
+.category-header h2 {
+  margin: 0;
+}
+
+/* COMPACT TWO-COLUMN GALLERY */
+
+.compact-gallery {
+  align-items: stretch;
+}
+
+.project-image-card,
+.project-pdf-card {
+  height: 100%;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 22px;
   overflow: hidden;
-  margin-bottom: 24px;
 }
 
-.project-image-feature img,
 .project-image-card img {
   width: 100%;
-  height: auto;
-  max-height: 560px;
+  height: 260px;
   display: block;
   object-fit: contain;
   object-position: center;
   background: #f2f2ef;
-  padding: 18px;
+  padding: 16px;
 }
 
-/* STACK ALL IMAGES */
+.project-pdf-card object {
+  width: 100%;
+  height: 360px;
+  display: block;
+  background: #f2f2ef;
+  border: 0;
+}
 
-.brand-project-page .row > [class*="col-md-6"],
-.brand-project-page .row > [class*="col-12"] {
-  flex: 0 0 100%;
-  max-width: 100%;
+.project-pdf-card a {
+  display: flex;
+  min-height: 180px;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 /* BACK BUTTON */
 
 .brand-back-section {
-  padding-top: 12px;
+  padding-top: 10px;
   padding-bottom: 80px;
 }
 
@@ -145,7 +178,6 @@
 /* RESPONSIVE */
 
 @media (max-width: 767px) {
-
   .brand-page,
   .brand-project-page {
     padding-top: 90px;
@@ -156,10 +188,12 @@
     height: 260px;
   }
 
-  .project-image-card img,
-  .project-image-feature img {
-    max-height: 420px;
+  .project-image-card img {
+    height: 260px;
     padding: 14px;
   }
 
+  .project-pdf-card object {
+    height: 320px;
+  }
 }
