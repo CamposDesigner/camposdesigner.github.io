@@ -3,140 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Kemper | Brand Design | Luciano Campos</title>
 
+  <link rel="stylesheet" href="/css/style.css" />
+
   <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      background: #f7f7f5;
-      color: #111;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .site-header {
-      height: 72px;
-      padding: 0 63px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #f7f7f5;
-      border-bottom: 1px solid #e7e7e4;
-      position: sticky;
-      top: 0;
-      z-index: 9999;
-    }
-
-    .site-logo {
-      color: #111;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      white-space: nowrap;
-    }
-
-    .site-nav {
-      display: flex;
-      align-items: center;
-      gap: 34px;
-    }
-
-    .site-nav a {
-      color: #3f3f3f;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 700;
-      white-space: nowrap;
-      transition: color 0.2s ease;
-    }
-
-    .site-nav a:hover,
-    .site-nav a.active {
-      color: #2f65f2;
-    }
-
-    .nav-dropdown {
-      position: relative;
-      padding: 27px 0;
-    }
-
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 70px;
-      left: -18px;
-      min-width: 140px;
-      background: #fff;
-      border: 1px solid #e5e5e2;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.08);
-      padding: 8px 0;
-      z-index: 10000;
-    }
-
-    .dropdown-menu a {
-      display: block;
-      padding: 10px 16px;
-    }
-
-    .dropdown-menu a:hover {
-      color: #2f65f2;
-      background: #f7f7f5;
-    }
-
-    .nav-dropdown:hover .dropdown-menu {
-      display: block;
-    }
-
-    .nav-icon {
-      color: #6f6f6f !important;
-      font-size: 17px !important;
-      font-weight: 800 !important;
-    }
-
-    .nav-icon:hover {
-      color: #2f65f2 !important;
-    }
-
-    .project-hero {
+    .brand-project {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 112px 24px 58px;
+      padding: 110px 24px 80px;
     }
 
-    .eyebrow {
-      margin: 0 0 24px;
-      color: #7d7d7d;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.02em;
+    .brand-project .eyebrow {
+      margin-bottom: 24px;
     }
 
-    .project-hero h1 {
-      max-width: 940px;
+    .brand-project h1 {
+      max-width: 920px;
       margin: 0 0 28px;
       font-size: clamp(44px, 6vw, 76px);
       line-height: 0.98;
       letter-spacing: -0.075em;
-      font-weight: 900;
     }
 
-    .project-hero p {
+    .brand-project-intro {
       max-width: 720px;
-      margin: 0;
       color: #666;
       font-size: 19px;
       line-height: 1.7;
+      margin-bottom: 64px;
     }
 
     .project-meta {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 24px 54px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 28px;
+      margin-top: 56px;
     }
 
     .project-meta div {
@@ -159,110 +62,99 @@
       line-height: 1.3;
     }
 
-    .project-gallery {
-      max-width: 940px;
+    .brand-section {
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 0 24px 88px;
-      display: grid;
-      gap: 28px;
+      padding: 0 24px 90px;
     }
 
-    .project-image {
+    .brand-section-header {
+      margin-bottom: 28px;
+      border-top: 1px solid #ddd;
+      padding-top: 28px;
+    }
+
+    .brand-section-header p {
+      margin: 0 0 10px;
+      color: #777;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .brand-section-header h2 {
       margin: 0;
-      background: #fff;
-      border: 1px solid #e6e6e3;
-      border-radius: 20px;
-      overflow: hidden;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1;
+      letter-spacing: -0.06em;
     }
 
-    .project-image img {
-      width: 100%;
-      max-height: 520px;
-      display: block;
-      object-fit: contain;
-      background: #f2f2ef;
-      padding: 18px;
-    }
-
-    .gallery-two {
+    .section-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 28px;
     }
 
-    .gallery-two .project-image img {
-      height: 360px;
-      max-height: 360px;
+    .section-grid.three {
+      grid-template-columns: repeat(3, 1fr);
     }
 
-    .site-footer {
-      min-height: 84px;
-      padding: 0 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #f7f7f5;
-      border-top: 1px solid #ededeb;
+    .section-grid img,
+    .section-feature img {
+      width: 100%;
+      display: block;
+      object-fit: contain;
+      background: #f2f2ef;
+      border: 1px solid #e6e6e3;
+      border-radius: 20px;
+      padding: 18px;
     }
 
-    .site-footer p {
-      margin: 0;
-      color: #777;
-      font-size: 15px;
+    .section-feature {
+      margin-bottom: 28px;
     }
 
-    @media (max-width: 980px) {
-      .site-header {
-        height: auto;
-        padding: 22px 24px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+    .section-feature img {
+      max-height: 620px;
+    }
+
+    .section-grid img {
+      height: 420px;
+    }
+
+    .section-grid.three img {
+      height: 320px;
+    }
+
+    .back-link {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+    }
+
+    .back-link a {
+      color: #111;
+      text-decoration: none;
+      font-weight: 800;
+      border-bottom: 1px solid #111;
+    }
+
+    @media (max-width: 900px) {
+      .brand-project {
+        padding: 80px 22px 60px;
       }
 
-      .site-nav {
-        flex-wrap: wrap;
-        gap: 18px;
-      }
-
-      .nav-dropdown {
-        padding: 0;
-      }
-
-      .dropdown-menu {
-        display: none !important;
-      }
-
-      .project-hero {
-        padding: 90px 22px 56px;
-      }
-
-      .project-meta {
-        grid-template-columns: 1fr;
-        padding: 0 22px 46px;
-      }
-
-      .project-gallery {
-        max-width: 100%;
-        padding: 0 22px 72px;
-      }
-
-      .gallery-two {
+      .project-meta,
+      .section-grid,
+      .section-grid.three {
         grid-template-columns: 1fr;
       }
 
-      .project-image img,
-      .gallery-two .project-image img {
+      .section-grid img,
+      .section-grid.three img {
         height: auto;
-        max-height: 420px;
-        padding: 16px;
-      }
-
-      .site-footer {
-        padding: 28px 24px;
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
+        max-height: 480px;
       }
     }
   </style>
@@ -270,107 +162,117 @@
 
 <body>
 
-  <header class="site-header">
-    <a href="/index.html" class="site-logo">Luciano Campos</a>
-
-    <nav class="site-nav">
-      <a href="/index.html">Home</a>
-      <a href="/brand/" class="active">Brand</a>
-      <a href="/web.html">Web</a>
-
-      <div class="nav-dropdown">
-        <a href="/magazine.html">Magazines ▾</a>
-        <div class="dropdown-menu">
-          <a href="/editorial.html">Editorial</a>
-        </div>
-      </div>
-
-      <div class="nav-dropdown">
-        <a href="/projects.html">Projects ▾</a>
-        <div class="dropdown-menu">
-          <a href="/work.html">Work</a>
-        </div>
-      </div>
-
-      <a href="/clients.html">Clients</a>
-
-      <div class="nav-dropdown">
-        <a href="/about.html">About ▾</a>
-        <div class="dropdown-menu">
-          <a href="/about.html#contact">Contact</a>
-        </div>
-      </div>
-
-      <a href="https://camposdesigner.github.io/visualdesigner/" target="_blank" rel="noopener noreferrer" class="nav-icon">▤</a>
-      <a href="https://www.linkedin.com/in/lucianoacampos/" target="_blank" rel="noopener noreferrer" class="nav-icon">in</a>
-    </nav>
-  </header>
+  <div id="navbar-placeholder"></div>
 
   <main>
 
-    <section class="project-hero">
+    <section class="brand-project">
       <p class="eyebrow">Kemper</p>
 
-      <h1>Corporate communication, digital campaigns, and editorial brand systems.</h1>
+      <h1>Corporate communication, campaigns, and brand support systems.</h1>
 
-      <p>
+      <p class="brand-project-intro">
         Visual communication and brand support materials developed across print and digital platforms,
-        including campaign systems, marketing assets, presentations, editorial layouts, and web-related visuals.
+        including brochures, campaigns, flyers, posters, social assets, presentations, and web-related visuals.
       </p>
+
+      <div class="project-meta">
+        <div>
+          <p>Client</p>
+          <h3>Kemper Corporation</h3>
+        </div>
+
+        <div>
+          <p>Role</p>
+          <h3>Visual Designer</h3>
+        </div>
+
+        <div>
+          <p>Focus</p>
+          <h3>Brand • Editorial • Campaigns • Digital</h3>
+        </div>
+      </div>
     </section>
 
-    <section class="project-meta">
-      <div>
-        <p>Client</p>
-        <h3>Kemper Corporation</h3>
+    <section class="brand-section">
+      <div class="brand-section-header">
+        <p>Category</p>
+        <h2>Brochure Design</h2>
       </div>
 
-      <div>
-        <p>Role</p>
-        <h3>Visual Designer</h3>
+      <div class="section-feature">
+        <img src="/brand/kemper/brochure/images/brochure-01.jpg" alt="Kemper brochure design">
       </div>
 
-      <div>
-        <p>Focus</p>
-        <h3>Brand • Editorial • Digital • Campaigns</h3>
+      <div class="section-grid">
+        <img src="/brand/kemper/brochure/images/brochure-02.jpg" alt="Kemper brochure layout">
+        <img src="/brand/kemper/brochure/images/brochure-03.jpg" alt="Kemper brochure spread">
       </div>
     </section>
 
-    <section class="project-gallery">
-
-      <figure class="project-image">
-        <img src="/brand/kemper/images/cover.jpg" alt="Kemper brand design cover">
-      </figure>
-
-      <div class="gallery-two">
-        <figure class="project-image">
-          <img src="/brand/kemper/images/kemper-01.jpg" alt="Kemper design layout">
-        </figure>
-
-        <figure class="project-image">
-          <img src="/brand/kemper/images/kemper-02.jpg" alt="Kemper campaign design">
-        </figure>
+    <section class="brand-section">
+      <div class="brand-section-header">
+        <p>Category</p>
+        <h2>Campaigns</h2>
       </div>
 
-      <figure class="project-image">
-        <img src="/brand/kemper/images/kemper-03.jpg" alt="Kemper editorial design">
-      </figure>
-
-      <div class="gallery-two">
-        <figure class="project-image">
-          <img src="/brand/kemper/images/kemper-04.jpg" alt="Kemper marketing material">
-        </figure>
-
-        <figure class="project-image">
-          <img src="/brand/kemper/images/kemper-05.jpg" alt="Kemper digital assets">
-        </figure>
+      <div class="section-grid">
+        <img src="/brand/kemper/campaigns/images/campaign-01.jpg" alt="Kemper campaign design">
+        <img src="/brand/kemper/campaigns/images/campaign-02.jpg" alt="Kemper campaign visual">
       </div>
-
-      <figure class="project-image">
-        <img src="/brand/kemper/images/kemper-06.jpg" alt="Kemper corporate communication">
-      </figure>
-
     </section>
+
+    <section class="brand-section">
+      <div class="brand-section-header">
+        <p>Category</p>
+        <h2>Flyers & Posters</h2>
+      </div>
+
+      <div class="section-grid">
+        <img src="/brand/kemper/flyers-posters/images/poster-01.jpg" alt="Kemper poster design">
+        <img src="/brand/kemper/flyers-posters/images/poster-02.jpg" alt="Kemper flyer design">
+      </div>
+    </section>
+
+    <section class="brand-section">
+      <div class="brand-section-header">
+        <p>Category</p>
+        <h2>Social Assets</h2>
+      </div>
+
+      <div class="section-grid three">
+        <img src="/brand/kemper/social-assets/images/social-01.jpg" alt="Kemper social media asset">
+        <img src="/brand/kemper/social-assets/images/social-02.jpg" alt="Kemper social graphic">
+        <img src="/brand/kemper/social-assets/images/social-03.jpg" alt="Kemper digital social asset">
+      </div>
+    </section>
+
+    <section class="brand-section">
+      <div class="brand-section-header">
+        <p>Category</p>
+        <h2>Presentations</h2>
+      </div>
+
+      <div class="section-grid">
+        <img src="/brand/kemper/presentations/images/presentation-01.jpg" alt="Kemper presentation design">
+        <img src="/brand/kemper/presentations/images/presentation-02.jpg" alt="Kemper presentation layout">
+      </div>
+    </section>
+
+    <section class="brand-section">
+      <div class="brand-section-header">
+        <p>Category</p>
+        <h2>Web Assets</h2>
+      </div>
+
+      <div class="section-feature">
+        <img src="/brand/kemper/web-assets/images/web-01.jpg" alt="Kemper web asset design">
+      </div>
+    </section>
+
+    <div class="back-link">
+      <a href="/brand/">← Back to Brand</a>
+    </div>
 
   </main>
 
@@ -378,6 +280,14 @@
     <p>Product • Brand • UI/UX Designer</p>
     <p>© 2026 Luciano Campos</p>
   </footer>
+
+  <script>
+    fetch('/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      });
+  </script>
 
 </body>
 </html>
