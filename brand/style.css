@@ -169,6 +169,16 @@
   transform: translateY(-1px);
 }
 
+/* SMALL DOWNLOAD BUTTON */
+
+.brand-download-button.small {
+  min-height: 42px;
+  padding: 0 18px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
 /* BACK BUTTON */
 
 .brand-back-section {
