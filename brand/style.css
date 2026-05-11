@@ -118,15 +118,19 @@
 }
 
 .brand-back-link {
-  color: inherit;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  color: #111;
+  font-size: 15px;
+  font-weight: 600;
   text-decoration: none;
-  border-bottom: 1px solid currentColor;
+  transition: opacity 0.2s ease;
 }
 
 .brand-back-link:hover {
-  color: inherit;
+  color: #111;
   text-decoration: none;
+  opacity: 0.65;
 }
 
 /* RESPONSIVE */
