@@ -1,42 +1,110 @@
-.brand-page-hero {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 112px 24px 64px;
+/* Brand pages only.
+   Global typography, navbar, footer, spacing system come from /css/style.css.
+*/
+
+/* Overview cards */
+
+.brand-page {
+  padding-top: 130px;
+  padding-bottom: 90px;
 }
 
-.brand-page-hero h1 {
-  max-width: 940px;
-  margin: 0 0 28px;
+.brand-card {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 22px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.brand-page-hero p:not(.eyebrow) {
-  max-width: 720px;
+.brand-card:hover {
+  color: inherit;
+  text-decoration: none;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.brand-card-image {
+  background: #f2f2ef;
+  padding: 18px;
+}
+
+.brand-card-image img {
+  width: 100%;
+  height: 320px;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+
+.brand-card-content {
+  padding: 26px;
+}
+
+.brand-card-content h2 {
+  margin-bottom: 12px;
+}
+
+.brand-card-content span {
+  display: block;
+  color: #666;
+}
+
+/* Project page */
+
+.brand-project-page {
+  padding-top: 130px;
+  padding-bottom: 55px;
+}
+
+.project-meta-row {
+  margin-top: 35px;
+}
+
+.project-meta-card {
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+  padding-top: 18px;
+}
+
+.project-meta-card h3 {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.brand-category-section {
+  padding-bottom: 76px;
+}
+
+.brand-category-section.last {
+  padding-bottom: 50px;
+}
+
+.category-header {
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+  padding-top: 28px;
+  margin-bottom: 28px;
+}
+
+.category-header h2 {
   margin: 0;
 }
 
-.brand-page-grid {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 24px 88px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-}
-
-.brand-page-card {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border: 1px solid #e6e6e3;
+.project-image-feature,
+.project-image-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 22px;
   overflow: hidden;
-  color: inherit;
-  text-decoration: none;
 }
 
-.brand-page-card img {
+.project-image-feature img,
+.project-image-card img {
   width: 100%;
-  height: 320px;
   display: block;
   object-fit: contain;
   object-position: center;
@@ -44,35 +112,52 @@
   padding: 18px;
 }
 
-.brand-page-card div {
-  padding: 26px;
+.project-image-feature img {
+  max-height: 560px;
 }
 
-.brand-page-card p {
-  margin: 0 0 10px;
-  text-transform: uppercase;
+.project-image-card img {
+  height: 360px;
 }
 
-.brand-page-card h2 {
-  margin: 0 0 12px;
+.project-image-card.small img {
+  height: 300px;
 }
 
-.brand-page-card span {
-  display: block;
+.brand-back-section {
+  padding-bottom: 90px;
 }
 
-@media (max-width: 980px) {
-  .brand-page-hero {
-    padding: 90px 22px 56px;
+.brand-back-link {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.brand-back-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .brand-page,
+  .brand-project-page {
+    padding-top: 90px;
+    padding-bottom: 55px;
   }
 
-  .brand-page-grid {
-    grid-template-columns: 1fr;
-    padding: 0 22px 72px;
+  .brand-card-image img {
+    height: 260px;
   }
 
-  .brand-page-card img {
-    height: 280px;
-    padding: 16px;
+  .project-image-card img,
+  .project-image-card.small img {
+    height: auto;
+    max-height: 420px;
+  }
+
+  .project-image-feature img {
+    max-height: 420px;
   }
 }
