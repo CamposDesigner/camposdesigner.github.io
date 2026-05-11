@@ -122,6 +122,35 @@
   padding: 16px;
 }
 
+/* BROCHURE CARD WITH BUTTON */
+
+.brochure-item {
+  height: 100%;
+}
+
+.brochure-card {
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.brochure-card .project-image-card {
+  height: auto;
+  border: 0;
+  border-radius: 0;
+}
+
+.brochure-card .project-image-card img {
+  height: 260px;
+}
+
+.brochure-card-actions {
+  padding: 18px;
+  background: #ffffff;
+}
+
 /* PDF VIEWERS */
 
 .project-pdf-card object {
@@ -152,28 +181,30 @@
   min-height: 52px;
   padding: 0 28px;
   border-radius: 11px;
-  background: #111111;
+  background: #2f65f2;
   color: #ffffff;
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
   transition:
     background 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .brand-download-button:hover {
   color: #ffffff;
   text-decoration: none;
-  background: #000000;
+  background: #2454d6;
   transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(47, 101, 242, 0.28);
 }
 
 /* SMALL DOWNLOAD BUTTON */
 
 .brand-download-button.small {
-  min-height: 42px;
-  padding: 0 18px;
+  min-height: 40px;
+  padding: 0 16px;
   border-radius: 9px;
   font-size: 13px;
   font-weight: 700;
@@ -227,7 +258,8 @@
     height: 260px;
   }
 
-  .project-image-card img {
+  .project-image-card img,
+  .brochure-card .project-image-card img {
     height: 260px;
     padding: 14px;
   }
