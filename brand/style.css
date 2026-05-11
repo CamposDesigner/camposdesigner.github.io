@@ -122,6 +122,8 @@
   padding: 16px;
 }
 
+/* PDF VIEWERS */
+
 .project-pdf-card object {
   width: 100%;
   height: 360px;
@@ -139,6 +141,32 @@
   color: inherit;
   font-weight: 700;
   text-decoration: none;
+}
+
+/* DOWNLOAD BUTTON */
+
+.brand-download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 28px;
+  border-radius: 11px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.brand-download-button:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background: #000000;
+  transform: translateY(-1px);
 }
 
 /* BACK BUTTON */
@@ -178,6 +206,7 @@
 /* RESPONSIVE */
 
 @media (max-width: 767px) {
+
   .brand-page,
   .brand-project-page {
     padding-top: 90px;
@@ -196,4 +225,5 @@
   .project-pdf-card object {
     height: 320px;
   }
+
 }
