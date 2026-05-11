@@ -1,15 +1,13 @@
 /* =========================================================
-   BRAND PAGE ONLY
-   Navbar, typography, footer, icons, and dropdowns come from:
-   /css/style.css + /navbar.html
+   BRAND PAGES ONLY
 ========================================================= */
+
+/* OVERVIEW PAGE */
 
 .brand-page {
   padding-top: 130px;
   padding-bottom: 90px;
 }
-
-/* Cards */
 
 .brand-card {
   display: block;
@@ -56,15 +54,104 @@
   color: #666;
 }
 
-/* Responsive */
+/* PROJECT PAGES */
+
+.brand-project-page {
+  padding-top: 130px;
+  padding-bottom: 60px;
+}
+
+.project-meta-row {
+  margin-top: 35px;
+  margin-bottom: 20px;
+}
+
+.project-meta-card {
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+  padding-top: 18px;
+}
+
+.project-meta-card h3 {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+/* IMAGES */
+
+.project-image-feature,
+.project-image-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.project-image-feature img,
+.project-image-card img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  background: #f2f2ef;
+  padding: 18px;
+}
+
+/* FEATURED IMAGE */
+
+.project-image-feature img {
+  max-height: 520px;
+}
+
+/* SIDE-BY-SIDE IMAGES */
+
+.project-image-card img {
+  height: 300px;
+  max-height: 300px;
+}
+
+/* BACK LINK */
+
+.brand-back-section {
+  padding-top: 10px;
+  padding-bottom: 80px;
+}
+
+.brand-back-link {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.brand-back-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
 
 @media (max-width: 767px) {
-  .brand-page {
+
+  .brand-page,
+  .brand-project-page {
     padding-top: 90px;
-    padding-bottom: 70px;
+    padding-bottom: 55px;
   }
 
   .brand-card-image img {
     height: 260px;
   }
+
+  .project-image-card img {
+    height: auto;
+    max-height: 340px;
+    padding: 14px;
+  }
+
+  .project-image-feature img {
+    max-height: 360px;
+    padding: 14px;
+  }
+
 }
