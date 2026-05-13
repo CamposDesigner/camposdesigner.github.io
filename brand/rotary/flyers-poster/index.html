@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rotary Flyers & Posters — Luciano Campos</title>
+
+  <meta name="description" content="Rotary International flyers and posters by Luciano Campos.">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="stylesheet" href="/brand/style.css">
+
+  <style>
+    .stacked-rotary-gallery .project-image-card {
+      height: auto;
+    }
+
+    .stacked-rotary-gallery .project-image-card img {
+      width: 100%;
+      height: auto;
+      max-height: none;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      background: #f2f2ef;
+      padding: 24px;
+    }
+
+    @media (max-width: 767px) {
+      .stacked-rotary-gallery .project-image-card img {
+        padding: 16px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="navbar-placeholder"></div>
+
+  <main>
+
+    <section class="selected-work brand-project-page">
+
+      <div class="container">
+
+        <div class="row mb-5">
+
+          <div class="col-lg-9">
+
+            <p class="eyebrow">
+              Rotary International
+            </p>
+
+            <h1 class="hero-title">
+              Flyers & Posters
+            </h1>
+
+            <p class="hero-subtitle">
+              Flyers, posters, and event communication materials designed to support brand clarity and campaign visibility.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="brand-category-section last">
+
+      <div class="container">
+
+        <div class="category-header">
+
+          <p class="eyebrow">
+            Category
+          </p>
+
+          <h2>
+            Flyers & Posters
+          </h2>
+
+        </div>
+
+        <div class="row stacked-rotary-gallery">
+
+          <div class="col-12 mb-5">
+
+            <div class="project-image-card">
+
+              <img src="/brand/rotary/flyers-poster/images/cover.jpg"
+                   alt="Rotary flyers and posters cover">
+
+            </div>
+
+          </div>
+
+          <div class="col-12 mb-5">
+
+            <div class="project-image-card">
+
+              <img src="/brand/rotary/flyers-poster/images/poster-01.jpg"
+                   alt="Rotary poster design 01">
+
+            </div>
+
+          </div>
+
+          <div class="col-12 mb-5">
+
+            <div class="project-image-card">
+
+              <img src="/brand/rotary/flyers-poster/images/poster-02.jpg"
+                   alt="Rotary poster design 02">
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="brand-back-section">
+
+      <div class="container">
+
+        <a href="/brand/rotary/" class="brand-back-link">
+          ← Back to Rotary
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer-section">
+
+    <div class="container">
+
+      <div class="row align-items-center">
+
+        <div class="col-md-6 text-left">
+
+          <p class="footer-copy mb-0">
+            Product • Brand • UI/UX Designer
+          </p>
+
+        </div>
+
+        <div class="col-md-6 text-md-right text-left mt-3 mt-md-0">
+
+          <p class="footer-copy mb-0">
+            © 2026 Luciano Campos
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <script>
+    fetch('/navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      });
+  </script>
+
+</body>
+
+</html>
