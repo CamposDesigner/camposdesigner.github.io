@@ -647,130 +647,7 @@
 
         </div>
 
-        <div id="social-layout-gallery" class="social-layout-grid">
-
-          <div class="social-layout-card priority-layout">
-
-            <img src="/brand/kemper/social-assets/images/poster-18.jpg"
-                 alt="Kemper distracted driving awareness layout 01">
-
-            <div class="social-layout-caption">
-              <span>Distracted Driving Awareness 01</span>
-            </div>
-
-          </div>
-
-          <div class="social-layout-card priority-layout">
-
-            <img src="/brand/kemper/social-assets/images/poster-17.jpg"
-                 alt="Kemper distracted driving awareness layout 02">
-
-            <div class="social-layout-caption">
-              <span>Distracted Driving Awareness 02</span>
-            </div>
-
-          </div>
-
-          <div class="social-layout-card priority-layout">
-
-            <img src="/brand/kemper/social-assets/images/poster-19.jpg"
-                 alt="Kemper distracted driving awareness layout 03">
-
-            <div class="social-layout-caption">
-              <span>Distracted Driving Awareness 03</span>
-            </div>
-
-          </div>
-
-          <div class="social-layout-card">
-
-            <img src="/brand/kemper/social-assets/images/poster-07.jpg"
-                 alt="Kemper social asset 04">
-
-            <div class="social-layout-caption">
-              <span>Social Asset 04</span>
-            </div>
-
-          </div>
-
-          <div class="social-layout-card">
-
-            <img src="/brand/kemper/social-assets/images/poster-08.jpg"
-                 alt="Kemper social asset 05">
-
-            <div class="social-layout-caption">
-              <span>Social Asset 05</span>
-            </div>
-
-          </div>
-
-          <div class="social-layout-card">
-
-            <img src="/brand/kemper/social-assets/images/poster-15.jpg"
-                 alt="Kemper social asset 06">
-
-            <div class="social-layout-caption">
-              <span>Social Asset 06</span>
-            </div>
-
-          </div>
-
-          <div class="social-layout-card">
-
-            <img src="/brand/kemper/social-assets/images/poster-16.jpg"
-                 alt="Kemper social asset 07">
-
-            <div class="social-layout-caption">
-              <span>Social Asset 07</span>
-            </div>
-
-          </div>
-
-          <div class="social-layout-card">
-
-            <img src="/brand/kemper/social-assets/images/poster-10.jpg"
-                 alt="Kemper social asset 08">
-
-            <div class="social-layout-caption">
-              <span>Social Asset 08</span>
-            </div>
-
-          </div>
-
-          <div class="social-layout-card">
-
-            <img src="/brand/kemper/social-assets/images/poster-11.jpg"
-                 alt="Kemper social asset 09">
-
-            <div class="social-layout-caption">
-              <span>Social Asset 09</span>
-            </div>
-
-          </div>
-
-          <div class="social-layout-card">
-
-            <img src="/brand/kemper/social-assets/images/poster-12.jpg"
-                 alt="Kemper social asset 10">
-
-            <div class="social-layout-caption">
-              <span>Social Asset 10</span>
-            </div>
-
-          </div>
-
-          <div class="social-layout-card">
-
-            <img src="/brand/kemper/social-assets/images/poster-13.jpg"
-                 alt="Kemper social asset 11">
-
-            <div class="social-layout-caption">
-              <span>Social Asset 11</span>
-            </div>
-
-          </div>
-
-        </div>
+        <div id="social-layout-gallery" class="social-layout-grid"></div>
 
         <div class="social-gallery-actions">
 
@@ -858,30 +735,50 @@
       });
     }
 
-    function createSocialLayoutCard(src, assetNumber) {
+    function createSocialLayoutCard(src, label, isPriority, isExtra) {
       var card = document.createElement('div');
-      card.className = 'social-layout-card social-extra-layout';
 
-      var paddedNumber = String(assetNumber).padStart(2, '0');
+      if (isPriority) {
+        card.className = 'social-layout-card priority-layout';
+      } else if (isExtra) {
+        card.className = 'social-layout-card social-extra-layout';
+      } else {
+        card.className = 'social-layout-card';
+      }
 
       var image = document.createElement('img');
       image.src = src;
-      image.alt = 'Kemper social asset ' + paddedNumber;
+      image.alt = label;
 
       var caption = document.createElement('div');
       caption.className = 'social-layout-caption';
 
-      var label = document.createElement('span');
-      label.textContent = 'Social Asset ' + paddedNumber;
+      var captionLabel = document.createElement('span');
+      captionLabel.textContent = label;
 
-      caption.appendChild(label);
+      caption.appendChild(captionLabel);
       card.appendChild(image);
       card.appendChild(caption);
 
       return card;
     }
 
-    async function loadAdditionalSocialLayouts() {
+    async function findImageSource(baseName) {
+      var extensions = ['jpg', 'jpeg', 'png', 'webp', 'JPG', 'JPEG', 'PNG', 'WEBP'];
+
+      for (var i = 0; i < extensions.length; i++) {
+        var src = '/brand/kemper/social-assets/images/' + baseName + '.' + extensions[i];
+        var exists = await imageExists(src);
+
+        if (exists) {
+          return src;
+        }
+      }
+
+      return null;
+    }
+
+    async function loadAllSocialLayouts() {
       var gallery = document.getElementById('social-layout-gallery');
       var toggleButton = document.getElementById('social-gallery-toggle');
 
@@ -889,44 +786,66 @@
         return;
       }
 
-      var loadedExtraLayouts = 0;
-      var socialAssetNumber = 12;
-      var extensions = ['jpg', 'jpeg', 'png'];
+      var prioritySequence = [18, 17, 19, 7, 8, 15, 16, 10, 11, 12, 13];
+      var priorityMap = {};
+      var visibleCount = 0;
+      var hiddenCount = 0;
 
-      var priorityNumbers = {
-        18: true,
-        17: true,
-        19: true,
-        7: true,
-        8: true,
-        15: true,
-        16: true,
-        10: true,
-        11: true,
-        12: true,
-        13: true
-      };
+      for (var p = 0; p < prioritySequence.length; p++) {
+        priorityMap[prioritySequence[p]] = true;
+      }
 
-      for (var i = 1; i <= 60; i++) {
-        if (priorityNumbers[i]) {
-          continue;
-        }
+      for (var i = 0; i < prioritySequence.length; i++) {
+        var priorityNumber = prioritySequence[i];
+        var priorityBaseName = 'poster-' + String(priorityNumber).padStart(2, '0');
+        var prioritySource = await findImageSource(priorityBaseName);
 
-        for (var e = 0; e < extensions.length; e++) {
-          var number = String(i).padStart(2, '0');
-          var src = '/brand/kemper/social-assets/images/poster-' + number + '.' + extensions[e];
-          var exists = await imageExists(src);
+        if (prioritySource) {
+          visibleCount++;
 
-          if (exists) {
-            gallery.appendChild(createSocialLayoutCard(src, socialAssetNumber));
-            socialAssetNumber++;
-            loadedExtraLayouts++;
-            break;
+          var priorityLabel;
+
+          if (visibleCount <= 3) {
+            priorityLabel = 'Distracted Driving Awareness ' + String(visibleCount).padStart(2, '0');
+          } else {
+            priorityLabel = 'Social Asset ' + String(visibleCount).padStart(2, '0');
           }
+
+          gallery.appendChild(
+            createSocialLayoutCard(
+              prioritySource,
+              priorityLabel,
+              visibleCount <= 3,
+              false
+            )
+          );
         }
       }
 
-      if (loadedExtraLayouts > 0) {
+      for (var n = 1; n <= 80; n++) {
+        if (priorityMap[n]) {
+          continue;
+        }
+
+        var baseName = 'poster-' + String(n).padStart(2, '0');
+        var source = await findImageSource(baseName);
+
+        if (source) {
+          visibleCount++;
+          hiddenCount++;
+
+          gallery.appendChild(
+            createSocialLayoutCard(
+              source,
+              'Social Asset ' + String(visibleCount).padStart(2, '0'),
+              false,
+              true
+            )
+          );
+        }
+      }
+
+      if (hiddenCount > 0) {
         toggleButton.style.display = 'inline-flex';
 
         toggleButton.addEventListener('click', function() {
@@ -941,7 +860,7 @@
       }
     }
 
-    loadAdditionalSocialLayouts();
+    loadAllSocialLayouts();
   </script>
 
 </body>
