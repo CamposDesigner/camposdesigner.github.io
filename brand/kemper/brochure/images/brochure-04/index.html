@@ -5,9 +5,9 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Contents / Fire Insurance Brochure — Luciano Campos</title>
+  <title>Contents / Fire Insurance — Luciano Campos</title>
 
-  <meta name="description" content="Kemper Contents and Fire Insurance brochure layout by Luciano Campos.">
+  <meta name="description" content="Kemper Contents and Fire Insurance brochure designed by Luciano Campos.">
 
   <link rel="icon" type="image/png" href="/favicon.png">
 
@@ -23,46 +23,22 @@
   <link rel="stylesheet" href="/brand/style.css">
 
   <style>
-    .brochure-detail-subheader {
-      max-width: 760px;
-      margin-top: 22px;
+    .brochure-detail-hero {
+      padding-bottom: 52px;
+    }
+
+    .brochure-detail-hero .hero-title {
+      max-width: 860px;
+      margin-bottom: 26px;
+    }
+
+    .brochure-detail-copy {
+      max-width: 720px;
       color: #666666;
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       line-height: 1.72;
       font-weight: 400;
       letter-spacing: -0.01em;
-    }
-
-    .brochure-detail-meta {
-      padding: 0 0 54px;
-    }
-
-    .brochure-detail-meta-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      border-top: 1px solid rgba(0, 0, 0, 0.12);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-      padding: 28px 0;
-    }
-
-    .brochure-detail-meta-item span {
-      display: block;
-      margin-bottom: 8px;
-      color: #777777;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .brochure-detail-meta-item p {
-      margin: 0;
-      color: #111111;
-      font-size: 1rem;
-      line-height: 1.5;
-      font-weight: 500;
-      letter-spacing: -0.02em;
     }
 
     .brochure-pages-section {
@@ -72,6 +48,8 @@
     .brochure-pages-stack {
       max-width: 980px;
       margin: 0 auto;
+      padding-top: 42px;
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
     }
 
     .brochure-page {
@@ -86,7 +64,11 @@
     .brochure-page img {
       width: 100%;
       height: auto;
-      display: block;
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      object-fit: contain;
+      object-position: center;
       background: #f2f2ef;
     }
 
@@ -134,21 +116,24 @@
     }
 
     @media (max-width: 991px) {
-      .brochure-detail-meta-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
-      }
-
       .brochure-pages-stack {
         max-width: 100%;
       }
     }
 
     @media (max-width: 767px) {
-      .brochure-detail-subheader {
+      .brochure-detail-hero {
+        padding-bottom: 42px;
+      }
+
+      .brochure-detail-copy {
         max-width: 100%;
         font-size: 1rem;
         line-height: 1.65;
+      }
+
+      .brochure-pages-stack {
+        padding-top: 32px;
       }
 
       .brochure-page {
@@ -169,20 +154,20 @@
 
   <main>
 
-    <section class="selected-work brand-project-page">
+    <section class="selected-work brand-project-page brochure-detail-hero">
       <div class="container">
 
-        <div class="row mb-5">
+        <div class="row">
           <div class="col-lg-10">
 
-            <p class="eyebrow">Kemper / Brochure 04</p>
+            <p class="eyebrow">Kemper</p>
 
             <h1 class="hero-title">
               Contents / Fire Insurance
             </h1>
 
-            <p class="hero-subtitle brochure-detail-subheader">
-              A compact brochure layout designed to present insurance-related content with clarity, professional structure, and a clean visual hierarchy that keeps the message direct and easy to understand.
+            <p class="hero-subtitle brochure-detail-copy">
+              A compact insurance communication piece designed to present policy-related content with clarity, structure, and a clean brand presence — keeping the message direct, organized, and easy to understand.
             </p>
 
           </div>
@@ -191,44 +176,10 @@
       </div>
     </section>
 
-    <section class="brochure-detail-meta">
-      <div class="container">
-
-        <div class="brochure-detail-meta-grid">
-
-          <div class="brochure-detail-meta-item">
-            <span>Client</span>
-            <p>Kemper</p>
-          </div>
-
-          <div class="brochure-detail-meta-item">
-            <span>Category</span>
-            <p>Brochure Design / Insurance Communication</p>
-          </div>
-
-          <div class="brochure-detail-meta-item">
-            <span>Focus</span>
-            <p>Message clarity, compact layout structure, brand consistency, and customer-facing communication.</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
     <section class="brochure-pages-section">
       <div class="container">
 
-        <div class="brochure-pages-stack">
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-04/brochure-01.jpg" alt="Contents and Fire Insurance brochure page 01" loading="lazy">
-            <figcaption class="brochure-page-caption">
-              <span>Page 01</span>
-            </figcaption>
-          </figure>
-
-        </div>
+        <div class="brochure-pages-stack" id="brochure-pages-stack"></div>
 
       </div>
     </section>
@@ -237,7 +188,7 @@
       <div class="container">
 
         <div class="brochure-nav-row">
-          <a href="/brand/kemper/brochure/brochure-03/" class="brochure-nav-link">
+          <a href="/brand/kemper/brochure/images/brochure-03/" class="brochure-nav-link">
             ← Previous Brochure
           </a>
 
@@ -285,6 +236,42 @@
       .then(function(data) {
         document.getElementById('navbar-placeholder').innerHTML = data;
       });
+
+    var pages = [
+      {
+        src: 'images/cover.jpg',
+        alt: 'Contents / Fire Insurance brochure cover',
+        caption: 'Cover'
+      },
+      {
+        src: 'images/brochure-01.jpg',
+        alt: 'Contents / Fire Insurance brochure page 01',
+        caption: 'Page 01'
+      }
+    ];
+
+    var pagesStack = document.getElementById('brochure-pages-stack');
+
+    pages.forEach(function(page) {
+      var figure = document.createElement('figure');
+      figure.className = 'brochure-page';
+
+      var image = document.createElement('img');
+      image.src = page.src;
+      image.alt = page.alt;
+
+      var figcaption = document.createElement('figcaption');
+      figcaption.className = 'brochure-page-caption';
+
+      var captionText = document.createElement('span');
+      captionText.textContent = page.caption;
+
+      figcaption.appendChild(captionText);
+      figure.appendChild(image);
+      figure.appendChild(figcaption);
+
+      pagesStack.appendChild(figure);
+    });
   </script>
 
 </body>
