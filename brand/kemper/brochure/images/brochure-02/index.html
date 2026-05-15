@@ -7,7 +7,7 @@
 
   <title>Corporate Responsibility Report — Luciano Campos</title>
 
-  <meta name="description" content="Kemper Corporate Responsibility Report brochure layout by Luciano Campos.">
+  <meta name="description" content="Kemper Corporate Responsibility Report designed by Luciano Campos.">
 
   <link rel="icon" type="image/png" href="/favicon.png">
 
@@ -23,46 +23,22 @@
   <link rel="stylesheet" href="/brand/style.css">
 
   <style>
-    .brochure-detail-subheader {
-      max-width: 760px;
-      margin-top: 22px;
+    .brochure-detail-hero {
+      padding-bottom: 52px;
+    }
+
+    .brochure-detail-hero .hero-title {
+      max-width: 860px;
+      margin-bottom: 26px;
+    }
+
+    .brochure-detail-copy {
+      max-width: 720px;
       color: #666666;
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       line-height: 1.72;
       font-weight: 400;
       letter-spacing: -0.01em;
-    }
-
-    .brochure-detail-meta {
-      padding: 0 0 54px;
-    }
-
-    .brochure-detail-meta-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      border-top: 1px solid rgba(0, 0, 0, 0.12);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-      padding: 28px 0;
-    }
-
-    .brochure-detail-meta-item span {
-      display: block;
-      margin-bottom: 8px;
-      color: #777777;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .brochure-detail-meta-item p {
-      margin: 0;
-      color: #111111;
-      font-size: 1rem;
-      line-height: 1.5;
-      font-weight: 500;
-      letter-spacing: -0.02em;
     }
 
     .brochure-pages-section {
@@ -72,6 +48,8 @@
     .brochure-pages-stack {
       max-width: 980px;
       margin: 0 auto;
+      padding-top: 42px;
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
     }
 
     .brochure-page {
@@ -86,7 +64,11 @@
     .brochure-page img {
       width: 100%;
       height: auto;
-      display: block;
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      object-fit: contain;
+      object-position: center;
       background: #f2f2ef;
     }
 
@@ -134,21 +116,24 @@
     }
 
     @media (max-width: 991px) {
-      .brochure-detail-meta-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
-      }
-
       .brochure-pages-stack {
         max-width: 100%;
       }
     }
 
     @media (max-width: 767px) {
-      .brochure-detail-subheader {
+      .brochure-detail-hero {
+        padding-bottom: 42px;
+      }
+
+      .brochure-detail-copy {
         max-width: 100%;
         font-size: 1rem;
         line-height: 1.65;
+      }
+
+      .brochure-pages-stack {
+        padding-top: 32px;
       }
 
       .brochure-page {
@@ -169,20 +154,20 @@
 
   <main>
 
-    <section class="selected-work brand-project-page">
+    <section class="selected-work brand-project-page brochure-detail-hero">
       <div class="container">
 
-        <div class="row mb-5">
+        <div class="row">
           <div class="col-lg-10">
 
-            <p class="eyebrow">Kemper / Brochure 02</p>
+            <p class="eyebrow">Kemper</p>
 
             <h1 class="hero-title">
               Corporate Responsibility Report
             </h1>
 
-            <p class="hero-subtitle brochure-detail-subheader">
-              A long-form corporate report designed to transform dense business, social responsibility, and brand content into a structured editorial experience with clear pacing, strong hierarchy, and a polished professional presentation.
+            <p class="hero-subtitle brochure-detail-copy">
+              A long-form corporate report designed to organize responsibility, business, and community-focused content into a polished editorial experience — using clear hierarchy, consistent pacing, and structured page layouts to make complex information easier to navigate.
             </p>
 
           </div>
@@ -191,187 +176,10 @@
       </div>
     </section>
 
-    <section class="brochure-detail-meta">
-      <div class="container">
-
-        <div class="brochure-detail-meta-grid">
-
-          <div class="brochure-detail-meta-item">
-            <span>Client</span>
-            <p>Kemper</p>
-          </div>
-
-          <div class="brochure-detail-meta-item">
-            <span>Category</span>
-            <p>Corporate Report / Editorial Layout</p>
-          </div>
-
-          <div class="brochure-detail-meta-item">
-            <span>Focus</span>
-            <p>Content structure, page hierarchy, reporting clarity, brand consistency, and long-form visual storytelling.</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
     <section class="brochure-pages-section">
       <div class="container">
 
-        <div class="brochure-pages-stack">
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-02.jpg" alt="Corporate Responsibility Report page 02" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 02</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-03.jpg" alt="Corporate Responsibility Report page 03" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 03</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-04.jpg" alt="Corporate Responsibility Report page 04" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 04</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-05.jpg" alt="Corporate Responsibility Report page 05" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 05</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-06.jpg" alt="Corporate Responsibility Report page 06" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 06</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-07.jpg" alt="Corporate Responsibility Report page 07" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 07</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-08.jpg" alt="Corporate Responsibility Report page 08" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 08</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-09.jpg" alt="Corporate Responsibility Report page 09" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 09</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-10.jpg" alt="Corporate Responsibility Report page 10" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 10</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-11.jpg" alt="Corporate Responsibility Report page 11" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 11</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-12.jpg" alt="Corporate Responsibility Report page 12" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 12</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-13.jpg" alt="Corporate Responsibility Report page 13" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 13</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-14.jpg" alt="Corporate Responsibility Report page 14" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 14</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-15.jpg" alt="Corporate Responsibility Report page 15" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 15</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-16.jpg" alt="Corporate Responsibility Report page 16" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 16</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-17.jpg" alt="Corporate Responsibility Report page 17" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 17</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-18.jpg" alt="Corporate Responsibility Report page 18" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 18</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-19.jpg" alt="Corporate Responsibility Report page 19" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 19</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-20.jpg" alt="Corporate Responsibility Report page 20" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 20</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-21.jpg" alt="Corporate Responsibility Report page 21" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 21</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-22.jpg" alt="Corporate Responsibility Report page 22" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 22</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-23.jpg" alt="Corporate Responsibility Report page 23" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 23</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-24.jpg" alt="Corporate Responsibility Report page 24" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 24</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-25.jpg" alt="Corporate Responsibility Report page 25" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 25</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-26.jpg" alt="Corporate Responsibility Report page 26" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 26</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-27.jpg" alt="Corporate Responsibility Report page 27" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 27</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-28.jpg" alt="Corporate Responsibility Report page 28" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 28</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-29.jpg" alt="Corporate Responsibility Report page 29" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 29</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-30.jpg" alt="Corporate Responsibility Report page 30" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 30</span></figcaption>
-          </figure>
-
-          <figure class="brochure-page">
-            <img src="/brand/kemper/brochure/images/brochure-02/brochure-31.jpg" alt="Corporate Responsibility Report page 31" loading="lazy">
-            <figcaption class="brochure-page-caption"><span>Page 31</span></figcaption>
-          </figure>
-
-        </div>
+        <div class="brochure-pages-stack" id="brochure-pages-stack"></div>
 
       </div>
     </section>
@@ -380,7 +188,7 @@
       <div class="container">
 
         <div class="brochure-nav-row">
-          <a href="/brand/kemper/brochure/brochure-01/" class="brochure-nav-link">
+          <a href="/brand/kemper/brochure/images/brochure-01/" class="brochure-nav-link">
             ← Previous Brochure
           </a>
 
@@ -388,7 +196,7 @@
             Back to Brochures
           </a>
 
-          <a href="/brand/kemper/brochure/brochure-03/" class="brochure-nav-link">
+          <a href="/brand/kemper/brochure/images/brochure-03/" class="brochure-nav-link">
             Next Brochure →
           </a>
         </div>
@@ -432,6 +240,49 @@
       .then(function(data) {
         document.getElementById('navbar-placeholder').innerHTML = data;
       });
+
+    function padNumber(number) {
+      return String(number).padStart(2, '0');
+    }
+
+    var pages = [
+      {
+        src: 'images/cover.jpg',
+        alt: 'Corporate Responsibility Report cover',
+        caption: 'Cover'
+      }
+    ];
+
+    for (var i = 2; i <= 31; i++) {
+      pages.push({
+        src: 'images/brochure-' + padNumber(i) + '.jpg',
+        alt: 'Corporate Responsibility Report page ' + padNumber(i),
+        caption: 'Page ' + padNumber(i)
+      });
+    }
+
+    var pagesStack = document.getElementById('brochure-pages-stack');
+
+    pages.forEach(function(page) {
+      var figure = document.createElement('figure');
+      figure.className = 'brochure-page';
+
+      var image = document.createElement('img');
+      image.src = page.src;
+      image.alt = page.alt;
+
+      var figcaption = document.createElement('figcaption');
+      figcaption.className = 'brochure-page-caption';
+
+      var captionText = document.createElement('span');
+      captionText.textContent = page.caption;
+
+      figcaption.appendChild(captionText);
+      figure.appendChild(image);
+      figure.appendChild(figcaption);
+
+      pagesStack.appendChild(figure);
+    });
   </script>
 
 </body>
