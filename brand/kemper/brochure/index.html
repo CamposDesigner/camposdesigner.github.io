@@ -23,6 +23,75 @@
   <link rel="stylesheet" href="/brand/style.css">
 
   <style>
+    .brochure-intro-copy {
+      max-width: 880px;
+      color: #555555;
+      font-size: clamp(1.15rem, 2vw, 1.55rem);
+      line-height: 1.55;
+      letter-spacing: -0.035em;
+      font-weight: 500;
+    }
+
+    .brochure-intro-copy strong {
+      color: #111111;
+      font-weight: 800;
+    }
+
+    .brochure-strategy-section {
+      padding: 10px 0 70px;
+    }
+
+    .brochure-strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .brochure-strategy-card {
+      min-height: 385px;
+      padding: 34px 30px;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 24px;
+      background: #ffffff;
+    }
+
+    .brochure-strategy-number {
+      display: block;
+      margin-bottom: 48px;
+      color: #1f5cff;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+    }
+
+    .brochure-strategy-label {
+      display: block;
+      margin-bottom: 22px;
+      color: #777777;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .brochure-strategy-card h3 {
+      max-width: 300px;
+      margin-bottom: 18px;
+      color: #111111;
+      font-size: 1.55rem;
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+      font-weight: 800;
+    }
+
+    .brochure-strategy-card p {
+      margin-bottom: 0;
+      color: #666666;
+      font-size: 1rem;
+      line-height: 1.55;
+      letter-spacing: -0.02em;
+    }
+
     .brochure-buckets-section {
       padding-bottom: 78px;
     }
@@ -111,7 +180,19 @@
 
     .brochure-viewer.active {
       display: block;
-      animation: fadeUpVisible 0.5s ease both;
+      animation: fadeUpVisible 0.45s ease both;
+    }
+
+    @keyframes fadeUpVisible {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .brochure-viewer-header {
@@ -190,9 +271,22 @@
 
     .brand-back-section {
       padding-top: 0;
+      padding-bottom: 80px;
     }
 
     @media (max-width: 991px) {
+      .brochure-strategy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brochure-strategy-card {
+        min-height: auto;
+      }
+
+      .brochure-strategy-number {
+        margin-bottom: 34px;
+      }
+
       .brochure-grid {
         grid-template-columns: 1fr;
       }
@@ -222,6 +316,10 @@
       .brochure-page-card img {
         padding: 14px;
       }
+
+      .brochure-strategy-card {
+        padding: 28px 24px;
+      }
     }
   </style>
 </head>
@@ -236,7 +334,7 @@
       <div class="container">
 
         <div class="row mb-5">
-          <div class="col-lg-9">
+          <div class="col-lg-10">
 
             <p class="eyebrow">Kemper</p>
 
@@ -244,11 +342,64 @@
               Brochures
             </h1>
 
-            <p class="hero-subtitle">
-              Brochure and report layouts designed for corporate communication, brand storytelling, and structured editorial presentation.
+            <p class="hero-subtitle brochure-intro-copy">
+              <strong>Turning complex corporate information into clear, polished, and scalable visual communication.</strong>
+              These brochure systems were built to make dense business content feel organized, credible, and easy to navigate — balancing brand consistency, editorial rhythm, image hierarchy, and production-ready layouts across multiple formats.
             </p>
 
           </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="brochure-strategy-section">
+      <div class="container">
+
+        <div class="brochure-strategy-grid">
+
+          <article class="brochure-strategy-card">
+            <span class="brochure-strategy-number">01</span>
+
+            <span class="brochure-strategy-label">Challenge</span>
+
+            <h3>
+              Scale without losing consistency.
+            </h3>
+
+            <p>
+              Kemper needed communication materials that could support different business units, campaign needs, internal messaging, and customer-facing content while still feeling connected to the same brand system.
+            </p>
+          </article>
+
+          <article class="brochure-strategy-card">
+            <span class="brochure-strategy-number">02</span>
+
+            <span class="brochure-strategy-label">Approach</span>
+
+            <h3>
+              Build modular visual structures.
+            </h3>
+
+            <p>
+              I used repeatable grids, consistent typography, adaptable image areas, and flexible layout patterns that could work across brochures, reports, campaigns, social assets, wireframes, and web pages.
+            </p>
+          </article>
+
+          <article class="brochure-strategy-card">
+            <span class="brochure-strategy-number">03</span>
+
+            <span class="brochure-strategy-label">Outcome</span>
+
+            <h3>
+              A more cohesive brand experience.
+            </h3>
+
+            <p>
+              The final work created a cleaner and more scalable communication system, helping different materials feel unified while still allowing each format to serve its specific purpose.
+            </p>
+          </article>
+
         </div>
 
       </div>
@@ -302,18 +453,18 @@
 
   </main>
 
-  <footer>
+  <footer class="footer-section">
     <div class="container">
       <div class="row align-items-center">
 
         <div class="col-md-6 text-left">
-          <p class="footer-text">
+          <p class="footer-copy mb-0">
             Product • Brand • UI/UX Designer
           </p>
         </div>
 
         <div class="col-md-6 text-md-right text-left mt-3 mt-md-0">
-          <p class="footer-text">
+          <p class="footer-copy mb-0">
             © 2026 Luciano Campos
           </p>
         </div>
@@ -383,7 +534,7 @@
       {
         category: 'Brochure 02',
         title: 'Corporate Responsibility Report',
-        description: 'Long-form report layout structured for corporate storytelling and information design.',
+        description: 'Long-form report layout structured for corporate storytelling, information hierarchy, and editorial pacing.',
         cover: {
           src: '/brand/kemper/brochure/images/brochure-02/cover.jpg',
           alt: 'Kemper Corporate Responsibility Report cover'
@@ -393,7 +544,7 @@
       {
         category: 'Brochure 03',
         title: 'Vanguard Conference Digital Flyer',
-        description: 'Short brochure/flyer layout with focused visual presentation.',
+        description: 'Short brochure and flyer layout with focused visual presentation.',
         cover: {
           src: '/brand/kemper/brochure/images/brochure-03/cover.jpg',
           alt: 'Kemper brochure 03 cover'
@@ -439,6 +590,7 @@
 
     function createBrochureBucket(brochure, index) {
       var bucket = document.createElement('div');
+
       bucket.className = 'brochure-bucket';
       bucket.setAttribute('role', 'button');
       bucket.setAttribute('tabindex', '0');
