@@ -24,27 +24,104 @@
   <link rel="stylesheet" href="/brand/style.css">
 
   <style>
-    .stacked-brochure-gallery .project-pdf-card {
-      height: auto;
+    .brochure-buckets-section {
+      padding-bottom: 90px;
     }
 
-    .stacked-brochure-gallery .project-pdf-card object {
-      width: 100%;
-      height: 720px;
-      display: block;
+    .brochure-bucket {
+      margin-bottom: 72px;
+      padding: 38px;
+      border-radius: 30px;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.06);
+    }
+
+    .brochure-bucket-header {
+      margin-bottom: 34px;
+    }
+
+    .brochure-bucket-header h2 {
+      margin-bottom: 12px;
+    }
+
+    .brochure-bucket-header p:not(.eyebrow) {
+      max-width: 720px;
+      color: #5f5f5f;
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .brochure-page-gallery {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .brochure-page-item {
+      margin-bottom: 34px;
+    }
+
+    .brochure-page-card {
+      overflow: hidden;
+      border-radius: 24px;
       background: #f2f2ef;
-      border: 0;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.045);
     }
 
-    @media (max-width: 991px) {
-      .stacked-brochure-gallery .project-pdf-card object {
-        height: 620px;
-      }
+    .brochure-page-card img {
+      width: 100%;
+      height: auto;
+      max-height: none;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      background: #f2f2ef;
+      padding: 24px;
+    }
+
+    .brochure-page-caption {
+      padding: 18px 22px;
+      background: #ffffff;
+    }
+
+    .brochure-page-caption span {
+      display: block;
+      color: #777777;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brochure-empty-message {
+      padding: 28px;
+      border-radius: 20px;
+      background: #f7f7f4;
+      color: #666666;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .brochure-loading-message {
+      padding: 28px;
+      border-radius: 20px;
+      background: #f7f7f4;
+      color: #666666;
+      font-size: 16px;
+      line-height: 1.65;
     }
 
     @media (max-width: 767px) {
-      .stacked-brochure-gallery .project-pdf-card object {
-        height: 520px;
+      .brochure-bucket {
+        padding: 24px;
+        border-radius: 22px;
+        margin-bottom: 48px;
+      }
+
+      .brochure-page-card img {
+        padding: 16px;
       }
     }
   </style>
@@ -85,7 +162,7 @@
 
     </section>
 
-    <section class="brand-category-section last">
+    <section class="brochure-buckets-section">
 
       <div class="container">
 
@@ -101,48 +178,112 @@
 
         </div>
 
-        <div class="row stacked-brochure-gallery">
+        <div class="brochure-bucket" data-brochure="01">
 
-          <div class="col-12 mb-5">
+          <div class="brochure-bucket-header">
 
-            <div class="project-pdf-card">
+            <p class="eyebrow">
+              Brochure 01
+            </p>
 
-              <object data="/brand/kemper/brochure/Images/pdf-originals/images/full-brochure-01.pdf"
-                      type="application/pdf"></object>
+            <h2>
+              Vanguard Leaders Conference
+            </h2>
 
+            <p>
+              Full brochure layout presented as individual image pages for a more reliable viewing experience.
+            </p>
+
+          </div>
+
+          <div id="brochure-gallery-01" class="brochure-page-gallery">
+
+            <div class="brochure-loading-message">
+              Loading brochure pages...
             </div>
 
           </div>
 
-          <div class="col-12 mb-5">
+        </div>
 
-            <div class="project-pdf-card">
+        <div class="brochure-bucket" data-brochure="02">
 
-              <object data="/brand/kemper/brochure/Images/pdf-originals/images/full-brochure-02.pdf"
-                      type="application/pdf"></object>
+          <div class="brochure-bucket-header">
 
+            <p class="eyebrow">
+              Brochure 02
+            </p>
+
+            <h2>
+              Community Impact Report
+            </h2>
+
+            <p>
+              Full brochure layout presented as individual image pages for a more reliable viewing experience.
+            </p>
+
+          </div>
+
+          <div id="brochure-gallery-02" class="brochure-page-gallery">
+
+            <div class="brochure-loading-message">
+              Loading brochure pages...
             </div>
 
           </div>
 
-          <div class="col-12 mb-5">
+        </div>
 
-            <div class="project-pdf-card">
+        <div class="brochure-bucket" data-brochure="03">
 
-              <object data="/brand/kemper/brochure/Images/pdf-originals/images/full-brochure-03.pdf"
-                      type="application/pdf"></object>
+          <div class="brochure-bucket-header">
 
+            <p class="eyebrow">
+              Brochure 03
+            </p>
+
+            <h2>
+              Corporate Responsibility Report
+            </h2>
+
+            <p>
+              Full brochure layout presented as individual image pages for a more reliable viewing experience.
+            </p>
+
+          </div>
+
+          <div id="brochure-gallery-03" class="brochure-page-gallery">
+
+            <div class="brochure-loading-message">
+              Loading brochure pages...
             </div>
 
           </div>
 
-          <div class="col-12 mb-5">
+        </div>
 
-            <div class="project-pdf-card">
+        <div class="brochure-bucket" data-brochure="04">
 
-              <object data="/brand/kemper/brochure/Images/pdf-originals/images/full-brochure-04.pdf"
-                      type="application/pdf"></object>
+          <div class="brochure-bucket-header">
 
+            <p class="eyebrow">
+              Brochure 04
+            </p>
+
+            <h2>
+              Contents / Fire Insurance
+            </h2>
+
+            <p>
+              Full brochure layout presented as individual image pages for a more reliable viewing experience.
+            </p>
+
+          </div>
+
+          <div id="brochure-gallery-04" class="brochure-page-gallery">
+
+            <div class="brochure-loading-message">
+              Loading brochure pages...
             </div>
 
           </div>
@@ -207,6 +348,157 @@
       .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
       });
+
+    function imageExists(src) {
+      return new Promise(function(resolve) {
+        var img = new Image();
+
+        img.onload = function() {
+          resolve(true);
+        };
+
+        img.onerror = function() {
+          resolve(false);
+        };
+
+        img.src = src;
+      });
+    }
+
+    function buildCandidateSources(brochureNumber, pageNumber) {
+      var basePath = '/brand/kemper/brochure/Images/Images/';
+      var brochure = String(brochureNumber).padStart(2, '0');
+      var page = String(pageNumber).padStart(2, '0');
+      var pageNoZero = String(pageNumber);
+      var extensions = ['jpg', 'jpeg', 'png', 'webp', 'JPG', 'JPEG', 'PNG', 'WEBP'];
+      var baseNames = [];
+
+      if (pageNumber === 1) {
+        baseNames.push('brochure-' + brochure);
+      }
+
+      baseNames.push('brochure-' + brochure + '-' + page);
+      baseNames.push('brochure-' + brochure + '-' + pageNoZero);
+      baseNames.push('brochure-' + brochure + '_' + page);
+      baseNames.push('brochure-' + brochure + '_' + pageNoZero);
+      baseNames.push('brochure-' + brochure + '-page-' + page);
+      baseNames.push('brochure-' + brochure + '-page-' + pageNoZero);
+      baseNames.push('brochure-' + brochure + '_page_' + page);
+      baseNames.push('brochure-' + brochure + '_page_' + pageNoZero);
+      baseNames.push('brochure-' + brochure + '_Page_' + page);
+      baseNames.push('brochure-' + brochure + '_Page_' + pageNoZero);
+      baseNames.push('brochure-' + brochure + '-p' + page);
+
+      baseNames.push('full-brochure-' + brochure + '-' + page);
+      baseNames.push('full-brochure-' + brochure + '-' + pageNoZero);
+      baseNames.push('full-brochure-' + brochure + '_page_' + page);
+      baseNames.push('full-brochure-' + brochure + '_page_' + pageNoZero);
+      baseNames.push('full-brochure-' + brochure + '_Page_' + page);
+      baseNames.push('full-brochure-' + brochure + '_Page_' + pageNoZero);
+
+      baseNames.push('brochure-' + brochure + '/page-' + page);
+      baseNames.push('brochure-' + brochure + '/page-' + pageNoZero);
+      baseNames.push('brochure-' + brochure + '/' + page);
+      baseNames.push('brochure-' + brochure + '/' + pageNoZero);
+
+      var sources = [];
+
+      for (var i = 0; i < baseNames.length; i++) {
+        for (var e = 0; e < extensions.length; e++) {
+          sources.push(basePath + baseNames[i] + '.' + extensions[e]);
+        }
+      }
+
+      return sources;
+    }
+
+    function createBrochurePageCard(src, brochureNumber, pageNumber) {
+      var item = document.createElement('div');
+      item.className = 'brochure-page-item';
+
+      var card = document.createElement('div');
+      card.className = 'brochure-page-card';
+
+      var image = document.createElement('img');
+      image.src = src;
+      image.alt = 'Kemper brochure ' + brochureNumber + ' page ' + pageNumber;
+
+      var caption = document.createElement('div');
+      caption.className = 'brochure-page-caption';
+
+      var label = document.createElement('span');
+      label.textContent = 'Brochure ' + brochureNumber + ' / Page ' + String(pageNumber).padStart(2, '0');
+
+      caption.appendChild(label);
+      card.appendChild(image);
+      card.appendChild(caption);
+      item.appendChild(card);
+
+      return item;
+    }
+
+    async function findFirstExistingImage(sources) {
+      for (var i = 0; i < sources.length; i++) {
+        var exists = await imageExists(sources[i]);
+
+        if (exists) {
+          return sources[i];
+        }
+      }
+
+      return null;
+    }
+
+    async function loadBrochurePages(brochureNumber) {
+      var gallery = document.getElementById('brochure-gallery-' + brochureNumber);
+
+      if (!gallery) {
+        return;
+      }
+
+      gallery.innerHTML = '';
+
+      var foundPages = 0;
+      var missingStreak = 0;
+      var maxPages = 80;
+
+      for (var pageNumber = 1; pageNumber <= maxPages; pageNumber++) {
+        var sources = buildCandidateSources(brochureNumber, pageNumber);
+        var foundSource = await findFirstExistingImage(sources);
+
+        if (foundSource) {
+          foundPages++;
+          missingStreak = 0;
+
+          gallery.appendChild(
+            createBrochurePageCard(foundSource, brochureNumber, foundPages)
+          );
+        } else {
+          if (foundPages > 0) {
+            missingStreak++;
+          }
+
+          if (foundPages > 0 && missingStreak >= 5) {
+            break;
+          }
+        }
+      }
+
+      if (foundPages === 0) {
+        gallery.innerHTML = '';
+
+        var message = document.createElement('div');
+        message.className = 'brochure-empty-message';
+        message.textContent = 'No brochure page images were found for this brochure yet. Add JPG, PNG, or WebP page images into /brand/kemper/brochure/Images/Images/ using names like brochure-' + brochureNumber + '-01.jpg, brochure-' + brochureNumber + '-02.jpg, and so on.';
+
+        gallery.appendChild(message);
+      }
+    }
+
+    loadBrochurePages('01');
+    loadBrochurePages('02');
+    loadBrochurePages('03');
+    loadBrochurePages('04');
   </script>
 
 </body>
