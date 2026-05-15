@@ -106,7 +106,6 @@
       border: 1px solid rgba(0, 0, 0, 0.08);
       border-radius: 22px;
       overflow: hidden;
-      cursor: pointer;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
@@ -167,104 +166,6 @@
       transform: translateX(4px);
     }
 
-    .brochure-viewer {
-      display: none;
-      margin-top: 44px;
-      padding-top: 34px;
-      border-top: 1px solid rgba(0, 0, 0, 0.14);
-    }
-
-    .brochure-viewer.active {
-      display: block;
-      animation: fadeUpVisible 0.45s ease both;
-    }
-
-    @keyframes fadeUpVisible {
-      from {
-        opacity: 0;
-        transform: translateY(14px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .brochure-viewer-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 24px;
-      margin-bottom: 34px;
-    }
-
-    .brochure-viewer-header h2 {
-      margin-bottom: 12px;
-    }
-
-    .brochure-viewer-header p {
-      max-width: 620px;
-      margin-bottom: 0;
-    }
-
-    .brochure-close-button {
-      border: 1px solid rgba(0, 0, 0, 0.14);
-      background: #ffffff;
-      color: #111111;
-      border-radius: 11px;
-      padding: 12px 22px;
-      font-size: 0.88rem;
-      font-weight: 800;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      white-space: nowrap;
-    }
-
-    .brochure-close-button:hover {
-      background: #111111;
-      color: #ffffff;
-      transform: translateY(-2px);
-    }
-
-    .brochure-pages-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-    }
-
-    .brochure-page-card {
-      overflow: hidden;
-      border-radius: 22px;
-      background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.06);
-    }
-
-    .brochure-page-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: contain;
-      object-position: center;
-      background: #f2f2ef;
-      padding: 18px;
-    }
-
-    .brochure-page-caption {
-      padding: 16px 18px;
-      background: #ffffff;
-    }
-
-    .brochure-page-caption span {
-      display: block;
-      color: #777777;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
     .brand-back-section {
       padding-top: 0;
       padding-bottom: 80px;
@@ -290,14 +191,6 @@
       .brochure-cover-wrap img {
         height: 300px;
       }
-
-      .brochure-viewer-header {
-        flex-direction: column;
-      }
-
-      .brochure-pages-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     @media (max-width: 767px) {
@@ -313,10 +206,6 @@
 
       .brochure-bucket-content {
         padding: 22px;
-      }
-
-      .brochure-page-card img {
-        padding: 14px;
       }
 
       .brochure-strategy-card {
@@ -417,28 +306,96 @@
           </h2>
         </div>
 
-        <div class="brochure-grid" id="brochure-grid"></div>
+        <div class="brochure-grid">
 
-        <div class="brochure-viewer" id="brochure-viewer">
-          <div class="brochure-viewer-header">
-            <div>
-              <p class="eyebrow" id="viewer-category">Brochure</p>
-
-              <h2 id="viewer-title">
-                Brochure
-              </h2>
-
-              <p id="viewer-description">
-                Selected brochure pages.
-              </p>
+          <a class="brochure-bucket" href="/brand/kemper/brochure/brochure-01/">
+            <div class="brochure-cover-wrap">
+              <img src="/brand/kemper/brochure/images/brochure-01/cover.jpg" alt="Kemper Vanguard Leaders Conference brochure cover" loading="lazy">
             </div>
 
-            <button class="brochure-close-button" type="button" id="close-viewer">
-              Close
-            </button>
-          </div>
+            <div class="brochure-bucket-content">
+              <span class="project-category">Brochure 01</span>
 
-          <div class="brochure-pages-grid" id="brochure-pages-grid"></div>
+              <h3 class="project-title">
+                Vanguard Leaders Conference
+              </h3>
+
+              <p>
+                Multi-page corporate brochure layout with cover and internal pages.
+              </p>
+
+              <span class="brochure-view-link">
+                View full brochure
+              </span>
+            </div>
+          </a>
+
+          <a class="brochure-bucket" href="/brand/kemper/brochure/brochure-02/">
+            <div class="brochure-cover-wrap">
+              <img src="/brand/kemper/brochure/images/brochure-02/cover.jpg" alt="Kemper Corporate Responsibility Report cover" loading="lazy">
+            </div>
+
+            <div class="brochure-bucket-content">
+              <span class="project-category">Brochure 02</span>
+
+              <h3 class="project-title">
+                Corporate Responsibility Report
+              </h3>
+
+              <p>
+                Long-form report layout structured for corporate storytelling, information hierarchy, and editorial pacing.
+              </p>
+
+              <span class="brochure-view-link">
+                View full brochure
+              </span>
+            </div>
+          </a>
+
+          <a class="brochure-bucket" href="/brand/kemper/brochure/brochure-03/">
+            <div class="brochure-cover-wrap">
+              <img src="/brand/kemper/brochure/images/brochure-03/cover.jpg" alt="Kemper Vanguard Conference Digital Flyer cover" loading="lazy">
+            </div>
+
+            <div class="brochure-bucket-content">
+              <span class="project-category">Brochure 03</span>
+
+              <h3 class="project-title">
+                Vanguard Conference Digital Flyer
+              </h3>
+
+              <p>
+                Short brochure and flyer layout with focused visual presentation.
+              </p>
+
+              <span class="brochure-view-link">
+                View full brochure
+              </span>
+            </div>
+          </a>
+
+          <a class="brochure-bucket" href="/brand/kemper/brochure/brochure-04/">
+            <div class="brochure-cover-wrap">
+              <img src="/brand/kemper/brochure/images/brochure-04/cover.jpg" alt="Kemper Contents and Fire Insurance brochure cover" loading="lazy">
+            </div>
+
+            <div class="brochure-bucket-content">
+              <span class="project-category">Brochure 04</span>
+
+              <h3 class="project-title">
+                Contents / Fire Insurance
+              </h3>
+
+              <p>
+                Single brochure page presented as a compact campaign and communication asset.
+              </p>
+
+              <span class="brochure-view-link">
+                View full brochure
+              </span>
+            </div>
+          </a>
+
         </div>
 
       </div>
@@ -488,217 +445,6 @@
       .then(function(data) {
         document.getElementById('navbar-placeholder').innerHTML = data;
       });
-
-    function padNumber(number) {
-      return String(number).padStart(2, '0');
-    }
-
-    function buildBrochure01Pages() {
-      var pages = [];
-
-      for (var i = 1; i <= 20; i++) {
-        pages.push({
-          src: '/brand/kemper/brochure/images/brochure-01/brochure-01-' + padNumber(i) + '.jpg',
-          alt: 'Kemper brochure 01 page ' + padNumber(i),
-          caption: 'Brochure 01 / Page ' + padNumber(i)
-        });
-      }
-
-      return pages;
-    }
-
-    function buildBrochure02Pages() {
-      var pages = [];
-
-      for (var i = 2; i <= 31; i++) {
-        pages.push({
-          src: '/brand/kemper/brochure/images/brochure-02/brochure-' + padNumber(i) + '.jpg',
-          alt: 'Corporate Responsibility Report page ' + padNumber(i),
-          caption: 'Brochure 02 / Page ' + padNumber(i)
-        });
-      }
-
-      return pages;
-    }
-
-    var brochures = [
-      {
-        category: 'Brochure 01',
-        title: 'Vanguard Leaders Conference',
-        description: 'Multi-page corporate brochure layout with cover and internal pages.',
-        cover: {
-          src: '/brand/kemper/brochure/images/brochure-01/cover.jpg',
-          alt: 'Kemper brochure 01 cover'
-        },
-        pages: buildBrochure01Pages()
-      },
-      {
-        category: 'Brochure 02',
-        title: 'Corporate Responsibility Report',
-        description: 'Long-form report layout structured for corporate storytelling, information hierarchy, and editorial pacing.',
-        cover: {
-          src: '/brand/kemper/brochure/images/brochure-02/cover.jpg',
-          alt: 'Kemper Corporate Responsibility Report cover'
-        },
-        pages: buildBrochure02Pages()
-      },
-      {
-        category: 'Brochure 03',
-        title: 'Vanguard Conference Digital Flyer',
-        description: 'Short brochure and flyer layout with focused visual presentation.',
-        cover: {
-          src: '/brand/kemper/brochure/images/brochure-03/cover.jpg',
-          alt: 'Kemper brochure 03 cover'
-        },
-        pages: [
-          {
-            src: '/brand/kemper/brochure/images/brochure-03/brochure-02.jpg',
-            alt: 'Kemper brochure 03 page 02',
-            caption: 'Brochure 03 / Page 02'
-          },
-          {
-            src: '/brand/kemper/brochure/images/brochure-03/brochure-03.jpg',
-            alt: 'Kemper brochure 03 page 03',
-            caption: 'Brochure 03 / Page 03'
-          }
-        ]
-      },
-      {
-        category: 'Brochure 04',
-        title: 'Contents / Fire Insurance',
-        description: 'Single brochure page presented as a compact campaign and communication asset.',
-        cover: {
-          src: '/brand/kemper/brochure/images/brochure-04/cover.jpg',
-          alt: 'Kemper brochure 04 cover'
-        },
-        pages: [
-          {
-            src: '/brand/kemper/brochure/images/brochure-04/brochure-01.jpg',
-            alt: 'Kemper brochure 04 page 01',
-            caption: 'Brochure 04 / Page 01'
-          }
-        ]
-      }
-    ];
-
-    var brochureGrid = document.getElementById('brochure-grid');
-    var brochureViewer = document.getElementById('brochure-viewer');
-    var viewerCategory = document.getElementById('viewer-category');
-    var viewerTitle = document.getElementById('viewer-title');
-    var viewerDescription = document.getElementById('viewer-description');
-    var brochurePagesGrid = document.getElementById('brochure-pages-grid');
-    var closeViewer = document.getElementById('close-viewer');
-
-    function createBrochureBucket(brochure, index) {
-      var bucket = document.createElement('div');
-
-      bucket.className = 'brochure-bucket';
-      bucket.setAttribute('role', 'button');
-      bucket.setAttribute('tabindex', '0');
-      bucket.setAttribute('aria-label', 'View full brochure: ' + brochure.title);
-
-      var coverWrap = document.createElement('div');
-      coverWrap.className = 'brochure-cover-wrap';
-
-      var coverImage = document.createElement('img');
-      coverImage.src = brochure.cover.src;
-      coverImage.alt = brochure.cover.alt;
-      coverImage.loading = 'lazy';
-
-      coverWrap.appendChild(coverImage);
-
-      var content = document.createElement('div');
-      content.className = 'brochure-bucket-content';
-
-      var category = document.createElement('span');
-      category.className = 'project-category';
-      category.textContent = brochure.category;
-
-      var title = document.createElement('h3');
-      title.className = 'project-title';
-      title.textContent = brochure.title;
-
-      var description = document.createElement('p');
-      description.textContent = brochure.description;
-
-      var viewLink = document.createElement('span');
-      viewLink.className = 'brochure-view-link';
-      viewLink.textContent = 'View full brochure';
-
-      content.appendChild(category);
-      content.appendChild(title);
-      content.appendChild(description);
-      content.appendChild(viewLink);
-
-      bucket.appendChild(coverWrap);
-      bucket.appendChild(content);
-
-      bucket.addEventListener('click', function() {
-        openBrochure(index);
-      });
-
-      bucket.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          openBrochure(index);
-        }
-      });
-
-      return bucket;
-    }
-
-    function createPageCard(page) {
-      var card = document.createElement('div');
-      card.className = 'brochure-page-card';
-
-      var image = document.createElement('img');
-      image.src = page.src;
-      image.alt = page.alt;
-      image.loading = 'lazy';
-
-      var caption = document.createElement('div');
-      caption.className = 'brochure-page-caption';
-
-      var captionText = document.createElement('span');
-      captionText.textContent = page.caption;
-
-      caption.appendChild(captionText);
-
-      card.appendChild(image);
-      card.appendChild(caption);
-
-      return card;
-    }
-
-    function openBrochure(index) {
-      var brochure = brochures[index];
-
-      viewerCategory.textContent = brochure.category;
-      viewerTitle.textContent = brochure.title;
-      viewerDescription.textContent = brochure.description;
-
-      brochurePagesGrid.innerHTML = '';
-
-      for (var i = 0; i < brochure.pages.length; i++) {
-        brochurePagesGrid.appendChild(createPageCard(brochure.pages[i]));
-      }
-
-      brochureViewer.classList.add('active');
-
-      brochureViewer.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-
-    closeViewer.addEventListener('click', function() {
-      brochureViewer.classList.remove('active');
-      brochurePagesGrid.innerHTML = '';
-    });
-
-    for (var b = 0; b < brochures.length; b++) {
-      brochureGrid.appendChild(createBrochureBucket(brochures[b], b));
-    }
   </script>
 
 </body>
