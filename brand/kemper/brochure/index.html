@@ -54,12 +54,16 @@
     }
 
     .brochure-page-gallery {
-      margin-left: 0;
-      margin-right: 0;
+      width: 100%;
     }
 
     .brochure-page-item {
+      width: 100%;
       margin-bottom: 34px;
+    }
+
+    .brochure-page-item:last-child {
+      margin-bottom: 0;
     }
 
     .brochure-page-card {
@@ -95,16 +99,8 @@
       text-transform: uppercase;
     }
 
+    .brochure-loading-message,
     .brochure-empty-message {
-      padding: 28px;
-      border-radius: 20px;
-      background: #f7f7f4;
-      color: #666666;
-      font-size: 16px;
-      line-height: 1.65;
-    }
-
-    .brochure-loading-message {
       padding: 28px;
       border-radius: 20px;
       background: #f7f7f4;
@@ -178,7 +174,7 @@
 
         </div>
 
-        <div class="brochure-bucket" data-brochure="01">
+        <div class="brochure-bucket">
 
           <div class="brochure-bucket-header">
 
@@ -191,7 +187,7 @@
             </h2>
 
             <p>
-              Full brochure layout presented as individual image pages for a more reliable viewing experience.
+              Full brochure layout presented as individual image pages for a reliable scrolling experience.
             </p>
 
           </div>
@@ -206,7 +202,7 @@
 
         </div>
 
-        <div class="brochure-bucket" data-brochure="02">
+        <div class="brochure-bucket">
 
           <div class="brochure-bucket-header">
 
@@ -219,7 +215,7 @@
             </h2>
 
             <p>
-              Full brochure layout presented as individual image pages for a more reliable viewing experience.
+              Full brochure layout presented as individual image pages for a reliable scrolling experience.
             </p>
 
           </div>
@@ -234,7 +230,7 @@
 
         </div>
 
-        <div class="brochure-bucket" data-brochure="03">
+        <div class="brochure-bucket">
 
           <div class="brochure-bucket-header">
 
@@ -247,7 +243,7 @@
             </h2>
 
             <p>
-              Full brochure layout presented as individual image pages for a more reliable viewing experience.
+              Full brochure layout presented as individual image pages for a reliable scrolling experience.
             </p>
 
           </div>
@@ -262,7 +258,7 @@
 
         </div>
 
-        <div class="brochure-bucket" data-brochure="04">
+        <div class="brochure-bucket">
 
           <div class="brochure-bucket-header">
 
@@ -275,7 +271,7 @@
             </h2>
 
             <p>
-              Full brochure layout presented as individual image pages for a more reliable viewing experience.
+              Full brochure layout presented as individual image pages for a reliable scrolling experience.
             </p>
 
           </div>
@@ -365,13 +361,39 @@
       });
     }
 
-    function buildCandidateSources(brochureNumber, pageNumber) {
+    function createBrochurePageCard(src, brochureLabel, pageLabel) {
+      var item = document.createElement('div');
+      item.className = 'brochure-page-item';
+
+      var card = document.createElement('div');
+      card.className = 'brochure-page-card';
+
+      var image = document.createElement('img');
+      image.src = src;
+      image.alt = brochureLabel + ' ' + pageLabel;
+
+      var caption = document.createElement('div');
+      caption.className = 'brochure-page-caption';
+
+      var label = document.createElement('span');
+      label.textContent = brochureLabel + ' / ' + pageLabel;
+
+      caption.appendChild(label);
+      card.appendChild(image);
+      card.appendChild(caption);
+      item.appendChild(card);
+
+      return item;
+    }
+
+    function buildBrochurePageCandidates(brochureNumber, pageNumber) {
       var basePath = '/brand/kemper/brochure/Images/Images/';
       var brochure = String(brochureNumber).padStart(2, '0');
       var page = String(pageNumber).padStart(2, '0');
       var pageNoZero = String(pageNumber);
       var extensions = ['jpg', 'jpeg', 'png', 'webp', 'JPG', 'JPEG', 'PNG', 'WEBP'];
       var baseNames = [];
+      var candidates = [];
 
       if (pageNumber === 1) {
         baseNames.push('brochure-' + brochure);
@@ -388,6 +410,7 @@
       baseNames.push('brochure-' + brochure + '_Page_' + page);
       baseNames.push('brochure-' + brochure + '_Page_' + pageNoZero);
       baseNames.push('brochure-' + brochure + '-p' + page);
+      baseNames.push('brochure-' + brochure + '-p' + pageNoZero);
 
       baseNames.push('full-brochure-' + brochure + '-' + page);
       baseNames.push('full-brochure-' + brochure + '-' + pageNoZero);
@@ -400,57 +423,32 @@
       baseNames.push('brochure-' + brochure + '/page-' + pageNoZero);
       baseNames.push('brochure-' + brochure + '/' + page);
       baseNames.push('brochure-' + brochure + '/' + pageNoZero);
-
-      var sources = [];
+      baseNames.push('brochure-' + brochure + '/brochure-' + brochure + '-' + page);
+      baseNames.push('brochure-' + brochure + '/brochure-' + brochure + '-' + pageNoZero);
 
       for (var i = 0; i < baseNames.length; i++) {
         for (var e = 0; e < extensions.length; e++) {
-          sources.push(basePath + baseNames[i] + '.' + extensions[e]);
+          candidates.push(basePath + baseNames[i] + '.' + extensions[e]);
         }
       }
 
-      return sources;
+      return candidates;
     }
 
-    function createBrochurePageCard(src, brochureNumber, pageNumber) {
-      var item = document.createElement('div');
-      item.className = 'brochure-page-item';
-
-      var card = document.createElement('div');
-      card.className = 'brochure-page-card';
-
-      var image = document.createElement('img');
-      image.src = src;
-      image.alt = 'Kemper brochure ' + brochureNumber + ' page ' + pageNumber;
-
-      var caption = document.createElement('div');
-      caption.className = 'brochure-page-caption';
-
-      var label = document.createElement('span');
-      label.textContent = 'Brochure ' + brochureNumber + ' / Page ' + String(pageNumber).padStart(2, '0');
-
-      caption.appendChild(label);
-      card.appendChild(image);
-      card.appendChild(caption);
-      item.appendChild(card);
-
-      return item;
-    }
-
-    async function findFirstExistingImage(sources) {
-      for (var i = 0; i < sources.length; i++) {
-        var exists = await imageExists(sources[i]);
+    async function findFirstExistingSource(candidates) {
+      for (var i = 0; i < candidates.length; i++) {
+        var exists = await imageExists(candidates[i]);
 
         if (exists) {
-          return sources[i];
+          return candidates[i];
         }
       }
 
       return null;
     }
 
-    async function loadBrochurePages(brochureNumber) {
-      var gallery = document.getElementById('brochure-gallery-' + brochureNumber);
+    async function loadBrochureBucket(brochureNumber, galleryId) {
+      var gallery = document.getElementById(galleryId);
 
       if (!gallery) {
         return;
@@ -458,47 +456,49 @@
 
       gallery.innerHTML = '';
 
-      var foundPages = 0;
-      var missingStreak = 0;
+      var foundCount = 0;
+      var missingAfterFound = 0;
       var maxPages = 80;
 
       for (var pageNumber = 1; pageNumber <= maxPages; pageNumber++) {
-        var sources = buildCandidateSources(brochureNumber, pageNumber);
-        var foundSource = await findFirstExistingImage(sources);
+        var candidates = buildBrochurePageCandidates(brochureNumber, pageNumber);
+        var source = await findFirstExistingSource(candidates);
 
-        if (foundSource) {
-          foundPages++;
-          missingStreak = 0;
+        if (source) {
+          foundCount++;
+          missingAfterFound = 0;
 
           gallery.appendChild(
-            createBrochurePageCard(foundSource, brochureNumber, foundPages)
+            createBrochurePageCard(
+              source,
+              'Brochure ' + String(brochureNumber).padStart(2, '0'),
+              'Page ' + String(foundCount).padStart(2, '0')
+            )
           );
         } else {
-          if (foundPages > 0) {
-            missingStreak++;
+          if (foundCount > 0) {
+            missingAfterFound++;
           }
 
-          if (foundPages > 0 && missingStreak >= 5) {
+          if (foundCount > 0 && missingAfterFound >= 8) {
             break;
           }
         }
       }
 
-      if (foundPages === 0) {
-        gallery.innerHTML = '';
+      if (foundCount === 0) {
+        var emptyMessage = document.createElement('div');
+        emptyMessage.className = 'brochure-empty-message';
+        emptyMessage.textContent = 'No image pages were found for this brochure. Add the JPG pages inside /brand/kemper/brochure/Images/Images/ using names such as brochure-' + String(brochureNumber).padStart(2, '0') + '-01.jpg, brochure-' + String(brochureNumber).padStart(2, '0') + '-02.jpg, and so on.';
 
-        var message = document.createElement('div');
-        message.className = 'brochure-empty-message';
-        message.textContent = 'No brochure page images were found for this brochure yet. Add JPG, PNG, or WebP page images into /brand/kemper/brochure/Images/Images/ using names like brochure-' + brochureNumber + '-01.jpg, brochure-' + brochureNumber + '-02.jpg, and so on.';
-
-        gallery.appendChild(message);
+        gallery.appendChild(emptyMessage);
       }
     }
 
-    loadBrochurePages('01');
-    loadBrochurePages('02');
-    loadBrochurePages('03');
-    loadBrochurePages('04');
+    loadBrochureBucket(1, 'brochure-gallery-01');
+    loadBrochureBucket(2, 'brochure-gallery-02');
+    loadBrochureBucket(3, 'brochure-gallery-03');
+    loadBrochureBucket(4, 'brochure-gallery-04');
   </script>
 
 </body>
