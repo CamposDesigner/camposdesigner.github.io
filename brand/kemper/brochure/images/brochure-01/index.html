@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Community Impact Report 2025 — Luciano Campos</title>
+
   <meta name="description" content="Kemper Community Impact Report 2025 designed by Luciano Campos.">
 
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -17,44 +19,58 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/css/style.css">
+
   <link rel="stylesheet" href="/brand/style.css">
 
   <style>
-    .brochure-hero-copy {
-      max-width: 760px;
+    .brochure-detail-intro {
+      padding-bottom: 36px;
+    }
+
+    .brochure-detail-subtitle {
+      max-width: 780px;
+      margin-top: 22px;
+      margin-bottom: 0;
+      color: #666666;
+      font-size: 1.08rem;
+      line-height: 1.72;
+      font-weight: 400;
+      letter-spacing: -0.01em;
     }
 
     .brochure-info-section {
-      padding: 0 0 60px;
+      padding: 0 0 68px;
     }
 
-    .brochure-info-wrap {
+    .brochure-info-panel {
+      padding: 34px 0 30px;
       border-top: 1px solid rgba(0, 0, 0, 0.12);
       border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-      padding: 26px 0 22px;
     }
 
     .brochure-info-item {
-      margin-bottom: 22px;
+      margin-bottom: 0;
     }
 
     .brochure-info-label {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       color: #7a7a7a;
       font-size: 0.72rem;
+      line-height: 1;
       font-weight: 800;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
     .brochure-info-text {
+      max-width: 330px;
       margin: 0;
       color: #111111;
-      font-size: 0.98rem;
-      line-height: 1.55;
+      font-size: 1rem;
+      line-height: 1.56;
       font-weight: 500;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
     }
 
     .brochure-pages-section {
@@ -78,9 +94,11 @@
     .brochure-page img {
       width: 100%;
       height: auto;
-      display: block;
+      display: block !important;
       opacity: 1 !important;
       visibility: visible !important;
+      object-fit: contain;
+      object-position: center;
       background: #f2f2ef;
     }
 
@@ -128,12 +146,38 @@
     }
 
     @media (max-width: 991px) {
+      .brochure-info-item {
+        margin-bottom: 28px;
+      }
+
+      .brochure-info-panel .col-lg-4:last-child .brochure-info-item {
+        margin-bottom: 0;
+      }
+
+      .brochure-info-text {
+        max-width: 100%;
+      }
+
       .brochure-pages-stack {
         max-width: 100%;
       }
     }
 
     @media (max-width: 767px) {
+      .brochure-detail-subtitle {
+        max-width: 100%;
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+
+      .brochure-info-section {
+        padding-bottom: 52px;
+      }
+
+      .brochure-info-panel {
+        padding: 28px 0 24px;
+      }
+
       .brochure-page {
         margin-bottom: 24px;
         border-radius: 18px;
@@ -141,10 +185,6 @@
 
       .brochure-page-caption {
         padding: 14px 16px;
-      }
-
-      .brochure-info-section {
-        padding-bottom: 48px;
       }
     }
   </style>
@@ -156,10 +196,10 @@
 
   <main>
 
-    <section class="selected-work brand-project-page">
+    <section class="selected-work brand-project-page brochure-detail-intro">
       <div class="container">
 
-        <div class="row mb-5">
+        <div class="row">
           <div class="col-lg-10">
 
             <p class="eyebrow">Kemper</p>
@@ -168,11 +208,9 @@
               Community Impact Report 2025
             </h1>
 
-            <div class="brochure-hero-copy">
-              <p class="hero-subtitle">
-                A community impact report designed to turn corporate social responsibility content into a clear, polished, and engaging editorial experience — balancing storytelling, data, imagery, and brand consistency across a long-form publication.
-              </p>
-            </div>
+            <p class="hero-subtitle brochure-detail-subtitle">
+              A community impact report designed to turn corporate social responsibility content into a clear, polished, and engaging editorial experience — balancing storytelling, data, imagery, and brand consistency across a long-form publication.
+            </p>
 
           </div>
         </div>
@@ -183,27 +221,33 @@
     <section class="brochure-info-section">
       <div class="container">
 
-        <div class="brochure-info-wrap">
+        <div class="brochure-info-panel">
           <div class="row">
 
-            <div class="col-md-4">
+            <div class="col-lg-4">
               <div class="brochure-info-item">
                 <span class="brochure-info-label">Client</span>
-                <p class="brochure-info-text">Kemper</p>
+                <p class="brochure-info-text">
+                  Kemper
+                </p>
               </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4">
               <div class="brochure-info-item">
                 <span class="brochure-info-label">Category</span>
-                <p class="brochure-info-text">Community Impact Report / Editorial Layout</p>
+                <p class="brochure-info-text">
+                  Community Impact Report / Editorial Layout
+                </p>
               </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-lg-4">
               <div class="brochure-info-item">
                 <span class="brochure-info-label">Project Focus</span>
-                <p class="brochure-info-text">Corporate storytelling, page rhythm, information hierarchy, report structure, and production-ready layout design.</p>
+                <p class="brochure-info-text">
+                  Corporate storytelling, page rhythm, information hierarchy, report structure, and production-ready layout design.
+                </p>
               </div>
             </div>
 
@@ -215,7 +259,9 @@
 
     <section class="brochure-pages-section">
       <div class="container">
+
         <div class="brochure-pages-stack" id="brochure-pages-stack"></div>
+
       </div>
     </section>
 
@@ -258,7 +304,9 @@
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
   <script>
