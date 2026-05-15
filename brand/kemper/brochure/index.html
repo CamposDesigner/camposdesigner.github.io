@@ -1,406 +1,1017 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Kemper Brochures — Luciano Campos</title>
 
-  <meta name="description" content="Kemper brochure design work by Luciano Campos.">
-
-  <link rel="icon" type="image/png" href="/favicon.png">
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="/css/style.css">
-
-  <link rel="stylesheet" href="/brand/style.css">
+  <meta
+    name="description"
+    content="Kemper brochure and report layouts by Luciano Campos, featuring corporate communication, brand storytelling, and structured editorial design."
+  />
 
   <style>
-    .brochure-buckets-section {
-      padding-bottom: 90px;
+    :root {
+      --bg: #f6f4ef;
+      --bg-soft: #ebe7dd;
+      --text: #111111;
+      --muted: #6d6a63;
+      --line: rgba(17, 17, 17, 0.12);
+      --card: #ffffff;
+      --card-soft: #f2efe7;
+      --dark: #111111;
+      --dark-soft: #1b1b1b;
+      --white: #ffffff;
+      --radius: 24px;
+      --radius-sm: 16px;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.08);
+      --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.06);
+      --max: 1180px;
+      --ease: cubic-bezier(.2,.8,.2,1);
     }
 
-    .brochure-project-card {
-      display: block;
-      cursor: default;
-      margin-bottom: 72px;
-      overflow: hidden;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .brochure-project-card:hover {
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.95), transparent 34rem),
+        linear-gradient(180deg, #f8f6f1 0%, var(--bg) 48%, #efebe2 100%);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
       text-decoration: none;
     }
 
-    .brochure-cover-image {
-      width: 100%;
-      height: 520px;
-      object-fit: contain;
-      object-position: center;
-      background: #f2f2ef;
-      padding: 30px;
-    }
-
-    .brochure-pages-stack {
-      padding: 36px;
-      background: #ffffff;
-      border-top: 1px solid rgba(0, 0, 0, 0.06);
-    }
-
-    .brochure-page-item {
-      width: 100%;
-      margin-bottom: 34px;
-    }
-
-    .brochure-page-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .brochure-page-card {
-      overflow: hidden;
-      border-radius: 24px;
-      background: #f2f2ef;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.045);
-    }
-
-    .brochure-page-card img {
-      width: 100%;
-      height: auto;
-      max-height: none;
+    img {
       display: block;
-      object-fit: contain;
-      object-position: center;
-      background: #f2f2ef;
-      padding: 24px;
+      max-width: 100%;
     }
 
-    .brochure-page-caption {
-      padding: 18px 22px;
-      background: #ffffff;
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      width: 100%;
+      border-bottom: 1px solid rgba(17,17,17,0.08);
+      background: rgba(246, 244, 239, 0.82);
+      backdrop-filter: blur(20px);
     }
 
-    .brochure-page-caption span {
-      display: block;
-      color: #777777;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
+    .nav-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand-mark {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .brand-mark span {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
-    @media (max-width: 991px) {
-      .brochure-cover-image {
-        height: 420px;
+    .main-nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 22px;
+      font-size: 13px;
+      letter-spacing: 0.03em;
+      color: rgba(17,17,17,0.76);
+    }
+
+    .main-nav a,
+    .drop-trigger {
+      transition: color .25s var(--ease);
+      white-space: nowrap;
+    }
+
+    .main-nav a:hover,
+    .dropdown:hover .drop-trigger {
+      color: #000;
+    }
+
+    .dropdown {
+      position: relative;
+      padding: 10px 0;
+    }
+
+    .drop-trigger {
+      cursor: default;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 34px;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      min-width: 150px;
+      padding: 10px;
+      border: 1px solid rgba(17,17,17,0.1);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: .25s var(--ease);
+    }
+
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 9px 10px;
+      border-radius: 10px;
+      color: rgba(17,17,17,0.72);
+    }
+
+    .dropdown-menu a:hover {
+      background: #f2efe7;
+      color: #000;
+    }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 86px 24px 54px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: rgba(17,17,17,0.35);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 52px;
+      align-items: end;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(48px, 8vw, 112px);
+      line-height: .88;
+      letter-spacing: -0.075em;
+      font-weight: 760;
+    }
+
+    .hero-copy {
+      max-width: 470px;
+      color: rgba(17,17,17,0.68);
+      font-size: clamp(17px, 1.6vw, 21px);
+      letter-spacing: -0.025em;
+    }
+
+    .meta-row {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pill {
+      border: 1px solid rgba(17,17,17,0.12);
+      background: rgba(255,255,255,0.52);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font-size: 12px;
+      color: rgba(17,17,17,0.68);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .divider {
+      max-width: var(--max);
+      height: 1px;
+      margin: 0 auto;
+      background: var(--line);
+    }
+
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 62px 24px;
+    }
+
+    .section-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 54px);
+      line-height: .96;
+      letter-spacing: -0.055em;
+      font-weight: 740;
+    }
+
+    .section-note {
+      max-width: 390px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .bucket-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .bucket {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(17,17,17,0.1);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.62);
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+      transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease);
+    }
+
+    .bucket:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-color: rgba(17,17,17,0.18);
+    }
+
+    .bucket-media {
+      position: relative;
+      aspect-ratio: 16 / 11;
+      overflow: hidden;
+      background: #e8e3d8;
+    }
+
+    .bucket-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transform: scale(1.01);
+      transition: transform .7s var(--ease);
+    }
+
+    .bucket:hover .bucket-media img {
+      transform: scale(1.055);
+    }
+
+    .bucket-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 42%, rgba(0,0,0,0.34));
+      pointer-events: none;
+    }
+
+    .bucket-count {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(14px);
+      font-size: 12px;
+      color: rgba(17,17,17,0.72);
+      font-weight: 650;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .bucket-body {
+      padding: 22px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .bucket-kicker {
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .bucket-title {
+      font-size: clamp(22px, 2.2vw, 32px);
+      line-height: 1;
+      letter-spacing: -0.045em;
+      font-weight: 740;
+    }
+
+    .bucket-desc {
+      color: rgba(17,17,17,0.64);
+      font-size: 14px;
+      max-width: 520px;
+    }
+
+    .bucket-action {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 8px;
+      margin-top: 4px;
+      color: #111;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .bucket-action::after {
+      content: "→";
+      transition: transform .25s var(--ease);
+    }
+
+    .bucket:hover .bucket-action::after {
+      transform: translateX(4px);
+    }
+
+    .viewer {
+      display: none;
+      margin-top: 34px;
+      padding: 30px;
+      border: 1px solid rgba(17,17,17,0.1);
+      border-radius: 30px;
+      background: rgba(255,255,255,0.62);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .viewer.is-active {
+      display: block;
+      animation: fadeUp .35s var(--ease) both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    @media (max-width: 767px) {
-      .brochure-project-card {
-        margin-bottom: 52px;
+    .viewer-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(17,17,17,0.1);
+    }
+
+    .viewer-title {
+      font-size: clamp(28px, 3.4vw, 46px);
+      line-height: .98;
+      letter-spacing: -0.055em;
+      font-weight: 740;
+    }
+
+    .viewer-subtitle {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .close-viewer {
+      appearance: none;
+      border: 1px solid rgba(17,17,17,0.13);
+      border-radius: 999px;
+      padding: 11px 14px;
+      background: #fff;
+      color: rgba(17,17,17,0.72);
+      cursor: pointer;
+      font-weight: 700;
+      transition: .25s var(--ease);
+    }
+
+    .close-viewer:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    .pages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .page-card {
+      overflow: hidden;
+      border: 1px solid rgba(17,17,17,0.1);
+      border-radius: 18px;
+      background: #f7f4ed;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.05);
+      cursor: zoom-in;
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+    }
+
+    .page-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 34px rgba(0,0,0,0.1);
+    }
+
+    .page-card img {
+      width: 100%;
+      height: auto;
+      background: #e8e3d8;
+    }
+
+    .page-label {
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 650;
+      letter-spacing: .03em;
+    }
+
+    .cta-section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 24px 76px;
+    }
+
+    .cta-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
+      padding: clamp(28px, 5vw, 48px);
+      border-radius: 32px;
+      background: #111;
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-card h2 {
+      max-width: 720px;
+      font-size: clamp(32px, 4.6vw, 62px);
+      line-height: .96;
+      letter-spacing: -0.06em;
+    }
+
+    .cta-card p {
+      margin-top: 14px;
+      max-width: 520px;
+      color: rgba(255,255,255,0.68);
+      font-size: 15px;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      background: #fff;
+      color: #111;
+      font-weight: 760;
+      font-size: 14px;
+      white-space: nowrap;
+      transition: transform .25s var(--ease), background .25s var(--ease);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      background: #f2efe7;
+    }
+
+    .site-footer {
+      border-top: 1px solid rgba(17,17,17,0.1);
+      padding: 28px 24px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(0,0,0,0.88);
+    }
+
+    .lightbox.is-active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: min(100%, 1180px);
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+      background: #fff;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 22px;
+      right: 22px;
+      z-index: 110;
+      appearance: none;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 999px;
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 24px;
+      line-height: 1;
+      cursor: pointer;
+      backdrop-filter: blur(14px);
+    }
+
+    .lightbox-caption {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.72);
+      font-size: 13px;
+      letter-spacing: .03em;
+      text-align: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(14px);
+    }
+
+    @media (max-width: 900px) {
+      .nav-wrap {
+        align-items: flex-start;
+        flex-direction: column;
       }
 
-      .brochure-cover-image {
-        height: 320px;
+      .main-nav {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .hero-grid,
+      .cta-card {
+        grid-template-columns: 1fr;
+      }
+
+      .section-top,
+      .viewer-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .bucket-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pages-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero {
+        padding-top: 58px;
+      }
+
+      .main-nav {
+        gap: 16px;
+        font-size: 12px;
+      }
+
+      .dropdown-menu {
+        display: none;
+      }
+
+      .section {
+        padding-top: 44px;
+        padding-bottom: 44px;
+      }
+
+      .viewer {
         padding: 18px;
+        border-radius: 22px;
       }
 
-      .brochure-pages-stack {
-        padding: 22px;
+      .pages-grid {
+        grid-template-columns: 1fr;
       }
 
-      .brochure-page-card img {
-        padding: 16px;
+      .bucket-body {
+        padding: 18px;
       }
     }
   </style>
-
 </head>
 
 <body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand-mark" href="/">
+        Luciano Campos
+        <span>Designer Portfolio</span>
+      </a>
 
-  <div id="navbar-placeholder"></div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/brand/">Brand</a>
+        <a href="/web/">Web</a>
+
+        <div class="dropdown">
+          <span class="drop-trigger">Magazines</span>
+          <div class="dropdown-menu">
+            <a href="/magazine/">Magazines</a>
+            <a href="/editorial/">Editorial</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <span class="drop-trigger">Projects</span>
+          <div class="dropdown-menu">
+            <a href="/projects/">Projects</a>
+            <a href="/work/">Work</a>
+          </div>
+        </div>
+
+        <a href="/clients/">Clients</a>
+
+        <div class="dropdown">
+          <span class="drop-trigger">About</span>
+          <div class="dropdown-menu">
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
 
   <main>
+    <section class="hero">
+      <div class="eyebrow">Kemper</div>
 
-    <section class="selected-work brand-project-page">
+      <div class="hero-grid">
+        <h1>Brochures</h1>
 
-      <div class="container">
-
-        <div class="row mb-5">
-
-          <div class="col-lg-9">
-
-            <p class="eyebrow">
-              Kemper
-            </p>
-
-            <h1 class="hero-title">
-              Brochures
-            </h1>
-
-            <p class="hero-subtitle">
-              Brochure and report layouts designed for corporate communication, brand storytelling, and structured editorial presentation.
-            </p>
-
-          </div>
-
-        </div>
-
+        <p class="hero-copy">
+          Brochure and report layouts designed for corporate communication, brand storytelling,
+          campaign support, and structured editorial presentation.
+        </p>
       </div>
-
     </section>
 
-    <section class="brochure-buckets-section">
-
-      <div class="container">
-
-        <div class="category-header">
-
-          <p class="eyebrow">
-            Category
-          </p>
-
-          <h2>
-            Brochures
-          </h2>
-
-        </div>
-
-        <div id="brochure-buckets"></div>
-
-      </div>
-
-    </section>
-
-    <section class="brand-back-section">
-
-      <div class="container">
-
-        <a href="/brand/kemper/" class="brand-back-link">
-          ← Back to Kemper
-        </a>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <footer class="footer-section">
-
-    <div class="container">
-
-      <div class="row align-items-center">
-
-        <div class="col-md-6 text-left">
-
-          <p class="footer-copy mb-0">
-            Product • Brand • UI/UX Designer
-          </p>
-
-        </div>
-
-        <div class="col-md-6 text-md-right text-left mt-3 mt-md-0">
-
-          <p class="footer-copy mb-0">
-            © 2026 Luciano Campos
-          </p>
-
-        </div>
-
-      </div>
-
+    <div class="meta-row">
+      <span class="pill">Brand Design</span>
+      <span class="pill">Brochures</span>
+      <span class="pill">Reports</span>
+      <span class="pill">Editorial Layout</span>
     </div>
 
+    <div class="divider"></div>
+
+    <section class="section">
+      <div class="section-top">
+        <h2 class="section-title">Selected brochure systems</h2>
+        <p class="section-note">
+          Each bucket below represents one brochure folder. Click a bucket to view the pages inside it.
+        </p>
+      </div>
+
+      <div class="bucket-grid" id="bucketGrid"></div>
+
+      <div class="viewer" id="viewer" aria-live="polite">
+        <div class="viewer-head">
+          <div>
+            <h3 class="viewer-title" id="viewerTitle">Brochure</h3>
+            <p class="viewer-subtitle" id="viewerSubtitle">Selected pages</p>
+          </div>
+
+          <button class="close-viewer" type="button" id="closeViewer">
+            Close
+          </button>
+        </div>
+
+        <div class="pages-grid" id="pagesGrid"></div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-card">
+        <div>
+          <h2>Need more project details?</h2>
+          <p>
+            I can share additional context about layout systems, production structure,
+            image handling, and brand consistency across these assets.
+          </p>
+        </div>
+
+        <a class="cta-button" href="/contact/">Contact</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>Product • Brand • UI/UX Designer</span>
+      <span>© 2026 Luciano Campos</span>
+    </div>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" id="lightboxClose" aria-label="Close image">
+      ×
+    </button>
+    <img src="" alt="" id="lightboxImage" />
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
 
   <script>
-    fetch('/navbar.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
-      });
-
-    function padNumber(number) {
-      return String(number).padStart(2, '0');
-    }
-
-    function createPageItem(page) {
-      var item = document.createElement('div');
-      item.className = 'brochure-page-item';
-
-      var card = document.createElement('div');
-      card.className = 'brochure-page-card';
-
-      var image = document.createElement('img');
-      image.src = page.src;
-      image.alt = page.alt;
-
-      var caption = document.createElement('div');
-      caption.className = 'brochure-page-caption';
-
-      var label = document.createElement('span');
-      label.textContent = page.caption;
-
-      caption.appendChild(label);
-      card.appendChild(image);
-      card.appendChild(caption);
-      item.appendChild(card);
-
-      return item;
-    }
-
-    function createBrochureBucket(brochure) {
-      var bucket = document.createElement('div');
-      bucket.className = 'project-card brochure-project-card';
-
-      var coverImage = document.createElement('img');
-      coverImage.src = brochure.cover.src;
-      coverImage.alt = brochure.cover.alt;
-      coverImage.className = 'img-fluid project-image brochure-cover-image';
-
-      var projectInfo = document.createElement('div');
-      projectInfo.className = 'project-info';
-
-      var category = document.createElement('span');
-      category.className = 'project-category';
-      category.textContent = brochure.category;
-
-      var title = document.createElement('h3');
-      title.className = 'project-title';
-      title.textContent = brochure.title;
-
-      projectInfo.appendChild(category);
-      projectInfo.appendChild(title);
-
-      var pagesStack = document.createElement('div');
-      pagesStack.className = 'brochure-pages-stack';
-
-      for (var i = 0; i < brochure.pages.length; i++) {
-        pagesStack.appendChild(createPageItem(brochure.pages[i]));
-      }
-
-      bucket.appendChild(coverImage);
-      bucket.appendChild(projectInfo);
-      bucket.appendChild(pagesStack);
-
-      return bucket;
-    }
-
-    function buildBrochure01Pages() {
-      var pages = [];
-
-      for (var i = 1; i <= 20; i++) {
-        pages.push({
-          src: '/brand/kemper/brochure/images/brochure-01/brochure-01-' + padNumber(i) + '.jpg',
-          alt: 'Kemper brochure 01 page ' + padNumber(i),
-          caption: 'Brochure 01 / Page ' + padNumber(i)
-        });
-      }
-
-      return pages;
-    }
-
-    function buildBrochure02Pages() {
-      var pages = [];
-
-      for (var i = 2; i <= 31; i++) {
-        pages.push({
-          src: '/brand/kemper/brochure/images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_' + padNumber(i) + '.jpg',
-          alt: 'Corporate Responsibility Report page ' + padNumber(i),
-          caption: 'Brochure 02 / Page ' + padNumber(i)
-        });
-      }
-
-      return pages;
-    }
-
-    function buildBrochure03Pages() {
-      var pages = [];
-
-      for (var i = 2; i <= 3; i++) {
-        pages.push({
-          src: '/brand/kemper/brochure/images/brochure-03/25_14351_KL-Vanguard-Conference-2026-Digital-Flyer-V.22_Page_' + i + '.jpg',
-          alt: 'Kemper brochure 03 page ' + padNumber(i),
-          caption: 'Brochure 03 / Page ' + padNumber(i)
-        });
-      }
-
-      return pages;
-    }
-
-    function buildBrochure04Pages() {
-      return [
-        {
-          src: '/brand/kemper/brochure/images/brochure-04/25_03852_KL-Contents-Fire-V.09_Page_2.jpg',
-          alt: 'Kemper brochure 04 page 02',
-          caption: 'Brochure 04 / Page 02'
-        }
-      ];
-    }
-
-    var brochures = [
+    const brochures = [
       {
-        category: 'Brochure 01',
-        title: 'Vanguard Leaders Conference',
-        cover: {
-          src: '/brand/kemper/brochure/images/brochure-01/brochure-01-cover.jpg',
-          alt: 'Kemper Vanguard Leaders Conference brochure cover'
-        },
-        pages: buildBrochure01Pages()
+        id: "brochure-01",
+        title: "Kemper Brochure 01",
+        kicker: "Brochure 01",
+        description: "Multi-page corporate brochure layout with cover and internal spreads.",
+        cover: "images/brochure-01/cover.jpg",
+        pages: [
+          "images/brochure-01/brochure-01-01.jpg",
+          "images/brochure-01/brochure-01-02.jpg",
+          "images/brochure-01/brochure-01-03.jpg",
+          "images/brochure-01/brochure-01-04.jpg",
+          "images/brochure-01/brochure-01-05.jpg",
+          "images/brochure-01/brochure-01-06.jpg",
+          "images/brochure-01/brochure-01-07.jpg",
+          "images/brochure-01/brochure-01-08.jpg",
+          "images/brochure-01/brochure-01-09.jpg",
+          "images/brochure-01/brochure-01-10.jpg",
+          "images/brochure-01/brochure-01-11.jpg",
+          "images/brochure-01/brochure-01-12.jpg",
+          "images/brochure-01/brochure-01-13.jpg",
+          "images/brochure-01/brochure-01-14.jpg",
+          "images/brochure-01/brochure-01-15.jpg",
+          "images/brochure-01/brochure-01-16.jpg",
+          "images/brochure-01/brochure-01-17.jpg",
+          "images/brochure-01/brochure-01-18.jpg",
+          "images/brochure-01/brochure-01-19.jpg",
+          "images/brochure-01/brochure-01-20.jpg"
+        ]
       },
       {
-        category: 'Brochure 02',
-        title: 'Corporate Responsibility Report',
-        cover: {
-          src: '/brand/kemper/brochure/images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_01.jpg',
-          alt: 'Kemper Corporate Responsibility Report brochure cover'
-        },
-        pages: buildBrochure02Pages()
+        id: "brochure-02",
+        title: "Corporate Responsibility Report",
+        kicker: "Brochure 02",
+        description: "Long-form report layout structured for corporate storytelling and information design.",
+        cover: "images/brochure-02/cover.jpg",
+        pages: [
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_02.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_03.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_04.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_05.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_06.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_07.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_08.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_09.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_10.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_11.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_12.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_13.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_14.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_15.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_16.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_17.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_18.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_19.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_20.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_21.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_22.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_23.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_24.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_25.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_26.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_27.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_28.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_29.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_30.jpg",
+          "images/brochure-02/Corporate_Responsability_Report-2024-06.20.24.1_Page_31.jpg"
+        ]
       },
       {
-        category: 'Brochure 03',
-        title: 'Vanguard Conference Digital Flyer',
-        cover: {
-          src: '/brand/kemper/brochure/images/brochure-03/25_14351_KL-Vanguard-Conference-2026-Digital-Flyer-V.22_Page_1.jpg',
-          alt: 'Kemper Vanguard Conference Digital Flyer cover'
-        },
-        pages: buildBrochure03Pages()
+        id: "brochure-03",
+        title: "Kemper Brochure 03",
+        kicker: "Brochure 03",
+        description: "Short brochure/flyer layout with focused visual presentation.",
+        cover: "images/brochure-03/cover.jpg",
+        pages: [
+          "images/brochure-03/brochure-02.jpg",
+          "images/brochure-03/brochure-03.jpg"
+        ]
       },
       {
-        category: 'Brochure 04',
-        title: 'Contents / Fire Insurance',
-        cover: {
-          src: '/brand/kemper/brochure/images/brochure-04/25_03852_KL-Contents-Fire-V.09_Page_1.jpg',
-          alt: 'Kemper Contents Fire Insurance brochure cover'
-        },
-        pages: buildBrochure04Pages()
+        id: "brochure-04",
+        title: "Kemper Brochure 04",
+        kicker: "Brochure 04",
+        description: "Single brochure page presented as a compact campaign/design asset.",
+        cover: "images/brochure-04/cover.jpg",
+        pages: [
+          "images/brochure-04/brochure-01.jpg"
+        ]
       }
     ];
 
-    var brochureContainer = document.getElementById('brochure-buckets');
+    const bucketGrid = document.getElementById("bucketGrid");
+    const viewer = document.getElementById("viewer");
+    const viewerTitle = document.getElementById("viewerTitle");
+    const viewerSubtitle = document.getElementById("viewerSubtitle");
+    const pagesGrid = document.getElementById("pagesGrid");
+    const closeViewer = document.getElementById("closeViewer");
 
-    if (brochureContainer) {
-      for (var b = 0; b < brochures.length; b++) {
-        brochureContainer.appendChild(createBrochureBucket(brochures[b]));
-      }
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    function renderBuckets() {
+      bucketGrid.innerHTML = brochures.map((brochure, index) => {
+        const pageText = brochure.pages.length === 1 ? "1 image" : `${brochure.pages.length} images`;
+
+        return `
+          <article class="bucket" tabindex="0" role="button" data-index="${index}" aria-label="Open ${brochure.title}">
+            <div class="bucket-media">
+              <img src="${brochure.cover}" alt="${brochure.title} cover" loading="lazy">
+              <span class="bucket-count">${pageText}</span>
+            </div>
+
+            <div class="bucket-body">
+              <div class="bucket-kicker">${brochure.kicker}</div>
+              <h3 class="bucket-title">${brochure.title}</h3>
+              <p class="bucket-desc">${brochure.description}</p>
+              <span class="bucket-action">View bucket</span>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      document.querySelectorAll(".bucket").forEach((bucket) => {
+        bucket.addEventListener("click", () => {
+          openBrochure(Number(bucket.dataset.index));
+        });
+
+        bucket.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openBrochure(Number(bucket.dataset.index));
+          }
+        });
+      });
     }
+
+    function openBrochure(index) {
+      const brochure = brochures[index];
+
+      viewerTitle.textContent = brochure.title;
+      viewerSubtitle.textContent = `${brochure.kicker} • ${brochure.pages.length === 1 ? "1 image" : `${brochure.pages.length} images`}`;
+
+      pagesGrid.innerHTML = brochure.pages.map((page, pageIndex) => {
+        return `
+          <article class="page-card" tabindex="0" role="button" data-src="${page}" data-title="${brochure.title}" data-page="${pageIndex + 1}">
+            <img src="${page}" alt="${brochure.title} page ${pageIndex + 1}" loading="lazy">
+            <div class="page-label">Page ${String(pageIndex + 1).padStart(2, "0")}</div>
+          </article>
+        `;
+      }).join("");
+
+      viewer.classList.add("is-active");
+
+      document.querySelectorAll(".page-card").forEach((card) => {
+        card.addEventListener("click", () => {
+          openLightbox(card.dataset.src, `${card.dataset.title} — Page ${card.dataset.page}`);
+        });
+
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openLightbox(card.dataset.src, `${card.dataset.title} — Page ${card.dataset.page}`);
+          }
+        });
+      });
+
+      viewer.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function openLightbox(src, caption) {
+      lightboxImage.src = src;
+      lightboxImage.alt = caption;
+      lightboxCaption.textContent = caption;
+      lightbox.classList.add("is-active");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("is-active");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.src = "";
+      document.body.style.overflow = "";
+    }
+
+    closeViewer.addEventListener("click", () => {
+      viewer.classList.remove("is-active");
+      pagesGrid.innerHTML = "";
+    });
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+
+    renderBuckets();
   </script>
-
 </body>
-
 </html>
