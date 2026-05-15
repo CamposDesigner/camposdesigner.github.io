@@ -642,7 +642,7 @@
         <div class="social-gallery-intro">
 
           <p>
-            A larger collection of social layouts is presented in a compact gallery format to show range and consistency without creating a long scrolling page. The strongest distracted-driving layouts appear first to connect the visual work directly to the highlighted performance insight.
+            A larger collection of social layouts is presented in a compact gallery format to show range and consistency without creating a long scrolling page. The first three distracted-driving awareness layouts connect directly to the highlighted performance insight.
           </p>
 
         </div>
@@ -652,10 +652,10 @@
           <div class="social-layout-card priority-layout">
 
             <img src="/brand/kemper/social-assets/images/poster-18.jpg"
-                 alt="Kemper social asset 18">
+                 alt="Kemper distracted driving awareness layout 01">
 
             <div class="social-layout-caption">
-              <span>Distracted Driving Layout 01</span>
+              <span>Distracted Driving Awareness 01</span>
             </div>
 
           </div>
@@ -663,10 +663,10 @@
           <div class="social-layout-card priority-layout">
 
             <img src="/brand/kemper/social-assets/images/poster-17.jpg"
-                 alt="Kemper social asset 17">
+                 alt="Kemper distracted driving awareness layout 02">
 
             <div class="social-layout-caption">
-              <span>Distracted Driving Layout 02</span>
+              <span>Distracted Driving Awareness 02</span>
             </div>
 
           </div>
@@ -674,98 +674,98 @@
           <div class="social-layout-card priority-layout">
 
             <img src="/brand/kemper/social-assets/images/poster-19.jpg"
-                 alt="Kemper social asset 19">
+                 alt="Kemper distracted driving awareness layout 03">
 
             <div class="social-layout-caption">
-              <span>Distracted Driving Layout 03</span>
+              <span>Distracted Driving Awareness 03</span>
             </div>
 
           </div>
 
-          <div class="social-layout-card priority-layout">
+          <div class="social-layout-card">
 
             <img src="/brand/kemper/social-assets/images/poster-07.jpg"
+                 alt="Kemper social asset 04">
+
+            <div class="social-layout-caption">
+              <span>Social Asset 04</span>
+            </div>
+
+          </div>
+
+          <div class="social-layout-card">
+
+            <img src="/brand/kemper/social-assets/images/poster-08.jpg"
+                 alt="Kemper social asset 05">
+
+            <div class="social-layout-caption">
+              <span>Social Asset 05</span>
+            </div>
+
+          </div>
+
+          <div class="social-layout-card">
+
+            <img src="/brand/kemper/social-assets/images/poster-15.jpg"
+                 alt="Kemper social asset 06">
+
+            <div class="social-layout-caption">
+              <span>Social Asset 06</span>
+            </div>
+
+          </div>
+
+          <div class="social-layout-card">
+
+            <img src="/brand/kemper/social-assets/images/poster-16.jpg"
                  alt="Kemper social asset 07">
 
             <div class="social-layout-caption">
-              <span>Distracted Driving Layout 04</span>
+              <span>Social Asset 07</span>
             </div>
 
           </div>
 
-          <div class="social-layout-card priority-layout">
+          <div class="social-layout-card">
 
-            <img src="/brand/kemper/social-assets/images/poster-08.jpg"
+            <img src="/brand/kemper/social-assets/images/poster-10.jpg"
                  alt="Kemper social asset 08">
 
             <div class="social-layout-caption">
-              <span>Distracted Driving Layout 05</span>
+              <span>Social Asset 08</span>
             </div>
 
           </div>
 
-          <div class="social-layout-card priority-layout">
+          <div class="social-layout-card">
 
-            <img src="/brand/kemper/social-assets/images/poster-15.jpg"
-                 alt="Kemper social asset 15">
+            <img src="/brand/kemper/social-assets/images/poster-11.jpg"
+                 alt="Kemper social asset 09">
 
             <div class="social-layout-caption">
-              <span>Distracted Driving Layout 06</span>
+              <span>Social Asset 09</span>
             </div>
 
           </div>
 
-          <div class="social-layout-card priority-layout">
+          <div class="social-layout-card">
 
-            <img src="/brand/kemper/social-assets/images/poster-16.jpg"
-                 alt="Kemper social asset 16">
-
-            <div class="social-layout-caption">
-              <span>Distracted Driving Layout 07</span>
-            </div>
-
-          </div>
-
-          <div class="social-layout-card priority-layout">
-
-            <img src="/brand/kemper/social-assets/images/poster-10.jpg"
+            <img src="/brand/kemper/social-assets/images/poster-12.jpg"
                  alt="Kemper social asset 10">
 
             <div class="social-layout-caption">
-              <span>Distracted Driving Layout 08</span>
+              <span>Social Asset 10</span>
             </div>
 
           </div>
 
-          <div class="social-layout-card priority-layout">
+          <div class="social-layout-card">
 
-            <img src="/brand/kemper/social-assets/images/poster-11.jpg"
+            <img src="/brand/kemper/social-assets/images/poster-13.jpg"
                  alt="Kemper social asset 11">
 
             <div class="social-layout-caption">
-              <span>Distracted Driving Layout 09</span>
-            </div>
-
-          </div>
-
-          <div class="social-layout-card priority-layout">
-
-            <img src="/brand/kemper/social-assets/images/poster-12.jpg"
-                 alt="Kemper social asset 12">
-
-            <div class="social-layout-caption">
-              <span>Distracted Driving Layout 10</span>
-            </div>
-
-          </div>
-
-          <div class="social-layout-card priority-layout">
-
-            <img src="/brand/kemper/social-assets/images/poster-13.jpg"
-                 alt="Kemper social asset 13">
-
-            <div class="social-layout-caption">
-              <span>Distracted Driving Layout 11</span>
+              <span>Social Asset 11</span>
             </div>
 
           </div>
@@ -858,19 +858,21 @@
       });
     }
 
-    function createSocialLayoutCard(src, index) {
+    function createSocialLayoutCard(src, assetNumber) {
       var card = document.createElement('div');
       card.className = 'social-layout-card social-extra-layout';
 
+      var paddedNumber = String(assetNumber).padStart(2, '0');
+
       var image = document.createElement('img');
       image.src = src;
-      image.alt = 'Kemper social asset ' + index;
+      image.alt = 'Kemper social asset ' + paddedNumber;
 
       var caption = document.createElement('div');
       caption.className = 'social-layout-caption';
 
       var label = document.createElement('span');
-      label.textContent = 'Social Layout ' + String(index).padStart(2, '0');
+      label.textContent = 'Social Asset ' + paddedNumber;
 
       caption.appendChild(label);
       card.appendChild(image);
@@ -888,6 +890,7 @@
       }
 
       var loadedExtraLayouts = 0;
+      var socialAssetNumber = 12;
       var extensions = ['jpg', 'jpeg', 'png'];
 
       var priorityNumbers = {
@@ -915,7 +918,8 @@
           var exists = await imageExists(src);
 
           if (exists) {
-            gallery.appendChild(createSocialLayoutCard(src, i));
+            gallery.appendChild(createSocialLayoutCard(src, socialAssetNumber));
+            socialAssetNumber++;
             loadedExtraLayouts++;
             break;
           }
